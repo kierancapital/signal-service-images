@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{page_title}} · Signal Service</title>
+<meta name="description" content="{{description}}">
+<style>
+/* Kit page template (v3, 2026-11-07), styled like the Signal Service newsletter. Kieran: "once they get into anything to do with me
+   page-wise, I want it to be styled like my newsletter." White, Helvetica 17px, #0A0A0A, 2px black cards with 12px corners, bold
+   black labels ending in a colon, black and white only (green only inside the logo). Rules: 01 Process/Issue Template.md.
+   The Worker fills the {{…}} slots from the kit's JSON. This file is also published as kits/_template.html (publish_kit.py --template),
+   so a design change goes live without a Worker deploy. */
+:root{--ink:#0A0A0A;--grey:#6B6B6B;--white:#FFFFFF}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--white);color:var(--ink);font-family:Helvetica,Arial,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);font-weight:700;text-decoration:underline}
+.wrap{max-width:680px;margin:0 auto;padding:16px 16px 48px}
+.head{display:block;margin:0 0 24px}
+.head img{display:block;width:100%;height:auto;border-radius:12px}
+.card{border:2px solid var(--ink);border-radius:12px;padding:22px 18px 18px;margin:0 0 24px;background:var(--white)}
+h1{font-size:30px;line-height:1.2;font-weight:700;margin:0 0 12px}
+h2{font-size:24px;line-height:1.25;font-weight:700;margin:0 0 12px}
+p{margin:0 0 12px}
+ol,ul{margin:0 0 12px;padding-left:18px}
+li{margin:0 0 8px}
+hr{border:0;border-top:2px solid var(--ink);margin:16px 0}
+.label{font-weight:700;margin:0 0 8px}
+.prompt{border:2px solid var(--ink);border-radius:12px;padding:14px 16px;font-weight:700;line-height:1.45;margin:0 0 10px;background:var(--white)}
+.copy{display:block;margin-top:10px;font:inherit;font-size:14px;font-weight:700;color:var(--white);background:var(--ink);border:2px solid var(--ink);border-radius:8px;padding:6px 14px;cursor:pointer}
+.copy.done{color:var(--ink);background:var(--white)}
+.note{font-size:15px;margin:0 0 6px}
+.teaser{position:relative;max-height:92px;overflow:hidden;margin:0 0 4px}
+.teaser .prompt{margin:0}
+.teaser:after{content:"";position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(to bottom,rgba(255,255,255,0),#FFFFFF)}
+form{margin:16px 0 0}
+label.q{display:block;font-weight:700;margin:0 0 8px}
+input[type=email]{width:100%;font:inherit;font-size:17px;padding:13px 14px;border:2px solid var(--ink);border-radius:12px;background:var(--white);color:var(--ink);outline:none}
+input[type=email]:focus{box-shadow:0 0 0 2px var(--ink)}
+.btn{display:block;width:100%;margin:12px 0 0;font:inherit;font-size:17px;font-weight:700;color:var(--white);background:var(--ink);border:2px solid var(--ink);border-radius:12px;padding:14px;cursor:pointer}
+.btn[disabled]{opacity:0.6}
+.small{font-size:14px;color:var(--grey);margin:10px 0 0}
+.err{display:none;color:#B42318;font-weight:700;font-size:15px;margin:10px 0 0}
+.ok{display:none;border:2px solid var(--ink);border-radius:12px;padding:14px 16px;font-weight:700;margin:0 0 24px}
+ul.results{list-style:none;padding:0;margin:0 0 12px}
+ul.results li{margin:0 0 4px}
+ol.fu{list-style:none;padding:0;margin:0}
+ol.fu li{margin:0 0 18px}
+ol.fu li:last-child{margin:0}
+ul.check{list-style:none;padding:0;margin:0 0 8px}
+ul.check li{display:flex;gap:12px;align-items:flex-start;margin:0 0 12px;cursor:pointer;user-select:none}
+ul.check .box{flex:none;width:24px;height:24px;border:2px solid var(--ink);border-radius:6px;margin-top:2px;display:grid;place-items:center}
+ul.check li.on .box{background:var(--ink)}
+ul.check li.on .box:after{content:"";width:11px;height:6px;border-left:2.5px solid var(--white);border-bottom:2.5px solid var(--white);transform:rotate(-45deg) translate(1px,-1px)}
+.stamp{font-size:14px;color:var(--grey);margin:4px 0 0}
+footer{text-align:center}
+footer p{margin:0}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="head" href="https://signalservice.ai" aria-label="Signal Service home"><img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/7f160a01-d858-48c0-ad87-b75f846b013b/Email_Header_Rounded_1200x300.png?t=1791410708" alt="Signal Service" width="1200" height="300"></a>
+
+  <div class="card">
+    <h1>{{title}}</h1>
+    <p>{{sub}}</p>
+    <hr>
+    <p class="label">What's inside:</p>
+    <ol><li>The prompt to start with</li><li>3 follow-up prompts</li><li>{{checklist_title}}</li></ol>
+  </div>
+
+  <div class="card" id="gate">
+    <p class="label">The prompt:</p>
+    <div class="teaser"><div class="prompt">{{prompt}}</div></div>
+    <form id="form" novalidate>
+      <label class="q" for="email">Where should we send it?</label>
+      <input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
+      <button class="btn" id="go" type="submit">Claim my kit</button>
+      <div class="err" id="err">That email doesn't look right. Try again?</div>
+      <p class="small">You'll also be added to our free newsletter, Signal Service, so you can stay ahead with AI. Unsubscribe any time.</p>
+    </form>
+  </div>
+
+  <div id="kit" hidden>
+    <div class="ok" id="okmsg">Done. Your kit is below, and a copy is on its way to your inbox.</div>
+
+    <div class="card">
+      <h2>1. Ask this first</h2>
+      <p>{{prompt_how}}</p>
+      <div class="prompt" id="p1">{{prompt}}<button class="copy" data-copy="p1" type="button">Copy</button></div>
+      <p class="note">{{prompt_note}}</p>
+    </div>
+{{tested}}
+    <div class="card">
+      <h2>2. Then ask</h2>
+      <ol class="fu">{{followups}}</ol>
+    </div>
+
+    <div class="card">
+      <h2>3. {{checklist_title}}</h2>
+      <ul class="check" id="check">{{checklist}}</ul>
+      <p class="note">Tap a point to tick it off.</p>
+    </div>
+
+    <div class="card">
+      <p class="label">Do it safely:</p>
+      {{safety}}
+      <p class="stamp">Checked on {{checked}}. Re-tested monthly.</p>
+    </div>
+  </div>
+
+  <footer><p>From <a href="https://signalservice.ai">Signal Service</a>, the free AI newsletter.</p></footer>
+</div>
+
+<script>
+// RELAY_URL: "/api/signup" on the live Worker; "" in a local preview (the form simulates a sign-up and sends nothing).
+const RELAY_URL = "{{relay}}";
+const KIT = "{{slug}}";
+const $ = (id) => document.getElementById(id);
+const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const q = new URLSearchParams(location.search);
+const utm = {utm_source: q.get("utm_source") || "kit", utm_medium: q.get("utm_medium") || "", utm_campaign: q.get("utm_campaign") || KIT};
+
+function unlock(scroll, message){
+  $("gate").hidden = true;
+  $("kit").hidden = false;
+  if (message) { $("okmsg").textContent = message; $("okmsg").style.display = "block"; }
+  store.set("kit_" + KIT, "1");
+  if (scroll) $("kit").scrollIntoView({behavior: "smooth", block: "start"});
+}
+// A return visit (or #kit): straight to the kit.
+if (location.hash === "#kit" || store.get("kit_" + KIT) === "1") unlock(false, "");
+
+$("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = $("email").value.trim();
+  $("err").style.display = "none";
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $("err").textContent = "That email doesn't look right. Try again?"; $("err").style.display = "block"; return; }
+  $("go").disabled = true; $("go").textContent = "Sending…";
+  try {
+    if (!RELAY_URL) { await new Promise((r) => setTimeout(r, 500)); unlock(true, "Preview: nothing was sent. Live, the kit unlocks here and a copy goes to their inbox."); return; }
+    const res = await fetch(RELAY_URL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email, lead_magnet: KIT, ...utm})});
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.ok) throw new Error(data.error || "send");
+    unlock(true, data.existing ? "You're already on the list, so no new email this time. Here's your kit." : "Done. Your kit is below, and a copy is on its way to your inbox.");
+  } catch (err) {
+    $("go").disabled = false; $("go").textContent = "Claim my kit";
+    $("err").textContent = "Something went wrong on our side. Try again in a moment?"; $("err").style.display = "block";
+  }
+});
+
+// Copy buttons and the tick-off checklist.
+document.querySelectorAll(".copy").forEach((b) => b.addEventListener("click", async () => {
+  const el = $(b.dataset.copy), text = el.firstChild.textContent.trim();
+  try { await navigator.clipboard.writeText(text); b.textContent = "Copied"; b.classList.add("done"); setTimeout(() => { b.textContent = "Copy"; b.classList.remove("done"); }, 1600); }
+  catch (e) { b.textContent = "Select and copy"; }
+}));
+document.querySelectorAll("#check li").forEach((li) => li.addEventListener("click", () => li.classList.toggle("on")));
+</script>
+</body>
+</html>
