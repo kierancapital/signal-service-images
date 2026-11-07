@@ -1,0 +1,88 @@
+{
+  "slug": "cv",
+  "keyword": "CV",
+  "name": "CV kit",
+  "checked": "6 Nov 2026",
+  "description": "One prompt that finds the mistake most likely to get your CV rejected, three follow-ups and a 5-point checklist. Tested on ChatGPT, Claude and Gemini.",
+  "page": {
+    "title": "The CV check",
+    "mark": "CV",
+    "sub": "The one prompt that finds the mistake most likely to get your CV rejected, three follow-ups, and the 5-point checklist. Tested on ChatGPT, Claude and Gemini.",
+    "prompt_how": "Swap in the job, then paste your CV underneath.",
+    "prompt_note": "\"Answer in 2 sentences\" keeps it to the one thing that matters.",
+    "tested_label": "what we found · 6 nov 2026",
+    "tested_title": "We tested it on all three",
+    "results": [
+      {
+        "name": "ChatGPT",
+        "ok": true
+      },
+      {
+        "name": "Claude",
+        "ok": true
+      },
+      {
+        "name": "Gemini",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "FOUND IT",
+      "MISSED IT"
+    ],
+    "tested_text": "Our test CV had one planted typo: **gmial.com** instead of gmail.com. ChatGPT and Claude caught it straight away. Gemini missed it on that run, but flagged vague bullet points instead.",
+    "tip": "**The tip:** ask more than one AI. They catch different things.",
+    "checklist_label": "step 3 · before you send"
+  },
+  "prompt": "I'm applying for a [job title] job. What's the one mistake on my CV most likely to get it rejected? Answer in 2 sentences.",
+  "followups": [
+    {
+      "label": "Fix vague bullets",
+      "prompt": "Rewrite my bullet points as achievements. Don't make up any numbers: ask me for the real ones first.",
+      "note": "The \"don't make up numbers\" part matters: a CV with invented numbers is worse than a vague one.",
+      "email_note": "Invented numbers are worse than vague ones."
+    },
+    {
+      "label": "Match the job advert",
+      "prompt": "Compare my CV with this job advert. List the skills and keywords it asks for that my CV doesn't show yet.",
+      "note": "Paste the advert under it. Only add what you can back up."
+    },
+    {
+      "label": "Catch the typos",
+      "prompt": "Check every contact detail, date and job title on my CV for typos or anything that doesn't add up.",
+      "note": "This is the one that catches a broken email address."
+    }
+  ],
+  "checklist_title": "The 5-point CV checklist",
+  "checklist": [
+    {
+      "title": "Contact details that work",
+      "detail": "Send yourself a test email from the address on your CV."
+    },
+    {
+      "title": "A real number in every bullet you can",
+      "detail": "\"Grew followers 40% in 3 months\" beats \"responsible for social media\"."
+    },
+    {
+      "title": "Matched to the advert's own words",
+      "detail": "Use their words for the skills you really have."
+    },
+    {
+      "title": "Dates that line up",
+      "detail": "No overlaps or mismatched months between jobs."
+    },
+    {
+      "title": "No gaps left unexplained",
+      "detail": "One honest line covers it: study, travel, caring, a project."
+    }
+  ],
+  "safety": [
+    "Use a **temporary chat** in ChatGPT or Gemini, or **incognito** in Claude, so your CV isn't saved to your history.",
+    "Take out your home address and phone number, but **leave your email in**: that's the line the AIs caught."
+  ],
+  "email": {
+    "tested": "When we tested it on 6 Nov, ChatGPT and Claude caught our planted email typo (gmial instead of gmail) straight away. Gemini missed it. So ask more than one AI: they catch different things.",
+    "safety": "Use a temporary chat (incognito in Claude). Take out your home address and phone number, but leave your email in.",
+    "question": "what job are you going for?"
+  }
+}
