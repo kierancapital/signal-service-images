@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{page_title}} · Signal Service</title>
+<meta name="description" content="{{description}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@600;700&display=swap">
+<style>
+/* Kit page template (v4, 2026-11-07). The reel look (Kieran, after seeing the newsletter look: "I actually preferred it"):
+   off-white page, black window bars, Signal green, red only for a mistake. The landing is just the title card with the email box
+   ("I just want this CV check box and then email, where should we send it, below"); no prompt teaser, people know it from the reel.
+   The Worker fills the {{…}} slots from the kit's JSON. Published as kits/_page.html (publish_kit.py --template), so a design
+   change goes live without a Worker deploy. Steps: 01 Process/Comment Keyword Funnel.md. */
+:root{--page:#F3F0E8;--ink:#0A0A0A;--ink2:#2E2C28;--grey:#8F897D;--line:#D6D0C3;--white:#FFFFFF;--green:#00D97E;--red:#E5484D;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:560px;margin:0 auto;padding:20px 16px 56px}
+.top{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-0.02em;font-size:17px;text-decoration:none;margin:4px 0 22px}
+.top svg{width:30px;height:30px;display:block}
+.win{background:var(--white);border:3px solid var(--ink);border-radius:8px;box-shadow:6px 6px 0 var(--ink);overflow:hidden;margin:0 0 22px}
+.chrome{height:42px;display:flex;align-items:center;gap:7px;padding:0 14px;background:var(--ink);color:var(--white);font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:0.02em}
+.chrome i{width:11px;height:11px;border:2px solid #9A9A9A;border-radius:2px;display:block}
+.chrome i:first-child{border-color:var(--green);background:var(--green)}
+.chrome span{margin-left:6px}
+.chrome .pill{margin-left:auto}
+.pill{display:inline-block;font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:0.08em;color:var(--ink);background:var(--white);border:2px solid var(--ink);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.pill.green{background:var(--green)}
+.body{padding:20px 20px 22px}
+h1{font-size:40px;line-height:1.02;letter-spacing:-0.04em;font-weight:900;margin:2px 0 12px}
+h1 mark{background:var(--green);color:var(--ink);padding:0 6px;border-radius:4px}
+h2{font-size:22px;line-height:1.15;letter-spacing:-0.025em;font-weight:800;margin:0 0 10px}
+p{margin:0 0 12px}
+.sub{color:var(--ink2);font-size:17px}
+.prompt{position:relative;background:var(--page);border:2.5px solid var(--ink);border-radius:6px;padding:14px 14px 14px 16px;font-weight:600;font-size:17px;line-height:1.4;margin:0 0 10px}
+.copy{display:block;margin-top:10px;font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;background:var(--ink);color:var(--white);border:0;border-radius:6px;padding:8px 12px;cursor:pointer}
+.copy.done{background:var(--green);color:var(--ink)}
+.note{font-size:14px;color:var(--ink2);margin:0 0 6px}
+#gate{margin:18px 0 0;padding:18px 0 0;border-top:2px solid var(--ink)}
+label.q{display:block;font-weight:800;font-size:18px;letter-spacing:-0.02em;margin:0 0 8px}
+input[type=email]{width:100%;font:inherit;font-size:18px;padding:14px 14px;border:2.5px solid var(--ink);border-radius:8px;background:var(--white);color:var(--ink);outline:none}
+input[type=email]:focus{box-shadow:0 0 0 3px var(--green)}
+.btn{display:block;width:100%;margin:12px 0 0;font:inherit;font-size:18px;font-weight:800;letter-spacing:-0.01em;color:var(--ink);background:var(--green);border:2.5px solid var(--ink);border-radius:8px;padding:14px;box-shadow:4px 4px 0 var(--ink);cursor:pointer}
+.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn[disabled]{opacity:0.6}
+.small{font-size:13px;color:var(--grey);margin:10px 0 0}
+.err{display:none;color:var(--red);font-weight:600;font-size:15px;margin:10px 0 0}
+.ok{display:none;border:2.5px solid var(--ink);background:var(--green);border-radius:8px;padding:12px 14px;font-weight:700;margin:0 0 22px}
+ol.fu{margin:0;padding:0;list-style:none;counter-reset:fu}
+ol.fu li{counter-increment:fu;margin:0 0 16px}
+ol.fu li:last-child{margin:0}
+ol.fu .fu-label{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 6px}
+ol.fu .fu-label:before{content:"0" counter(fu) " \00B7  "}
+ul.check{list-style:none;margin:0;padding:0}
+ul.check li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1.5px solid var(--line);cursor:pointer;user-select:none}
+ul.check li:first-child{border-top:0}
+ul.check .box{flex:none;width:26px;height:26px;border:2.5px solid var(--ink);border-radius:5px;background:var(--white);display:grid;place-items:center;margin-top:1px}
+ul.check li.on .box{background:var(--green)}
+ul.check li.on .box:after{content:"";width:12px;height:7px;border-left:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(-45deg) translate(1px,-1px)}
+ul.check b{display:block;font-weight:800;letter-spacing:-0.01em}
+ul.check small{display:block;color:var(--ink2);font-size:14px}
+ul.found{list-style:none;display:flex;flex-direction:column;gap:8px;margin:2px 0 12px;padding:0}
+ul.found li{display:flex;align-items:center;gap:10px;font-weight:700}
+ul.found em{font-style:normal;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;border:2px solid var(--ink);border-radius:999px;padding:2px 8px}
+ul.found li.ok em{background:var(--green)}
+ul.found li.no em{background:var(--red);color:var(--white)}
+.stamp{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--grey);text-align:center;margin:8px 0 0}
+footer{text-align:center;color:var(--ink2);font-size:14px;margin-top:28px}
+footer a{font-weight:700}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="top" href="https://signalservice.ai" aria-label="Signal Service home">
+    <svg viewBox="0 0 1024 1024" aria-hidden="true"><rect width="1024" height="1024" rx="224" fill="#0A0A0A"/><g transform="translate(0 8)"><g fill="none" stroke="#FFFFFF" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"><path d="M275.4 315.3 A313.5 313.5 0 0 1 748.6 315.3"/><path d="M346.6 379.7 A217.5 217.5 0 0 1 677.4 379.7"/><path d="M419.6 442.1 A121.5 121.5 0 0 1 604.4 442.1"/><path d="M355 480 H236 A24 24 0 0 0 212 504 V775 A24 24 0 0 0 236 799 H787 A24 24 0 0 0 811 775 V504 A24 24 0 0 0 787 480 H668"/><path d="M232 504 L512 699 L791 504"/></g><path d="M512 467 L522 513 L568 523 L522 533 L512 579 L502 533 L456 523 L502 513 Z" fill="#00D97E"/></g></svg>
+    Signal Service
+  </a>
+
+  <section class="win">
+    <div class="chrome"><i></i><i></i><i></i><span>the {{kit_name}} · free</span><b class="pill green">FREE</b></div>
+    <div class="body">
+      <h1>{{title_marked}}</h1>
+      <p class="sub">{{sub}}</p>
+      <form id="gate" novalidate>
+        <label class="q" for="email">Where should we send it?</label>
+        <input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
+        <button class="btn" id="go" type="submit">Claim my kit</button>
+        <div class="err" id="err">That email doesn't look right. Try again?</div>
+        <p class="small">You'll also be added to our free newsletter, Signal Service, so you can stay ahead with AI. Unsubscribe any time.</p>
+      </form>
+    </div>
+  </section>
+
+  <div id="kit" hidden>
+    <div class="ok" id="okmsg">Done. Your kit is below, and a copy is on its way to your inbox.</div>
+
+    <section class="win">
+      <div class="chrome"><i></i><i></i><i></i><span>step 1 · the prompt</span></div>
+      <div class="body">
+        <h2>Ask this first</h2>
+        <p class="note">{{prompt_how}}</p>
+        <div class="prompt" id="p1">{{prompt}}<button class="copy" data-copy="p1" type="button">Copy</button></div>
+        <p class="note">{{prompt_note}}</p>
+      </div>
+    </section>
+
+    <section class="win" {{tested_attr}}>
+      <div class="chrome"><i></i><i></i><i></i><span>{{tested_label}}</span></div>
+      <div class="body">
+        <h2>{{tested_title}}</h2>
+        <ul class="found">{{results}}</ul>
+        <p>{{tested_text}}</p>
+        <p class="note">{{tip}}</p>
+      </div>
+    </section>
+
+    <section class="win">
+      <div class="chrome"><i></i><i></i><i></i><span>step 2 · then ask</span></div>
+      <div class="body">
+        <h2>Three follow-ups (all tested)</h2>
+        <ol class="fu">{{followups}}</ol>
+      </div>
+    </section>
+
+    <section class="win">
+      <div class="chrome"><i></i><i></i><i></i><span>{{checklist_label}}</span></div>
+      <div class="body">
+        <h2>{{checklist_title}}</h2>
+        <ul class="check" id="check">{{checklist}}</ul>
+      </div>
+    </section>
+
+    <section class="win">
+      <div class="chrome"><i></i><i></i><i></i><span>do it safely</span></div>
+      <div class="body">
+        {{safety}}
+        <p class="stamp">Checked on {{checked}} · re-tested monthly</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>From <a href="https://signalservice.ai">Signal Service</a>, the free AI newsletter.</footer>
+</div>
+
+<script>
+// RELAY_URL: "/api/signup" on the live Worker; "" in a local preview (the form simulates a sign-up and sends nothing).
+const RELAY_URL = "{{relay}}";
+const KIT = "{{slug}}";
+const $ = (id) => document.getElementById(id);
+const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const q = new URLSearchParams(location.search);
+const utm = {utm_source: q.get("utm_source") || "kit", utm_medium: q.get("utm_medium") || "", utm_campaign: q.get("utm_campaign") || KIT};
+
+function unlock(scroll, message){
+  $("gate").hidden = true;
+  $("kit").hidden = false;
+  if (message) { $("okmsg").textContent = message; $("okmsg").style.display = "block"; }
+  store.set("kit_" + KIT, "1");
+  if (scroll) $("kit").scrollIntoView({behavior: "smooth", block: "start"});
+}
+// A return visit (or #kit): straight to the kit.
+if (location.hash === "#kit" || store.get("kit_" + KIT) === "1") unlock(false, "");
+
+$("gate").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = $("email").value.trim();
+  $("err").style.display = "none";
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $("err").textContent = "That email doesn't look right. Try again?"; $("err").style.display = "block"; return; }
+  $("go").disabled = true; $("go").textContent = "Sending…";
+  try {
+    if (!RELAY_URL) { await new Promise((r) => setTimeout(r, 500)); unlock(true, "Preview: nothing was sent. Live, the kit unlocks here and a copy goes to their inbox."); return; }
+    const res = await fetch(RELAY_URL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email, lead_magnet: KIT, ...utm})});
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.ok) throw new Error(data.error || "send");
+    unlock(true, data.existing ? "You're already on the list, so no new email this time. Here's your kit." : "Done. Your kit is below, and a copy is on its way to your inbox.");
+  } catch (err) {
+    $("go").disabled = false; $("go").textContent = "Claim my kit";
+    $("err").textContent = "Something went wrong on our side. Try again in a moment?"; $("err").style.display = "block";
+  }
+});
+
+// Copy buttons and the tick-off checklist.
+document.querySelectorAll(".copy").forEach((b) => b.addEventListener("click", async () => {
+  const el = $(b.dataset.copy), text = el.firstChild.textContent.trim();
+  try { await navigator.clipboard.writeText(text); b.textContent = "Copied"; b.classList.add("done"); setTimeout(() => { b.textContent = "Copy"; b.classList.remove("done"); }, 1600); }
+  catch (e) { b.textContent = "Select and copy"; }
+}));
+document.querySelectorAll("#check li").forEach((li) => li.addEventListener("click", () => li.classList.toggle("on")));
+</script>
+</body>
+</html>
