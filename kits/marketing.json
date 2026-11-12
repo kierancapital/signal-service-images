@@ -1,0 +1,94 @@
+{
+  "slug": "marketing",
+  "keyword": "MARKETING",
+  "name": "Marketing kit",
+  "checked": "12 Nov 2026",
+  "description": "The link from the reel, the one install command and the first four things to ask Claude. Checked on 12 Nov 2026.",
+  "page": {
+    "title": "Run your marketing with Claude",
+    "mark": "with Claude",
+    "sub": "The link from the reel, the one install command, and the first four things to ask it. Checked on 12 Nov 2026.",
+    "prompt_how": "Set it up first (the five steps below), then say this to Claude Code. It asks about your business and saves the answers.",
+    "prompt_note": "Every other skill reads that file first, so you only do this once.",
+    "tested_label": "what we checked · 12 nov 2026",
+    "tested_title": "We read the repo page",
+    "results": [
+      {
+        "name": "59.9k stars, free, 53 skills",
+        "ok": true
+      },
+      {
+        "name": "Installed and run by us",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "It's called Marketing Skills, by Corey Haines: **github.com/coreyhaines31/marketingskills**. On 12 Nov 2026 the page showed 59.9k stars, an MIT licence (free to use) and 53 skills, and the install command below is copied from its README. **Not checked:** we haven't installed it on a clean computer or measured results. The numbers in the reel's pictures are examples.",
+    "tip": "**The tip:** do the business set-up first. It's what stops the answers sounding generic.",
+    "checklist_label": "step 3 · set it up"
+  },
+  "prompt": "Set up my product marketing context. Ask me about my product, my customer and my pitch, one question at a time, then save it.",
+  "followups": [
+    {
+      "label": "Audit your website",
+      "prompt": "Run an SEO audit on [your website address]. Tell me the three fixes that matter most, in plain English.",
+      "note": "This uses the seo-audit skill. You can also type /seo-audit."
+    },
+    {
+      "label": "Rewrite your homepage",
+      "prompt": "Rewrite my homepage so more visitors buy. Here's the page as it is now: [paste the text]",
+      "note": "This uses the copywriting skill. It reads your business set-up first, so the words fit your customer."
+    },
+    {
+      "label": "Ask the Marketing Council",
+      "prompt": "Ask the marketing council: should we raise our prices?",
+      "note": "The marketing-council skill gives you several expert takes on one decision. Swap in your own question."
+    }
+  ],
+  "checklist_title": "Get it running in 5 steps",
+  "checklist": [
+    {
+      "title": "Get Claude Code",
+      "detail": "It's Anthropic's app that lets Claude work on your computer. It needs a paid Claude plan."
+    },
+    {
+      "title": "Install Node.js",
+      "detail": "It's free, from nodejs.org. The install command needs it."
+    },
+    {
+      "title": "Run one command",
+      "detail": "In your terminal, inside your project folder: npx skills add coreyhaines31/marketingskills"
+    },
+    {
+      "title": "Pick Claude Code when it asks",
+      "detail": "If you ask Claude Code to run the command for you, add -a claude-code to the end."
+    },
+    {
+      "title": "Open Claude Code and paste the prompt",
+      "detail": "Start with the business set-up at the top of this page, then try the three below it."
+    }
+  ],
+  "safety": [
+    "**Nothing goes live by itself.** Claude drafts, and you read it and approve it before anything is sent or published.",
+    "It's free code written by someone else. We read the repo page; we haven't checked all 53 skills line by line."
+  ],
+  "email": {
+    "tested": "It's called Marketing Skills, by Corey Haines: github.com/coreyhaines31/marketingskills. On 12 Nov 2026 the page showed 59.9k stars, an MIT licence (free to use) and 53 skills. We read the repo page and copied the install command from its README. We haven't installed it on a clean computer or measured results.",
+    "safety": "Nothing goes live by itself: Claude drafts, and you approve it before anything is sent or published. It's free code written by someone else, so read what it's about to do before you say yes.",
+    "question": "what would you hand to Claude first: your website, your emails or your ads?"
+  },
+  "dm": {
+    "keyword": "MARKETING",
+    "replies": [
+      "Sent! Check your DMs for the link.",
+      "Done, the link is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free kit to run your marketing with Claude, instead of paying an agency $3,000 a month.\nInside: the one install command and the first four things to ask it.\nTap below 👇",
+    "button": "Get the marketing kit",
+    "link": "https://plan.signalservice.ai/marketing?utm_source=instagram&utm_medium=autodm&utm_campaign=marketing"
+  }
+}
