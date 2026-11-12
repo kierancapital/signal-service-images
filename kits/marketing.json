@@ -3,14 +3,14 @@
   "keyword": "MARKETING",
   "name": "Marketing kit",
   "checked": "12 Nov 2026",
-  "description": "The link from the reel, the one install command and the first four things to ask Claude. Checked on 12 Nov 2026.",
+  "description": "The link from the reel, the one install command and the first four things to ask Claude.",
   "page": {
     "title": "Run your marketing with Claude",
     "mark": "with Claude",
-    "sub": "The link from the reel, the one install command, and the first four things to ask it. Checked on 12 Nov 2026.",
+    "sub": "The link from the reel, the one install command, and the first four things to ask it.",
     "prompt_how": "Set it up first (the five steps below), then say this to Claude Code. It asks about your business and saves the answers.",
     "prompt_note": "Every other skill reads that file first, so you only do this once.",
-    "tested_label": "what we checked · 12 nov 2026",
+    "tested_label": "what we checked",
     "tested_title": "We read the repo page",
     "results": [
       {
@@ -26,7 +26,7 @@
       "Checked",
       "Not yet"
     ],
-    "tested_text": "It's called Marketing Skills, by Corey Haines: **github.com/coreyhaines31/marketingskills**. On 12 Nov 2026 the page showed 59.9k stars, an MIT licence (free to use) and 53 skills, and the install command below is copied from its README. **Not checked:** we haven't installed it on a clean computer or measured results. The numbers in the reel's pictures are examples.",
+    "tested_text": "It's called Marketing Skills, by Corey Haines: **github.com/coreyhaines31/marketingskills**. When we looked, the page showed 59.9k stars, an MIT licence (free to use) and 53 skills, and the install command below is copied from its README. **Not checked:** we haven't installed it on a clean computer or measured results. The numbers in the reel's pictures are examples.",
     "tip": "**The tip:** do the business set-up first. It's what stops the answers sounding generic.",
     "checklist_label": "step 3 · set it up"
   },
@@ -76,7 +76,7 @@
     "It's free code written by someone else. We read the repo page; we haven't checked all 53 skills line by line."
   ],
   "email": {
-    "tested": "It's called Marketing Skills, by Corey Haines: github.com/coreyhaines31/marketingskills. On 12 Nov 2026 the page showed 59.9k stars, an MIT licence (free to use) and 53 skills. We read the repo page and copied the install command from its README. We haven't installed it on a clean computer or measured results.",
+    "tested": "It's called Marketing Skills, by Corey Haines: github.com/coreyhaines31/marketingskills. When we looked, the page showed 59.9k stars, an MIT licence (free to use) and 53 skills. We read the repo page and copied the install command from its README. We haven't installed it on a clean computer or measured results.",
     "safety": "Nothing goes live by itself: Claude drafts, and you approve it before anything is sent or published. It's free code written by someone else, so read what it's about to do before you say yes.",
     "question": "what would you hand to Claude first: your website, your emails or your ads?"
   },
