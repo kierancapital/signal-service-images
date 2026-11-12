@@ -10,7 +10,7 @@
     "sub": "The one prompt that finds the mistake most likely to get your CV rejected, three follow-ups, and the 5-point checklist. Tested on ChatGPT, Claude and Gemini.",
     "prompt_how": "Swap in the job, then paste your CV underneath.",
     "prompt_note": "\"Answer in 2 sentences\" keeps it to the one thing that matters.",
-    "tested_label": "what we found · 6 nov 2026",
+    "tested_label": "what we found",
     "tested_title": "We tested it on all three",
     "results": [
       {
@@ -81,8 +81,19 @@
     "Take out your home address and phone number, but **leave your email in**: that's the line the AIs caught."
   ],
   "email": {
-    "tested": "When we tested it on 6 Nov, ChatGPT and Claude caught our planted email typo (gmial instead of gmail) straight away. Gemini missed it. So ask more than one AI: they catch different things.",
+    "tested": "When we tested it, ChatGPT and Claude caught our planted email typo (gmial instead of gmail) straight away. Gemini missed it. So ask more than one AI: they catch different things.",
     "safety": "Use a temporary chat (incognito in Claude). Take out your home address and phone number, but leave your email in.",
     "question": "what job are you going for?"
+  },
+  "dm": {
+    "keyword": "CV",
+    "replies": [
+      "Sent! Check your DMs for the CV kit.",
+      "Done, the CV kit is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Here's your CV check.\nThe exact prompt, plus the 5-point checklist.\nTap below 👇",
+    "button": "Get the CV kit",
+    "link": "https://plan.signalservice.ai/cv?utm_source=instagram&utm_medium=autodm&utm_campaign=cv"
   }
 }
