@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@600;700&display=swap">
 <style>
-/* Kit page template (v4, 2026-11-07). The reel look (Kieran, after seeing the newsletter look: "I actually preferred it"):
+/* Kit page template (v5, 2026-11-11: the optional library section, each item with an optional note; v4, 2026-11-07). The reel look (Kieran, after seeing the newsletter look: "I actually preferred it"):
    off-white page, black window bars, Signal green, red only for a mistake. The landing is just the title card with the email box
    ("I just want this CV check box and then email, where should we send it, below"); no prompt teaser, people know it from the reel.
    The Worker fills the {{…}} slots from the kit's JSON. Published as kits/_page.html (publish_kit.py --template), so a design
@@ -72,6 +72,22 @@ ul.found li.no em{background:var(--red);color:var(--white)}
 .stamp{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--grey);text-align:center;margin:8px 0 0}
 footer{text-align:center;color:var(--ink2);font-size:14px;margin-top:28px}
 footer a{font-weight:700}
+/* The library (2026-11-11): an optional extra section for kits that carry a list of items, each with a prompt and its code
+   (the MOVES kit: ten animations). The kit's JSON has a "library" block; the script at the bottom draws it. */
+ol.lib{margin:0;padding:0;list-style:none}
+ol.lib li{margin:0 0 22px;padding:0 0 22px;border-bottom:1.5px solid var(--line)}
+ol.lib li:last-child{margin:0;padding:0;border-bottom:0}
+ol.lib .lib-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 8px}
+ol.lib .lib-n{flex:none;font-family:var(--mono);font-weight:700;font-size:13px;color:var(--white);background:var(--ink);border-radius:6px;padding:4px 8px}
+ol.lib .lib-name{font-weight:800;font-size:19px;letter-spacing:-0.02em}
+ol.lib .lib-note{margin:8px 0 0;font-size:14px;line-height:1.45;color:var(--ink2,#4B4740)}
+ol.lib .lib-use{margin-left:auto;font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:0.06em;background:var(--green);border:2px solid var(--ink);border-radius:999px;padding:2px 8px;white-space:nowrap}
+ol.lib .prompt{font-weight:500;font-size:16px}
+details.code{margin:0}
+details.code summary{cursor:pointer;font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;padding:8px 0}
+details.code pre{margin:0;background:var(--ink);color:#F3F0E8;font-family:var(--mono);font-weight:500;font-size:11.5px;line-height:1.55;padding:14px;border-radius:6px;overflow:auto;max-height:340px;white-space:pre;-webkit-overflow-scrolling:touch}
+.copy.light{background:var(--white);color:var(--ink);border:2.5px solid var(--ink);padding:6px 12px}
+.copy.light.done{background:var(--green)}
 [hidden]{display:none!important}
 </style>
 </head>
@@ -123,7 +139,7 @@ footer a{font-weight:700}
     <section class="win">
       <div class="chrome"><i></i><i></i><i></i><span>step 2 · then ask</span></div>
       <div class="body">
-        <h2>Three follow-ups (all tested)</h2>
+        <h2 id="fuTitle">Three follow-ups (all tested)</h2>
         <ol class="fu">{{followups}}</ol>
       </div>
     </section>
@@ -133,6 +149,16 @@ footer a{font-weight:700}
       <div class="body">
         <h2>{{checklist_title}}</h2>
         <ul class="check" id="check">{{checklist}}</ul>
+      </div>
+    </section>
+
+    <section class="win" id="library" hidden>
+      <div class="chrome"><i></i><i></i><i></i><span id="lib-label">the library</span></div>
+      <div class="body">
+        <h2 id="lib-title">The library</h2>
+        <p class="note" id="lib-intro"></p>
+        <ol class="lib" id="lib-list"></ol>
+        <p class="err" id="lib-err">The list didn't load. <a href="#" id="lib-retry">Tap to try again.</a></p>
       </div>
     </section>
 
@@ -157,9 +183,55 @@ const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}},
 const q = new URLSearchParams(location.search);
 const utm = {utm_source: q.get("utm_source") || "kit", utm_medium: q.get("utm_medium") || "", utm_campaign: q.get("utm_campaign") || KIT};
 
+// The library (optional). The Worker's page builder only knows the shape every kit shares (1 prompt, 3 follow-ups, a 5-point list), so a kit
+// with more to give (the MOVES kit: ten prompts and their code) keeps the extra in a "library" block of its own JSON, and the page reads
+// that public file itself once the kit is open. A kit with no library block is untouched.
+// Kits whose follow-ups we have NOT run ourselves must not say "all tested" (the marketing kit, 2026-11-12: we read the repo, we did not install it).
+if (["marketing"].includes(KIT)) { const h = document.getElementById("fuTitle"); if (h) h.textContent = "Three things to ask next"; }
+const KIT_PREVIEW = null; // local previews: test_kits.mjs puts the kit's library here (a file on disk can't be fetched)
+const KIT_FILE = "https://raw.githubusercontent.com/kierancapital/signal-service-images/main/kits/" + KIT + ".json";
+let libraryState = "idle";
+const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
+function copyButton(label, getText, light){
+  const b = el("button", "copy" + (light ? " light" : ""), label); b.type = "button";
+  b.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(getText()); b.textContent = "Copied"; b.classList.add("done"); setTimeout(() => { b.textContent = label; b.classList.remove("done"); }, 1600); }
+    catch (e) { b.textContent = "Select and copy"; }
+  });
+  return b;
+}
+async function loadLibrary(){
+  if (libraryState === "loading" || libraryState === "done") return;
+  libraryState = "loading"; $("lib-err").style.display = "none";
+  let lib = KIT_PREVIEW;
+  try {
+    if (!lib) { const res = await fetch(KIT_FILE); if (!res.ok) throw new Error("file"); lib = (await res.json()).library || null; }
+  } catch (e) { libraryState = "idle"; $("library").hidden = false; $("lib-err").style.display = "block"; return; }
+  libraryState = "done";
+  if (!lib || !Array.isArray(lib.items) || !lib.items.length) { $("library").hidden = true; return; }
+  $("lib-label").textContent = lib.label || "the library"; $("lib-title").textContent = lib.title || "The library"; $("lib-intro").textContent = lib.intro || "";
+  const list = $("lib-list"); list.textContent = "";
+  lib.items.forEach((it) => {
+    const li = el("li"), head = el("div", "lib-head");
+    head.append(el("span", "lib-n", it.n || ""), el("span", "lib-name", it.name || ""));
+    if (it.use) head.append(el("span", "lib-use", it.use));
+    const prompt = el("div", "prompt", it.prompt || "");
+    prompt.append(copyButton("Copy prompt", () => it.prompt || ""));
+    li.append(head, prompt);
+    if (it.note) li.append(el("p", "lib-note", it.note));
+    if (it.code) {
+      const d = el("details", "code"), sum = el("summary", "", "Show the code · " + (it.file || "") + " · " + it.code.split("\n").length + " lines");
+      d.append(sum, el("pre", "", it.code)); li.append(d, copyButton("Copy code", () => it.code, true));
+    }
+    list.append(li);
+  });
+  $("library").hidden = false;
+}
+
 function unlock(scroll, message){
   $("gate").hidden = true;
   $("kit").hidden = false;
+  loadLibrary();
   if (message) { $("okmsg").textContent = message; $("okmsg").style.display = "block"; }
   store.set("kit_" + KIT, "1");
   if (scroll) $("kit").scrollIntoView({behavior: "smooth", block: "start"});
@@ -186,12 +258,13 @@ $("gate").addEventListener("submit", async (e) => {
 });
 
 // Copy buttons and the tick-off checklist.
-document.querySelectorAll(".copy").forEach((b) => b.addEventListener("click", async () => {
+document.querySelectorAll(".copy[data-copy]").forEach((b) => b.addEventListener("click", async () => {
   const el = $(b.dataset.copy), text = el.firstChild.textContent.trim();
   try { await navigator.clipboard.writeText(text); b.textContent = "Copied"; b.classList.add("done"); setTimeout(() => { b.textContent = "Copy"; b.classList.remove("done"); }, 1600); }
   catch (e) { b.textContent = "Select and copy"; }
 }));
 document.querySelectorAll("#check li").forEach((li) => li.addEventListener("click", () => li.classList.toggle("on")));
+$("lib-retry").addEventListener("click", (e) => { e.preventDefault(); loadLibrary(); });
 </script>
 </body>
 </html>
