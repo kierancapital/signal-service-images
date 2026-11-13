@@ -89,14 +89,14 @@
       "Done, the 10 moves are in your DMs.",
       "Just sent them over. Check your DMs."
     ],
-    "text": "Hey! Thanks for commenting 🙌\nHere are the ten animations from the reel: the one sentence behind each, plus the code Claude wrote.\nNo After Effects needed.\nTap below 👇",
+    "text": "Hey! Thanks for commenting 🙌\nHere are the ten animations from the reel, with the simple prompt behind each one.\nNo After Effects needed.\nTap below 👇",
     "button": "Get the 10 moves",
     "link": "https://plan.signalservice.ai/moves?utm_source=instagram&utm_medium=autodm&utm_campaign=moves"
   },
   "library": {
     "label": "step 4 · the ten moves",
     "title": "All ten prompts, plus the code",
-    "intro": "Each move has its plain-English brief and the code Claude wrote for it. Nine of them play in the reel; all ten are here.",
+    "intro": "Each move has its plain-English brief and the code Claude wrote for it. All ten appear in the reel; here is each one.",
     "items": [
       {
         "n": "01",
