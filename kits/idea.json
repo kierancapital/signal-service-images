@@ -1,0 +1,94 @@
+{
+  "slug": "idea",
+  "keyword": "IDEA",
+  "name": "100 customers kit",
+  "checked": "13 Nov 2026",
+  "description": "The one prompt from the reel: Claude builds 100 buyers, pitches your idea to each one and tells you who bought, who passed and why.",
+  "page": {
+    "title": "Test your idea on 100 customers",
+    "mark": "100 customers",
+    "sub": "The one prompt from the reel. Claude builds 100 buyers, pitches your idea to each one, and shows you who bought, who passed and why.",
+    "prompt_how": "Paste this into Claude and fill in the three square brackets: your idea, who it's for and the price.",
+    "prompt_note": "If the answer stops part-way through the table, type: continue.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it on a $39 snack box",
+    "results": [
+      {
+        "name": "19 of 100 bought, 81 passed",
+        "ok": true
+      },
+      {
+        "name": "Run on Claude's free plan",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We ran this prompt on a $39-a-month healthy snack box for office workers. **19 bought and 81 passed.** The top reasons to pass were the price (24), an office that already has free snacks (15) and not being at a desk every day (13). The people most likely to buy were office managers spending company money, so the verdict was: don't sell it to individuals, test a team plan. **Not checked:** we ran it on a paid Claude plan, not the free one. Every name and quote in the reel is from that run.",
+    "tip": "**The tip:** AI customers are nicer than real ones. Treat the result as the best case, then ask real people.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "Act as a consumer panel for my business idea. My idea: [describe it in one sentence]. Who it's for: [your customer]. Price: [your price]. Step 1: invent 100 different buyers from that audience. Give each one a name, a monthly budget for this kind of thing, their habits, and one honest reason they might say no. Step 2: pitch my idea to every one of them. Each decides BUY or PASS, in their own words. Step 3: show me the full table of all 100, then a summary: how many bought, the top 5 reasons people passed with counts, the three buyer types most likely to buy, and the price at which most of them would say yes. Step 4: be tough, because real customers are less agreeable than AI ones. End with a verdict (worth testing on real people, or not yet) and the first real-world test I should run this week.",
+  "followups": [
+    {
+      "label": "Fix the top objection",
+      "prompt": "Take the number one reason people passed. Give me three ways to change the offer so it goes away, then re-run the same 100 buyers on the best one and show me what changed.",
+      "note": "Same panel, new offer, so you can see whether the change moved anyone."
+    },
+    {
+      "label": "Find the right price",
+      "prompt": "Re-run the same 100 buyers at three prices: [low], [middle], [high]. Show how many buy at each and which price makes the most money.",
+      "note": "In our test, $39 got 19 buyers and $25 got 37."
+    },
+    {
+      "label": "Write the pitch",
+      "prompt": "Write a 30-second pitch aimed only at the buyer type most likely to buy. Use their own words from the table.",
+      "note": "The table is full of phrases real customers might use. Borrow them."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Open Claude",
+      "detail": "claude.ai, or the Claude app."
+    },
+    {
+      "title": "Paste the prompt",
+      "detail": "Fill in your idea, who it's for and the price."
+    },
+    {
+      "title": "Read who passed, and why",
+      "detail": "The reasons people said no are worth more than the number who said yes."
+    },
+    {
+      "title": "Change one thing and run it again",
+      "detail": "Use the three follow-ups: fix the top objection, test the price, write the pitch."
+    },
+    {
+      "title": "Ask real people",
+      "detail": "Do the real-world test it gives you at the end, this week."
+    }
+  ],
+  "safety": [
+    "**This is a rehearsal, not a forecast.** The buyers are made up by Claude, and AI customers are more agreeable than real ones.",
+    "**Don't spend money on the result alone.** Use it to find the objections, then test with real people."
+  ],
+  "email": {
+    "tested": "We ran the prompt on a $39-a-month snack box for office workers: 19 of 100 bought, 81 passed, and it found the buyers most likely to pay (office managers spending company money). The prompt and three follow-ups are on your kit page: plan.signalservice.ai/idea",
+    "safety": "The buyers are made up by Claude and are nicer than real customers, so treat the result as the best case and test on real people before you spend money.",
+    "question": "what idea are you going to test first?"
+  },
+  "dm": {
+    "keyword": "IDEA",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the one prompt from the reel. Claude builds 100 customers, pitches your idea to each one, and tells you who'd buy.\nPaste it in and add your idea.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/idea?utm_source=instagram&utm_medium=autodm&utm_campaign=idea"
+  }
+}
