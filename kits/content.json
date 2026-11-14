@@ -8,33 +8,11 @@
     "title": "Plan your next month of Instagram",
     "mark": "30 days",
     "sub": "The one prompt from the reel. Claude reads your profile, studies three accounts in your niche, finds the reels that beat their own average, and plans 30 days of posts with every hook scored.",
-    "prompt_how": "Install the Claude in Chrome extension, open Instagram, then paste this into Claude in Chrome and fill in the square brackets: your handle and three accounts in your niche.",
+    "prompt_how": "1. Install the Claude in Chrome extension.\n2. Open Instagram in Chrome and sign in.\n3. Paste this into Claude, with your handle and three accounts in your niche in the square brackets.",
     "prompt_note": "No extension? Paste the view counts of your last 12 reels, and of three accounts in your niche, under the prompt instead.",
-    "tested_label": "what we checked",
-    "tested_title": "We ran it on our own account",
-    "results": [
-      {
-        "name": "8 outliers found in 36 reels",
-        "ok": true
-      },
-      {
-        "name": "30 posts planned, 11 hooks rewritten",
-        "ok": true
-      },
-      {
-        "name": "Typed into the extension's own side panel",
-        "ok": false
-      }
-    ],
-    "result_labels": [
-      "Checked",
-      "Not yet"
-    ],
-    "tested_text": "We ran this on @signalservice.co and three accounts in our niche. Claude read the view counts through the Chrome extension: **8 reels had at least doubled their own account's median, out of 36.** The biggest was 17.5x, on a \"What happens when you ask AI to…\" hook. It then planned 30 posts (20 Reels, 5 carousels, 5 Stories), kept 19 hooks, rewrote 11 and wrote the three top-scoring Reels in full. **Not checked:** we collected the numbers with Claude driving Chrome from another Claude app and wrote the plan in a normal chat; we have not typed this exact prompt into the extension's side panel.",
-    "tip": "**The tip:** pick niche accounts a little bigger than you, not the giants. Their outliers are the ones you can copy.",
     "checklist_label": "step 3 · use it"
   },
-  "prompt": "Go to instagram.com/[your handle]/reels and read the view count on my 12 newest reels. Do the same for these three accounts in my niche: [account 1], [account 2], [account 3]. Then act as my content strategist. Step 1: name my top performer and say in one line why it won. Step 2: for each niche account work out its median views, list every reel that beat its own median by 2x or more with the multiple, and name the hook pattern each one used. Step 3: plan 30 days of Instagram content for me, one post a day, as a table: day, format (Reel, carousel or Story), topic, and the hook (the first line people hear), built on what worked for me and those hook patterns, rewritten for my audience. Step 4: score every hook out of 10 for how likely it is to stop a stranger scrolling. Be tough, and rewrite any hook under 7, with the old score. Step 5: take the three highest-scoring Reels and write each one in full: a word-for-word script under 30 seconds, what to show on screen, and the caption.",
+  "prompt": "Go to instagram.com/[your handle]/reels and read the view count on my 12 newest reels. Do the same for these three accounts in my niche: [account 1], [account 2], [account 3]. Then act as my content strategist:\n\n1. Name my top performer and say in one line why it won.\n2. For each niche account, work out its median views, list every reel that beat it by 2x or more with the multiple, and name the hook pattern each one used.\n3. Plan 30 days of Instagram content for me, one post a day, as a table: day, format (Reel, carousel or Story), topic and hook (the first line people hear). Build on what worked for me and those hook patterns, rewritten for my audience.\n4. Score every hook out of 10 for how likely it is to stop a stranger scrolling. Be tough, and rewrite any hook under 7, with the old score.\n5. Write the three highest-scoring Reels in full: a word-for-word script under 30 seconds, what to show on screen, and the caption.",
   "followups": [
     {
       "label": "Write the rest",
