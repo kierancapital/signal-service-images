@@ -264,6 +264,24 @@ document.querySelectorAll(".copy[data-copy]").forEach((b) => b.addEventListener(
 }));
 document.querySelectorAll("#check li").forEach((li) => li.addEventListener("click", () => li.classList.toggle("on")));
 $("lib-retry").addEventListener("click", (e) => { e.preventDefault(); loadLibrary(); });
+// Web addresses written in a kit's notes and checklist (e.g. claude.com/claude-in-chrome) become tappable links. Prompts are left alone.
+document.querySelectorAll("#kit .note, #kit #check").forEach((root) => {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach((n) => {
+    const re = /(?:https?:\/\/)?(?:[a-z0-9-]+\.)+(?:com|ai|io|dev|org|co)\/[\w\-\/]+/gi, text = n.textContent;
+    if (n.parentNode.closest("a, button, .prompt") || !re.test(text)) return;
+    re.lastIndex = 0;
+    const frag = document.createDocumentFragment(); let last = 0, m;
+    while ((m = re.exec(text))) {
+      frag.append(text.slice(last, m.index));
+      const a = document.createElement("a"); a.href = /^https?:/i.test(m[0]) ? m[0] : "https://" + m[0]; a.textContent = m[0]; a.target = "_blank"; a.rel = "noopener"; a.style.fontWeight = "700";
+      a.addEventListener("click", (e) => e.stopPropagation());
+      frag.append(a); last = m.index + m[0].length;
+    }
+    frag.append(text.slice(last)); n.replaceWith(frag);
+  });
+});
 </script>
 </body>
 </html>
