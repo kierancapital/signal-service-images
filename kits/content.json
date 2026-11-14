@@ -1,0 +1,98 @@
+{
+  "slug": "content",
+  "keyword": "CONTENT",
+  "name": "30-day content kit",
+  "checked": "14 Nov 2026",
+  "description": "The one prompt from the reel: Claude goes through your Instagram and three accounts in your niche, finds what is working, and plans your next 30 days.",
+  "page": {
+    "title": "Plan your next month of Instagram",
+    "mark": "30 days",
+    "sub": "The one prompt from the reel. Claude reads your profile, studies three accounts in your niche, finds the reels that beat their own average, and plans 30 days of posts with every hook scored.",
+    "prompt_how": "Install the Claude in Chrome extension, open Instagram, then paste this into Claude in Chrome and fill in the square brackets: your handle and three accounts in your niche.",
+    "prompt_note": "No extension? Paste the view counts of your last 12 reels, and of three accounts in your niche, under the prompt instead.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it on our own account",
+    "results": [
+      {
+        "name": "8 outliers found in 36 reels",
+        "ok": true
+      },
+      {
+        "name": "30 posts planned, 11 hooks rewritten",
+        "ok": true
+      },
+      {
+        "name": "Typed into the extension's own side panel",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We ran this on @signalservice.co and three accounts in our niche. Claude read the view counts through the Chrome extension: **8 reels had at least doubled their own account's median, out of 36.** The biggest was 17.5x, on a \"What happens when you ask AI to…\" hook. It then planned 30 posts (20 Reels, 5 carousels, 5 Stories), kept 19 hooks, rewrote 11 and wrote the three top-scoring Reels in full. **Not checked:** we collected the numbers with Claude driving Chrome from another Claude app and wrote the plan in a normal chat; we have not typed this exact prompt into the extension's side panel.",
+    "tip": "**The tip:** pick niche accounts a little bigger than you, not the giants. Their outliers are the ones you can copy.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "Go to instagram.com/[your handle]/reels and read the view count on my 12 newest reels. Do the same for these three accounts in my niche: [account 1], [account 2], [account 3]. Then act as my content strategist. Step 1: name my top performer and say in one line why it won. Step 2: for each niche account work out its median views, list every reel that beat its own median by 2x or more with the multiple, and name the hook pattern each one used. Step 3: plan 30 days of Instagram content for me, one post a day, as a table: day, format (Reel, carousel or Story), topic, and the hook (the first line people hear), built on what worked for me and those hook patterns, rewritten for my audience. Step 4: score every hook out of 10 for how likely it is to stop a stranger scrolling. Be tough, and rewrite any hook under 7, with the old score. Step 5: take the three highest-scoring Reels and write each one in full: a word-for-word script under 30 seconds, what to show on screen, and the caption.",
+  "followups": [
+    {
+      "label": "Write the rest",
+      "prompt": "Write the next three Reels from the plan in full, the same way: a word-for-word script under 30 seconds, what to show on screen, and the caption.",
+      "note": "Repeat it until every Reel in the plan has a script."
+    },
+    {
+      "label": "Go deeper on one account",
+      "prompt": "Open [account] again and read the captions of its three biggest reels. Tell me what each promises in the first line, and write three hooks for me in that shape.",
+      "note": "Use it on the account closest to yours."
+    },
+    {
+      "label": "Plan next month",
+      "prompt": "Here is what happened this month: my best post was [post], my worst was [post]. Plan the next 30 days and do more of what worked.",
+      "note": "Run it again each month with your real results."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Install Claude in Chrome",
+      "detail": "It is Anthropic's own extension, on paid Claude plans. It lets Claude read pages in your browser."
+    },
+    {
+      "title": "Open Instagram and sign in",
+      "detail": "Claude reads what you can see, so use the browser where you are logged in."
+    },
+    {
+      "title": "Paste the prompt",
+      "detail": "Add your handle and three accounts in your niche."
+    },
+    {
+      "title": "Check the numbers it read",
+      "detail": "Glance at your own reels to see the view counts match before you trust the plan."
+    },
+    {
+      "title": "Film the top three",
+      "detail": "The scripts and shot lists are written for you. Start with the highest score."
+    }
+  ],
+  "safety": [
+    "**Claude reads, it does not post.** Nothing is published or changed on your account.",
+    "**Copy the pattern, not the post.** Use the hook shape with your own idea and words."
+  ],
+  "email": {
+    "tested": "We ran it on our own account and three accounts in our niche: 8 outliers in 36 reels, the biggest 17.5x its account's median, then a 30-day plan with 11 weak hooks rewritten. The prompt and three follow-ups are on your kit page: plan.signalservice.ai/content",
+    "safety": "Claude only reads the pages; nothing is posted for you. Copy the hook pattern, not someone's post.",
+    "question": "which three accounts in your niche are you going to study?"
+  },
+  "dm": {
+    "keyword": "CONTENT",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the one prompt from the reel. Claude goes through your Instagram, studies your niche, and plans your next 30 days.\nYou'll need the Claude in Chrome extension; the page walks you through it.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/content?utm_source=instagram&utm_medium=autodm&utm_campaign=content"
+  }
+}
