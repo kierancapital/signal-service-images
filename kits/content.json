@@ -8,7 +8,7 @@
     "title": "Plan your next month of Instagram",
     "mark": "30 days",
     "sub": "The one prompt from the reel. Claude reads your profile, studies three accounts in your niche, finds the reels that beat their own average, and plans 30 days of posts with every hook scored.",
-    "prompt_how": "1. Install the Claude in Chrome extension.\n2. Open Instagram in Chrome and sign in.\n3. Paste this into Claude, with your handle and three accounts in your niche in the square brackets.",
+    "prompt_how": "1. Install the Claude in Chrome extension: claude.com/claude-in-chrome\n2. Open Instagram in Chrome and sign in.\n3. Paste this into Claude, with your handle and three accounts in your niche in the square brackets.",
     "prompt_note": "No extension? Paste the view counts of your last 12 reels, and of three accounts in your niche, under the prompt instead.",
     "checklist_label": "step 3 · use it"
   },
@@ -34,7 +34,7 @@
   "checklist": [
     {
       "title": "Install Claude in Chrome",
-      "detail": "It is Anthropic's own extension, on paid Claude plans. It lets Claude read pages in your browser."
+      "detail": "Get it at claude.com/claude-in-chrome. It is Anthropic's own extension, on paid Claude plans, and lets Claude read pages in your browser."
     },
     {
       "title": "Open Instagram and sign in",
