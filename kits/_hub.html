@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free prompts from our reels · Signal Service</title>
-<meta name="description" content="Every prompt from Signal Service's reels, newest first. Search for the one you saw.">
+<title>Free guides from our videos · Signal Service</title>
+<meta name="description" content="A free guide for every Signal Service video, newest first. Search for the one you saw.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
-/* Prompts list v2 (2026-11-15, Kieran: "looks a little tacky… I prefer the style we had last time, just a more neat and minimal
+/* Guides list v2 (2026-11-15; called "prompts" until Kieran renamed it "guides" the same day, Kieran: "looks a little tacky… I prefer the style we had last time, just a more neat and minimal
    version"). The signalservice.ai look: white page, Inter, black type, light grey rounded rows, one green accent. One thin row
    per kit, newest first, live search. Published as kits/_hub.html (publish_kit.py --hub); the Worker serves it at /prompts and
    fills the KITS slot from kits/index.json (publish_kit.py rebuilds it from every data/<slug>.json with a "hub" block). */
@@ -65,9 +65,9 @@ li a:hover,li a:focus-visible{background:var(--rowhover);outline:none}
 <div class="wrap">
   <header>
     <a class="logo" href="https://www.signalservice.ai" aria-label="Signal Service home"><img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/publication/logo/803dd314-871f-405f-95c5-eb72ccbac17e/Signal_Service_Logo_-_Profile_Pic_800.png" alt="Signal Service"></a>
-    <h1>Free prompts from our reels</h1>
+    <h1>Free guides from our videos</h1>
   </header>
-  <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg><input id="q" type="search" placeholder="Search prompts" autocomplete="off" aria-label="Search prompts"></label>
+  <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg><input id="q" type="search" placeholder="Search guides" autocomplete="off" aria-label="Search guides"></label>
   <ul id="list"></ul>
   <div class="empty" id="empty" hidden>Nothing matches that. Try another word.</div>
   <p class="join">Just want the daily AI email? <a href="https://www.signalservice.ai/subscribe?utm_source=prompts&amp;utm_medium=bio">Join free</a></p>
