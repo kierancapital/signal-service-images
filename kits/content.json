@@ -1,7 +1,7 @@
 {
   "slug": "content",
   "keyword": "CONTENT",
-  "name": "30-day content kit",
+  "name": "30-day content guide",
   "checked": "14 Nov 2026",
   "description": "The one prompt from the reel: Claude goes through your Instagram and three accounts in your niche, finds what is working, and plans your next 30 days.",
   "page": {
@@ -72,5 +72,12 @@
     "text": "Hey! Here's the prompt you need 🙌\nIt gets Claude to go through your Instagram, study your niche and plan your next 30 days for you.\nTap below 👇",
     "button": "Get the prompt",
     "link": "https://plan.signalservice.ai/content?utm_source=instagram&utm_medium=autodm&utm_campaign=content"
+  },
+  "hub": {
+    "date": "2026-11-14",
+    "title": "Claude plans your next month of Instagram",
+    "line": "Studies your profile and your niche, then plans 30 days of posts.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/1dde0d88c87ce756043a39098ef72377ec939664/reels/2026-11-14/instagram-month-cover.jpg",
+    "tags": "instagram content social media reels posts plan creator"
   }
 }
