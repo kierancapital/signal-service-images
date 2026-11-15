@@ -7,79 +7,75 @@
 <meta name="description" content="Every prompt from Signal Service's reels, newest first. Search for the one you saw.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
-/* Prompts hub (2026-11-15, Kieran: "one thin bar rather than one massive block… is there a search bar"). Same look as the
-   kit pages (off-white page, black window bar, Signal green). One row per kit, newest first, live search. Published as kits/_hub.html
-   (publish_kit.py --hub). The Worker serves it at plan.signalservice.ai/prompts and fills the KITS slot from kits/index.json,
-   which publish_kit.py rebuilds from every data/<slug>.json that has a "hub" block. A new kit therefore appears by itself. */
-:root{--page:#F3F0E8;--ink:#0A0A0A;--ink2:#2E2C28;--grey:#8F897D;--line:#E2DCCF;--white:#FFFFFF;--green:#00D97E;
-  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+/* Prompts list v2 (2026-11-15, Kieran: "looks a little tacky… I prefer the style we had last time, just a more neat and minimal
+   version"). The signalservice.ai look: white page, Inter, black type, light grey rounded rows, one green accent. One thin row
+   per kit, newest first, live search. Published as kits/_hub.html (publish_kit.py --hub); the Worker serves it at /prompts and
+   fills the KITS slot from kits/index.json (publish_kit.py rebuilds it from every data/<slug>.json with a "hub" block). */
+:root{--ink:#0A0A0A;--soft:#5F5F5F;--faint:#9A9A9A;--row:#F4F4F4;--rowhover:#ECECEC;--green:#00D97E;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
 *{box-sizing:border-box}
 html{color-scheme:light}
-body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:600px;margin:0 auto;padding:20px 16px 48px}
-.top{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-0.02em;font-size:17px;margin:4px 0 18px}
-.top img{width:30px;height:30px;border-radius:7px;display:block}
-h1{font-size:34px;line-height:1.05;letter-spacing:-0.035em;font-weight:900;margin:0 0 6px}
-.sub{color:var(--ink2);margin:0 0 18px}
-.win{background:var(--white);border:3px solid var(--ink);border-radius:8px;box-shadow:6px 6px 0 var(--ink);overflow:hidden}
-.chrome{height:40px;display:flex;align-items:center;gap:7px;padding:0 14px;background:var(--ink);color:var(--white);font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:0.02em}
-.chrome i{width:11px;height:11px;border:2px solid #9A9A9A;border-radius:2px;display:block}
-.chrome i:first-child{border-color:var(--green);background:var(--green)}
-.chrome span{margin-left:6px}
-.chrome b{margin-left:auto;font-weight:700;color:#BDB6A8}
-.search{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:2px solid var(--ink)}
-.search svg{flex:none;width:18px;height:18px}
+.wrap{max-width:620px;margin:0 auto;padding:36px 16px 48px}
+header{text-align:center;margin:0 0 22px}
+.logo{display:inline-block;width:52px;height:52px;border-radius:13px;overflow:hidden;margin:0 0 14px}
+.logo img{width:100%;height:100%;display:block}
+h1{font-size:30px;line-height:1.12;letter-spacing:-0.03em;font-weight:800;margin:0 0 8px}
+.sub{color:var(--soft);font-size:16px;margin:0 auto;max-width:440px}
+.search{display:flex;align-items:center;gap:10px;background:var(--row);border-radius:999px;padding:12px 18px;margin:0 0 14px}
+.search svg{flex:none;width:17px;height:17px}
 .search input{flex:1;min-width:0;font:inherit;font-size:16px;border:0;outline:none;background:transparent;color:var(--ink)}
-.search input::placeholder{color:var(--grey)}
-ul{list-style:none;margin:0;padding:0}
-li a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-top:1.5px solid var(--line);min-height:64px}
-li:first-child a{border-top:0}
-li a:hover,li a:focus-visible{background:#F7F5EF;outline:none}
-.thumb{flex:none;width:44px;height:44px;border-radius:8px;border:2px solid var(--ink);object-fit:cover;object-position:50% 38%;background:var(--page)}
+.search input::placeholder{color:var(--faint)}
+.search:focus-within{box-shadow:0 0 0 2px var(--ink) inset}
+ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+li a{display:flex;align-items:center;gap:14px;background:var(--row);border-radius:14px;padding:10px 12px 10px 10px;transition:background .15s}
+li a:hover,li a:focus-visible{background:var(--rowhover);outline:none}
+.thumb{flex:none;width:46px;height:46px;border-radius:10px;object-fit:cover;object-position:50% 36%;background:#E6E6E6}
 .txt{flex:1;min-width:0}
-.title{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-weight:800;font-size:15.5px;letter-spacing:-0.015em;line-height:1.25;margin:0 0 2px}
-.line{display:block;font-size:13.5px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.new{font-family:var(--mono);font-weight:700;font-size:10px;letter-spacing:0.08em;background:var(--green);border:2px solid var(--ink);border-radius:999px;padding:1px 7px;margin-left:6px;vertical-align:2px}
-.go{flex:none;font-weight:800;font-size:18px}
-.empty{padding:22px 14px;color:var(--ink2);font-size:15px}
-.join{margin:22px 0 0;text-align:center;font-size:15px;color:var(--ink2)}
-.join a{font-weight:800;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
-.foot{margin:28px 0 0;text-align:center;font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--grey)}
+.title{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-weight:700;font-size:15.5px;letter-spacing:-0.01em;line-height:1.28}
+.line{display:block;margin-top:2px;font-size:13.5px;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.new{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:0.04em;color:var(--ink);background:var(--green);border-radius:999px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+.go{flex:none;width:28px;height:28px;border-radius:999px;background:var(--green);display:grid;place-items:center}
+.go svg{width:14px;height:14px}
+.empty{padding:18px 4px;color:var(--soft);font-size:15px;text-align:center}
+.join{margin:26px 0 0;text-align:center;font-size:15px;color:var(--soft)}
+.join a{font-weight:700;color:var(--ink);border-bottom:2px solid var(--green);padding-bottom:1px}
+.foot{margin:30px 0 0;text-align:center;font-size:12.5px;color:var(--faint)}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <a class="top" href="https://www.signalservice.ai"><img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/publication/logo/803dd314-871f-405f-95c5-eb72ccbac17e/Signal_Service_Logo_-_Profile_Pic_800.png" alt="">Signal Service</a>
-  <h1>Free prompts from our reels</h1>
-  <p class="sub">Newest at the top. Tap the one you saw, enter your email, and it opens straight away.</p>
-  <div class="win">
-    <div class="chrome"><i></i><i></i><i></i><span>all prompts · free</span><b id="count"></b></div>
-    <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg><input id="q" type="search" placeholder="Search, e.g. CV, Instagram, business" autocomplete="off" aria-label="Search prompts"></label>
-    <ul id="list"></ul>
-    <div class="empty" id="empty" hidden>Nothing matches that. Try another word, or scroll the full list.</div>
-  </div>
-  <p class="join">Just want the daily AI email? <a href="https://www.signalservice.ai/subscribe?utm_source=prompts&amp;utm_medium=bio">Join free →</a></p>
+  <header>
+    <a class="logo" href="https://www.signalservice.ai" aria-label="Signal Service home"><img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/publication/logo/803dd314-871f-405f-95c5-eb72ccbac17e/Signal_Service_Logo_-_Profile_Pic_800.png" alt="Signal Service"></a>
+    <h1>Free prompts from our reels</h1>
+    <p class="sub">Tap the one you saw, enter your email, and it opens straight away.</p>
+  </header>
+  <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg><input id="q" type="search" placeholder="Search prompts" autocomplete="off" aria-label="Search prompts"></label>
+  <ul id="list"></ul>
+  <div class="empty" id="empty" hidden>Nothing matches that. Try another word.</div>
+  <p class="join">Just want the daily AI email? <a href="https://www.signalservice.ai/subscribe?utm_source=prompts&amp;utm_medium=bio">Join free</a></p>
   <p class="foot">AI moves fast - we make keeping up easy.</p>
 </div>
 <script>
 const KITS = /*KITS*/[];
+const KIT_HOST = "https://plan.signalservice.ai/"; // absolute, so the list works on any address that serves it
 const list = document.getElementById("list"), q = document.getElementById("q"), empty = document.getElementById("empty");
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>';
 function draw(term){
   const words = term.toLowerCase().split(/\s+/).filter(Boolean);
   const shown = KITS.filter((k) => words.every((w) => (k.title + " " + k.line + " " + (k.tags || "")).toLowerCase().includes(w)));
-  list.innerHTML = shown.map((k) => `<li><a href="/${encodeURIComponent(k.slug)}?utm_source=prompts&utm_medium=bio">` +
+  list.innerHTML = shown.map((k) => `<li><a href="${KIT_HOST}${encodeURIComponent(k.slug)}?utm_source=prompts&utm_medium=bio">` +
     `<img class="thumb" src="${esc(k.cover)}" alt="" loading="lazy"><span class="txt"><span class="title">${esc(k.title)}${k === KITS[0] ? '<span class="new">NEW</span>' : ""}</span>` +
-    `<span class="line">${esc(k.line)}</span></span><span class="go">→</span></a></li>`).join("");
+    `<span class="line">${esc(k.line)}</span></span><span class="go">${arrow}</span></a></li>`).join("");
   empty.hidden = shown.length > 0;
-  document.getElementById("count").textContent = KITS.length + " prompts";
 }
 q.addEventListener("input", () => draw(q.value));
 // ?q=cv opens the page already filtered (handy for a link that should land on one prompt).
-q.value = new URLSearchParams(location.search).get("q") || (location.hash.startsWith("#q=") ? decodeURIComponent(location.hash.slice(3)) : "");
+q.value = new URLSearchParams(location.search).get("q") || "";
 draw(q.value);
 </script>
 </body>
