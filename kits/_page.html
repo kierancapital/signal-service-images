@@ -106,7 +106,7 @@ details.code pre{margin:0;background:var(--ink);color:#F3F0E8;font-family:var(--
       <form id="gate" novalidate>
         <label class="q" for="email">Enter your email to open it</label>
         <input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
-        <button class="btn" id="go" type="submit">Claim my kit</button>
+        <button class="btn" id="go" type="submit">Claim my guide</button>
         <div class="err" id="err">That email doesn't look right. Try again?</div>
         <p class="small">You'll also be added to our free newsletter, Signal Service, so you can stay ahead with AI. Unsubscribe any time.</p>
       </form>
@@ -114,7 +114,7 @@ details.code pre{margin:0;background:var(--ink);color:#F3F0E8;font-family:var(--
   </section>
 
   <div id="kit" hidden>
-    <div class="okmsg" id="okmsg">Done. Your kit is below. Copy the prompt now so you have it.</div>
+    <div class="okmsg" id="okmsg">Done. Your guide is below. Copy the prompt now so you have it.</div>
 
     <section class="win">
       <div class="chrome"><i></i><i></i><i></i><span>step 1 · the prompt</span></div>
@@ -253,13 +253,13 @@ $("gate").addEventListener("submit", async (e) => {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $("err").textContent = "That email doesn't look right. Try again?"; $("err").style.display = "block"; return; }
   $("go").disabled = true; $("go").textContent = "Sending…";
   try {
-    if (!RELAY_URL) { await new Promise((r) => setTimeout(r, 500)); unlock(true, "Preview: nothing was sent. Live, the kit unlocks here."); return; }
+    if (!RELAY_URL) { await new Promise((r) => setTimeout(r, 500)); unlock(true, "Preview: nothing was sent. Live, the guide unlocks here."); return; }
     const res = await fetch(RELAY_URL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email, lead_magnet: KIT, ...utm})});
     const data = await res.json().catch(() => ({}));
     if (!res.ok || !data.ok) throw new Error(data.error || "send");
-    unlock(true, data.existing ? "You're already on the list. Here's your kit." : "Done. Your kit is below. Copy the prompt now so you have it.");
+    unlock(true, data.existing ? "You're already on the list. Here's your guide." : "Done. Your guide is below. Copy the prompt now so you have it.");
   } catch (err) {
-    $("go").disabled = false; $("go").textContent = "Claim my kit";
+    $("go").disabled = false; $("go").textContent = "Claim my guide";
     $("err").textContent = "Something went wrong on our side. Try again in a moment?"; $("err").style.display = "block";
   }
 });
