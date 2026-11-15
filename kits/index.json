@@ -1,5 +1,13 @@
 [
   {
+    "slug": "watch",
+    "date": "2026-11-15 20:00",
+    "title": "Claude watches YouTube and learns any skill",
+    "line": "Drop in a video link. Claude turns what it teaches into a skill it keeps.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/765f8e0438cf11fde021acf1915246d02fe5bd73/reels/2026-11-15/watch-youtube-cover.jpg",
+    "tags": "youtube video skill learn claude code watch training"
+  },
+  {
     "slug": "content",
     "date": "2026-11-14",
     "title": "Claude plans your next month of Instagram",
