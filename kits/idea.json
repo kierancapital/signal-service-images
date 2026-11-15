@@ -1,7 +1,7 @@
 {
   "slug": "idea",
   "keyword": "IDEA",
-  "name": "100 customers kit",
+  "name": "100 customers guide",
   "checked": "13 Nov 2026",
   "description": "The one prompt from the reel: Claude builds 100 buyers, pitches your idea to each one and tells you who bought, who passed and why.",
   "page": {
@@ -90,5 +90,12 @@
     "text": "Hey! Thanks for commenting 🙌\nHere's the one prompt from the reel. Claude builds 100 customers, pitches your idea to each one, and tells you who'd buy.\nPaste it in and add your idea.\nTap below 👇",
     "button": "Get the prompt",
     "link": "https://plan.signalservice.ai/idea?utm_source=instagram&utm_medium=autodm&utm_campaign=idea"
+  },
+  "hub": {
+    "date": "2026-11-13 22:00",
+    "title": "Test your business idea on 100 fake customers",
+    "line": "100 buyers, one pitch: see who buys, who passes and why.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/1dde0d88c87ce756043a39098ef72377ec939664/reels/2026-11-13/fake-customers-cover.jpg",
+    "tags": "business idea startup side hustle customers product test"
   }
 }
