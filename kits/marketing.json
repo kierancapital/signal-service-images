@@ -1,7 +1,7 @@
 {
   "slug": "marketing",
   "keyword": "MARKETING",
-  "name": "Marketing kit",
+  "name": "Marketing guide",
   "checked": "12 Nov 2026",
   "description": "The link from the reel, the one install command and the first four things to ask Claude.",
   "page": {
@@ -90,5 +90,12 @@
     "text": "Hey! Thanks for commenting 🙌\nHere's the free kit to run your marketing with Claude, instead of paying an agency $3,000 a month.\nInside: the one install command and the first four things to ask it.\nTap below 👇",
     "button": "Get the marketing kit",
     "link": "https://plan.signalservice.ai/marketing?utm_source=instagram&utm_medium=autodm&utm_campaign=marketing"
+  },
+  "hub": {
+    "date": "2026-11-12",
+    "title": "Turn Claude into a marketing agency",
+    "line": "53 free marketing skills, one install, four starter prompts.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/1dde0d88c87ce756043a39098ef72377ec939664/reels/2026-11-12/marketing-cover.jpg",
+    "tags": "marketing seo ads emails agency homepage skills"
   }
 }
