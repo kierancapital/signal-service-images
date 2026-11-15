@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "content",
+    "date": "2026-11-14",
+    "title": "Claude plans your next month of Instagram",
+    "line": "Studies your profile and your niche, then plans 30 days of posts.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/1dde0d88c87ce756043a39098ef72377ec939664/reels/2026-11-14/instagram-month-cover.jpg",
+    "tags": "instagram content social media reels posts plan creator"
+  },
+  {
+    "slug": "idea",
+    "date": "2026-11-13 22:00",
+    "title": "Test your business idea on 100 fake customers",
+    "line": "100 buyers, one pitch: see who buys, who passes and why.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/1dde0d88c87ce756043a39098ef72377ec939664/reels/2026-11-13/fake-customers-cover.jpg",
+    "tags": "business idea startup side hustle customers product test"
+  },
+  {
+    "slug": "moves",
+    "date": "2026-11-13 17:00",
+    "title": "Animate your videos just by describing them",
+    "line": "Ten animation styles, each from one short prompt.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/1dde0d88c87ce756043a39098ef72377ec939664/reels/2026-11-13/after-effects-cover.jpg",
+    "tags": "video animation after effects editing motion remotion"
+  },
+  {
+    "slug": "marketing",
+    "date": "2026-11-12",
+    "title": "Turn Claude into a marketing agency",
+    "line": "53 free marketing skills, one install, four starter prompts.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/1dde0d88c87ce756043a39098ef72377ec939664/reels/2026-11-12/marketing-cover.jpg",
+    "tags": "marketing seo ads emails agency homepage skills"
+  },
+  {
+    "slug": "cv",
+    "date": "2026-11-07",
+    "title": "Find the mistake that gets your CV rejected",
+    "line": "One prompt that reads your CV like a recruiter.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/1dde0d88c87ce756043a39098ef72377ec939664/reels/2026-11-07/cv-cover.jpg",
+    "tags": "cv resume job jobs recruiter career application"
+  }
+]
