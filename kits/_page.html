@@ -235,8 +235,9 @@ function unlock(scroll, message){
   store.set("kit_" + KIT, "1");
   if (scroll) $("kit").scrollIntoView({behavior: "smooth", block: "start"});
 }
-// A return visit (or #kit): straight to the kit.
-if (location.hash === "#kit" || store.get("kit_" + KIT) === "1") unlock(false, "");
+// A return visit in the same browser: straight to the kit. (2026-11-15: the "#kit" shortcut is gone. It skipped the
+// email box for anyone who added #kit to the address; it only existed for the kit email, which is switched off.)
+if (store.get("kit_" + KIT) === "1") unlock(false, "");
 
 $("gate").addEventListener("submit", async (e) => {
   e.preventDefault();
