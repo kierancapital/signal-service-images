@@ -181,6 +181,13 @@ const $ = (id) => document.getElementById(id);
 const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 const q = new URLSearchParams(location.search);
 const utm = {utm_source: q.get("utm_source") || "kit", utm_medium: q.get("utm_medium") || "", utm_campaign: q.get("utm_campaign") || KIT};
+// Tidy address bar (2026-11-15, Kieran: the URL looked cluttered): the tracking tags are read above, then dropped from the
+// address so people see plan.signalservice.ai/<kit>. A reload in the same tab still counts the sign-up under its source.
+try {
+  if (q.get("utm_source")) sessionStorage.setItem("utm_" + KIT, JSON.stringify(utm));
+  else { const kept = JSON.parse(sessionStorage.getItem("utm_" + KIT) || "null"); if (kept) Object.assign(utm, kept); }
+  if (location.search && history.replaceState) history.replaceState(null, "", location.pathname + location.hash);
+} catch (e) {}
 
 // The library (optional). The Worker's page builder only knows the shape every kit shares (1 prompt, 3 follow-ups, a 5-point list), so a kit
 // with more to give (the MOVES kit: ten prompts and their code) keeps the extra in a "library" block of its own JSON, and the page reads
