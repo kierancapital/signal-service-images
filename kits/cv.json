@@ -1,7 +1,7 @@
 {
   "slug": "cv",
   "keyword": "CV",
-  "name": "CV kit",
+  "name": "CV guide",
   "checked": "6 Nov 2026",
   "description": "One prompt that finds the mistake most likely to get your CV rejected, three follow-ups and a 5-point checklist. Tested on ChatGPT, Claude and Gemini.",
   "page": {
@@ -95,5 +95,12 @@
     "text": "Here's your CV check.\nThe exact prompt, plus the 5-point checklist.\nTap below 👇",
     "button": "Get the CV kit",
     "link": "https://plan.signalservice.ai/cv?utm_source=instagram&utm_medium=autodm&utm_campaign=cv"
+  },
+  "hub": {
+    "date": "2026-11-07",
+    "title": "Find the mistake that gets your CV rejected",
+    "line": "One prompt that reads your CV like a recruiter.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/1dde0d88c87ce756043a39098ef72377ec939664/reels/2026-11-07/cv-cover.jpg",
+    "tags": "cv resume job jobs recruiter career application"
   }
 }
