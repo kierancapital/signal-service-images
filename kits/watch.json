@@ -1,0 +1,106 @@
+{
+  "slug": "watch",
+  "keyword": "WATCH",
+  "name": "YouTube to skill guide",
+  "checked": "15 Nov 2026",
+  "description": "The free skill and the exact prompt from the reel: Claude watches a YouTube video and turns what it teaches into a skill it keeps.",
+  "page": {
+    "title": "Turn any YouTube video into a Claude skill",
+    "mark": "YouTube to skill",
+    "sub": "The free skill and the prompt from the reel. Claude takes in a YouTube video and writes what it teaches as a skill it can use again and again.",
+    "prompt_how": "Do step 1 below first (install the skill in Claude Code). Then paste this into Claude Code with your video's link in the square brackets.",
+    "prompt_note": "Long video? Add: only watch from [start time] to [end time].",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it on three real videos",
+    "results": [
+      {
+        "name": "Three videos taken in: 88, 57 and 24 seconds (under 3 minutes in all)",
+        "ok": true
+      },
+      {
+        "name": "Three skills written, then one content plan from all three",
+        "ok": true
+      },
+      {
+        "name": "Podcasts, and many videos in one go",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We gave it three videos: Chris Voss's \"Top 10 Most Powerful Negotiation Tips\" (18:40, back in **88 seconds**), Alex Hormozi's \"How to Grow an Audience if You Have 0 Followers\" (6:53, 57 seconds) and GaryVee's \"If I Started Social Media In 2026, I'd Do This\" (7:49, 24 seconds). Claude wrote a skill from each. Then we asked it to use all three to write a content plan for Signal Service, and it gave three rules: **post every day and score the posting, not the views** (Hormozi); **teach the whole trick before the ask** (GaryVee); **ask with a question that is easy to answer** (Voss). **Not checked:** podcasts, a batch of videos in one go, and a computer with nothing installed (ours already had the tools it needs).",
+    "tip": "**The tip:** if the words come back in another language, add: use the English captions. That happened to us on one video.",
+    "checklist_label": "step 3 · set it up"
+  },
+  "prompt": "Use the watch skill on this video: [paste the YouTube link]. Watch this, learn what it teaches, and turn it into a skill that I can use forever. Save it as a skill in this project, with a short name. Then tell me in five lines what you learned and give me one example of how to use it.",
+  "followups": [
+    {
+      "label": "Use the skill",
+      "prompt": "Use the skill you just made on this: [describe your situation]. Give me the result ready to use, then one line on which part of the video it came from.",
+      "note": "Works best on a real task you have today."
+    },
+    {
+      "label": "Combine several videos",
+      "prompt": "Use all the skills you have made from videos to write me one plan for: [your goal]. One rule from each video, and say which video each rule came from.",
+      "note": "This is how we got the Signal Service content plan from three videos."
+    },
+    {
+      "label": "Check it against the video",
+      "prompt": "List every rule in the skill with the time in the video where it is said, so I can check it.",
+      "note": "The skill keeps timestamps, so you can jump to the moment and hear it yourself."
+    }
+  ],
+  "checklist_title": "Set it up in five steps",
+  "checklist": [
+    {
+      "title": "Open Claude Code",
+      "detail": "It is the Code tab in the Claude desktop app. The skill does not work in normal Claude chat, and Claude Code needs a paid Claude plan."
+    },
+    {
+      "title": "Install the Watch skill",
+      "detail": "Paste this and tell Claude to install it: github.com/bradautomates/claude-video. It is free and open source, made by Bradley Bonanno."
+    },
+    {
+      "title": "Let it check your computer",
+      "detail": "It needs three free tools (Python, ffmpeg, yt-dlp). On a Mac it offers to install them for you."
+    },
+    {
+      "title": "Choose how it watches",
+      "detail": "With a free Google AI Studio key it sees picture and sound. With no key it reads the captions and a set of frames, which is what we used."
+    },
+    {
+      "title": "Paste the prompt with your video",
+      "detail": "Then use the follow-ups to put the skill to work."
+    }
+  ],
+  "safety": [
+    "**Check the skill before you rely on it.** Captions can mishear words, so read what Claude wrote against the video.",
+    "**The video belongs to its maker.** Use this to learn from it, not to copy or repost it.",
+    "**With a Google key, the video link is sent to Google.** With no key, everything stays on your computer."
+  ],
+  "email": {
+    "tested": "We gave it three videos (Chris Voss, Alex Hormozi and GaryVee). It took in all three in under three minutes (88, 57 and 24 seconds) and wrote a skill from each. The skill link, the prompt and the setup steps are on your guide page: plan.signalservice.ai/watch",
+    "safety": "It runs in Claude Code (the Code tab), not normal Claude chat, and Claude Code needs a paid Claude plan. The skill itself is free.",
+    "question": "which video are you going to teach Claude first?"
+  },
+  "dm": {
+    "keyword": "WATCH",
+    "replies": [
+      "Sent! Check your DMs for the skill.",
+      "Done, the skill is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free skill and the exact prompt from the reel. Claude watches a YouTube video and turns it into a skill it keeps.\nTap below 👇",
+    "button": "Get the skill",
+    "link": "https://plan.signalservice.ai/watch?utm_source=instagram&utm_medium=autodm&utm_campaign=watch"
+  },
+  "hub": {
+    "date": "2026-11-15 20:00",
+    "title": "Claude watches YouTube and learns any skill",
+    "line": "Drop in a video link. Claude turns what it teaches into a skill it keeps.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/765f8e0438cf11fde021acf1915246d02fe5bd73/reels/2026-11-15/watch-youtube-cover.jpg",
+    "tags": "youtube video skill learn claude code watch training"
+  }
+}
