@@ -1,7 +1,7 @@
 {
   "slug": "sell",
   "keyword": "SELL",
-  "name": "Sell your stuff guide",
+  "name": "sell your stuff guide",
   "checked": "16 Nov 2026",
   "description": "The one prompt from the reel: photograph the things you don't use, and Claude names each one, finds what it sold for, writes the listing and tells you where to sell it.",
   "page": {
