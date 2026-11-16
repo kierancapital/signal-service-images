@@ -1,0 +1,106 @@
+{
+  "slug": "sell",
+  "keyword": "SELL",
+  "name": "Sell your stuff guide",
+  "checked": "16 Nov 2026",
+  "description": "The one prompt from the reel: photograph the things you don't use, and Claude names each one, finds what it sold for, writes the listing and tells you where to sell it.",
+  "page": {
+    "title": "Sell the stuff lying around your house",
+    "mark": "Sell your stuff",
+    "sub": "The one prompt from the reel. Add photos of the things you don't use. Claude names each one, finds what it actually sold for, writes the listing and tells you where to sell it.",
+    "prompt_how": "Take a photo of each thing, add the photos to a new Claude chat, then paste this. Change the country to yours.",
+    "prompt_note": "If the answer stops part-way through, type: continue. Up to about six things per chat works best.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it on six everyday things",
+    "results": [
+      {
+        "name": "6 things named and priced: $655 in total",
+        "ok": true
+      },
+      {
+        "name": "A listing, a place to sell and a reply for low offers",
+        "ok": true
+      },
+      {
+        "name": "Run on a free Claude account",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We gave Claude photos of six things: a Canon AE-1 film camera, a KitchenAid mixer, a Dyson V8, a PS4, an iPod from 2005 and a Game Boy Color. It named every model and came back in about two minutes with a fair used price for each: **$655 in total** ($814 if you list a little high and wait). The surprise was the iPod. Most people would throw it away, and tested ones sell for $100 to $150. It also said which prices it was unsure about: for the mixer and the Dyson it only found asking prices, so it told us to check those two first. **Not checked:** we ran it on a paid plan with Claude's smaller model, not on a free account. Every number in the reel is from that run.",
+    "tip": "**The tip:** only say what you've tested. Claude leaves [brackets] in each listing for the things only you know, like whether it switches on. Fill them in honestly.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "I've attached photos of things I don't use any more. I live in [your country]. Act as a resale expert who sells on eBay and Facebook Marketplace every day. 1) Name every item as exactly as you can (brand, model, version). If you're not sure, tell me what to check, like a label or model number. 2) Search the web for what each one has actually SOLD for recently in used condition, not what people are asking. Give me a quick-sale price, a fair price, and the price to list it at. 3) Put everything in one table, most valuable first, with a total at the bottom. 4) Tell me which one item is worth more than most people would guess, and why. 5) For each item, tell me the best place to sell it and why. 6) Write the listing for each one: a title buyers search for, a short honest description, and which extra photos to take. 7) Give me a reply I can copy when someone offers too little. Finish with the one item I should list first today.",
+  "followups": [
+    {
+      "label": "Make one thing worth more",
+      "prompt": "Pick the item where a small fix would raise the price the most (a clean, a new battery, a missing part). Tell me what the fix costs and what the item would sell for after it.",
+      "note": "In our test a $20 battery took the iPod from about $55 to over $110."
+    },
+    {
+      "label": "Check the ones it guessed",
+      "prompt": "For every item you marked low confidence, tell me exactly what to type into eBay and which filter to tick so I can see real sold prices myself.",
+      "note": "Claude tells you when it only found asking prices. Check those before you list."
+    },
+    {
+      "label": "Deal with a buyer",
+      "prompt": "A buyer just sent me this: [paste their message]. My lowest price is [your price]. Write a short, friendly reply that keeps the sale alive without going under it.",
+      "note": "Paste the real message in. You send the reply yourself."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Take the photos",
+      "detail": "One clear photo of each thing. Include any label or model number you can see."
+    },
+    {
+      "title": "Open Claude and add them",
+      "detail": "claude.ai or the Claude app. Tap the + and add your photos."
+    },
+    {
+      "title": "Paste the prompt",
+      "detail": "Change the country to yours, then send."
+    },
+    {
+      "title": "Check the low-confidence prices",
+      "detail": "Search the item on eBay and tick \"Sold items\" to see what people really paid."
+    },
+    {
+      "title": "List the first one today",
+      "detail": "Claude tells you which one to start with. Copy the listing, fill in the brackets, post it."
+    }
+  ],
+  "safety": [
+    "**Prices are estimates.** Claude tells you how sure it is. Check sold prices yourself before you list anything expensive.",
+    "**You post and you sell.** Claude writes the listing and the replies. It does not post for you or talk to buyers.",
+    "**Wipe phones, consoles and music players** before you sell them, and meet local buyers somewhere public."
+  ],
+  "email": {
+    "tested": "We gave Claude photos of six everyday things and it priced them at $655, wrote every listing and said where to sell each one. The prompt and three follow-ups are on your guide page: plan.signalservice.ai/sell",
+    "safety": "Prices are estimates, so check sold prices before you list anything expensive. Claude writes the listings; you post them.",
+    "question": "what's the first thing you're going to sell?"
+  },
+  "dm": {
+    "keyword": "SELL",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the prompt you need. Add photos of the stuff you don't use, and Claude prices it, writes the listings and tells you where to sell.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/sell?utm_source=instagram&utm_medium=autodm&utm_campaign=sell"
+  },
+  "hub": {
+    "date": "2026-11-16 21:30",
+    "title": "Sell the stuff lying around your house",
+    "line": "Photos in. Prices, listings and where to sell each thing out.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/3189684f465b430ec36ac92881b2fa05cabc6d9a/reels/2026-11-16/sell-cover.jpg",
+    "tags": "sell old stuff declutter ebay facebook marketplace money cash resale price"
+  }
+}
