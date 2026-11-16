@@ -247,40 +247,49 @@ function unlock(scroll, message){
 // email box for anyone who added #kit to the address; it only existed for the kit email, which is switched off.)
 if (store.get("kit_" + KIT) === "1") unlock(false, "");
 
-// Sign-up errors the Worker sends back (email checks, 2026-11-16). "typo" comes with a suggestion: tap it, or keep what you typed.
-const SIGNUP_ERRORS = {
-  email: "That email doesn't look right. Try again?",
-  fake: "Please use your real email address.",
-  throwaway: "Please use an email address you actually check. Throwaway inboxes don't work here.",
-  nomail: "That email address can't receive mail. Is there a typo?",
+// Email check WARNINGS from the Worker (2026-11-16 v2: warn, never block). Every warning has a one-tap way through: the address
+// is resent with keep: true, which skips all checks. "typo" comes with a suggested fix.
+const SIGNUP_WARNINGS = {
+  fake: ["Is that your real email? Your guide updates go there.", "Yes, it's my email"],
+  throwaway: ["That looks like a temporary inbox, so our emails may not reach you.", "Use it anyway"],
+  nomail: ["We couldn't find that email's domain. Is there a typo?", "It's right, continue"],
 };
-let keepTyped = ""; // an address someone chose to keep after "Did you mean…?" (sent with keep: true, so it isn't asked again)
+let keepTyped = ""; // an address someone chose to keep after a warning (sent with keep: true, so it isn't checked again)
 function showErr(text){ $("err").textContent = text; $("err").style.display = "block"; }
+const pick = (label, act) => { const x = document.createElement("button"); x.type = "button"; x.className = "pick"; x.textContent = label; x.addEventListener("click", act); return x; };
+const keepMine = () => { keepTyped = $("email").value.trim().toLowerCase(); send(); };
 function askTypo(suggestion){
   const err = $("err"), b = document.createElement("b");
   err.textContent = "Did you mean "; b.textContent = suggestion; err.append(b, "?");
-  const pick = (label, act) => { const x = document.createElement("button"); x.type = "button"; x.className = "pick"; x.textContent = label; x.addEventListener("click", act); return x; };
   err.append(document.createElement("br"),
     pick("Yes, use that", () => { $("email").value = suggestion; send(); }),
-    pick("No, mine is right", () => { keepTyped = $("email").value.trim().toLowerCase(); send(); }));
+    pick("No, mine is right", keepMine));
+  err.style.display = "block";
+}
+function warn(kind){
+  const [text, label] = SIGNUP_WARNINGS[kind], err = $("err");
+  err.textContent = text;
+  err.append(document.createElement("br"), pick(label, keepMine));
   err.style.display = "block";
 }
 async function send(){
   const email = $("email").value.trim();
   $("err").style.display = "none";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr(SIGNUP_ERRORS.email); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr("That email doesn't look right. Try again?"); return; }
   $("go").disabled = true; $("go").textContent = "Sending…";
   try {
     if (!RELAY_URL) { await new Promise((r) => setTimeout(r, 500)); unlock(true, "Preview: nothing was sent. Live, the guide unlocks here."); return; }
     const keep = keepTyped !== "" && keepTyped === email.toLowerCase();
-    const res = await fetch(RELAY_URL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email, lead_magnet: KIT, ...utm, ...(keep ? {keep: true} : {})})});
+    const res = await fetch(RELAY_URL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email, lead_magnet: KIT, ...utm, check: true, ...(keep ? {keep: true} : {})})});
     const data = await res.json().catch(() => ({}));
     if (!res.ok || !data.ok) { const x = new Error(data.error || "send"); x.suggestion = data.suggestion; throw x; }
     unlock(true, data.existing ? "You're already on the list. Here's your guide." : "Done. Your guide is below. Copy the prompt now so you have it.");
   } catch (err) {
     $("go").disabled = false; $("go").textContent = "Claim my guide";
     if (err.message === "typo" && err.suggestion) askTypo(err.suggestion);
-    else showErr(SIGNUP_ERRORS[err.message] || "Something went wrong on our side. Try again in a moment?");
+    else if (SIGNUP_WARNINGS[err.message]) warn(err.message);
+    else if (err.message === "email") showErr("That email doesn't look right. Try again?");
+    else showErr("Something went wrong on our side. Try again in a moment?");
   }
 }
 $("gate").addEventListener("submit", (e) => { e.preventDefault(); send(); });
