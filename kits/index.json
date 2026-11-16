@@ -1,5 +1,13 @@
 [
   {
+    "slug": "sell",
+    "date": "2026-11-16 21:30",
+    "title": "Sell the stuff lying around your house",
+    "line": "Photos in. Prices, listings and where to sell each thing out.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/3189684f465b430ec36ac92881b2fa05cabc6d9a/reels/2026-11-16/sell-cover.jpg",
+    "tags": "sell old stuff declutter ebay facebook marketplace money cash resale price"
+  },
+  {
     "slug": "watch",
     "date": "2026-11-15 20:00",
     "title": "Claude watches YouTube and learns any skill",
