@@ -50,6 +50,7 @@ input[type=email]:focus{box-shadow:0 0 0 3px var(--green)}
 .btn[disabled]{opacity:0.6}
 .small{font-size:13px;color:var(--grey);margin:10px 0 0}
 .err{display:none;color:var(--red);font-weight:600;font-size:15px;margin:10px 0 0}
+.err .pick{font:inherit;font-size:14px;font-weight:700;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:6px;padding:5px 10px;margin:8px 6px 0 0;cursor:pointer}
 .okmsg{display:none;border:2.5px solid var(--ink);background:var(--green);border-radius:8px;padding:12px 14px;font-weight:700;margin:0 0 22px}
 ol.fu{margin:0;padding:0;list-style:none;counter-reset:fu}
 ol.fu li{counter-increment:fu;margin:0 0 16px}
@@ -246,23 +247,43 @@ function unlock(scroll, message){
 // email box for anyone who added #kit to the address; it only existed for the kit email, which is switched off.)
 if (store.get("kit_" + KIT) === "1") unlock(false, "");
 
-$("gate").addEventListener("submit", async (e) => {
-  e.preventDefault();
+// Sign-up errors the Worker sends back (email checks, 2026-11-16). "typo" comes with a suggestion: tap it, or keep what you typed.
+const SIGNUP_ERRORS = {
+  email: "That email doesn't look right. Try again?",
+  fake: "Please use your real email address.",
+  throwaway: "Please use an email address you actually check. Throwaway inboxes don't work here.",
+  nomail: "That email address can't receive mail. Is there a typo?",
+};
+let keepTyped = ""; // an address someone chose to keep after "Did you mean…?" (sent with keep: true, so it isn't asked again)
+function showErr(text){ $("err").textContent = text; $("err").style.display = "block"; }
+function askTypo(suggestion){
+  const err = $("err"), b = document.createElement("b");
+  err.textContent = "Did you mean "; b.textContent = suggestion; err.append(b, "?");
+  const pick = (label, act) => { const x = document.createElement("button"); x.type = "button"; x.className = "pick"; x.textContent = label; x.addEventListener("click", act); return x; };
+  err.append(document.createElement("br"),
+    pick("Yes, use that", () => { $("email").value = suggestion; send(); }),
+    pick("No, mine is right", () => { keepTyped = $("email").value.trim().toLowerCase(); send(); }));
+  err.style.display = "block";
+}
+async function send(){
   const email = $("email").value.trim();
   $("err").style.display = "none";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $("err").textContent = "That email doesn't look right. Try again?"; $("err").style.display = "block"; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr(SIGNUP_ERRORS.email); return; }
   $("go").disabled = true; $("go").textContent = "Sending…";
   try {
     if (!RELAY_URL) { await new Promise((r) => setTimeout(r, 500)); unlock(true, "Preview: nothing was sent. Live, the guide unlocks here."); return; }
-    const res = await fetch(RELAY_URL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email, lead_magnet: KIT, ...utm})});
+    const keep = keepTyped !== "" && keepTyped === email.toLowerCase();
+    const res = await fetch(RELAY_URL, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email, lead_magnet: KIT, ...utm, ...(keep ? {keep: true} : {})})});
     const data = await res.json().catch(() => ({}));
-    if (!res.ok || !data.ok) throw new Error(data.error || "send");
+    if (!res.ok || !data.ok) { const x = new Error(data.error || "send"); x.suggestion = data.suggestion; throw x; }
     unlock(true, data.existing ? "You're already on the list. Here's your guide." : "Done. Your guide is below. Copy the prompt now so you have it.");
   } catch (err) {
     $("go").disabled = false; $("go").textContent = "Claim my guide";
-    $("err").textContent = "Something went wrong on our side. Try again in a moment?"; $("err").style.display = "block";
+    if (err.message === "typo" && err.suggestion) askTypo(err.suggestion);
+    else showErr(SIGNUP_ERRORS[err.message] || "Something went wrong on our side. Try again in a moment?");
   }
-});
+}
+$("gate").addEventListener("submit", (e) => { e.preventDefault(); send(); });
 
 // Copy buttons and the tick-off checklist.
 document.querySelectorAll(".copy[data-copy]").forEach((b) => b.addEventListener("click", async () => {
