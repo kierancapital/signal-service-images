@@ -1,0 +1,106 @@
+{
+  "slug": "hired",
+  "keyword": "HIRED",
+  "name": "100 hiring managers guide",
+  "checked": "17 Nov 2026",
+  "description": "The one prompt from the reel: Claude builds 100 hiring managers, has each one screen your CV for the job you want, tells you why you were rejected, then rewrites the weak lines and runs it again.",
+  "page": {
+    "title": "Test your CV on 100 hiring managers",
+    "mark": "100 hiring managers",
+    "sub": "The one prompt from the reel. Claude builds 100 hiring managers, each one reads your CV for ten seconds and says interview or reject, and you see exactly why.",
+    "prompt_how": "Paste this into Claude, then replace the two square brackets at the end with the job advert and your CV.",
+    "prompt_note": "If the answer stops part-way through the table, type: continue.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it on a sample CV",
+    "results": [
+      {
+        "name": "First run: 7 of 100 would interview",
+        "ok": true
+      },
+      {
+        "name": "After the rewrite: 31 of 100 (best case)",
+        "ok": true
+      },
+      {
+        "name": "Run on a free Claude account",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We wrote an ordinary sample CV (a marketing executive, all duties and no numbers) and a sample advert for a marketing manager job. **7 of the 100 would interview and 93 rejected it.** The top reasons were no numbers anywhere (35), duties instead of results (19) and looking too junior for the role (16). One of them said: \"Helped, assisted, supported. Who did the work?\" Claude then rewrote the weak lines using only what was already on the CV, left [brackets] where a real number was missing, and ran the same 100 again: **31 said yes**. That is the best case. Claude said to expect about 12 if the numbers you fill in are weak. **Not checked:** we ran it on a paid plan with Claude's smaller model, not on a free account. Every number and quote in the reel is from that run.",
+    "tip": "**The tip:** the rewrite only works with your real numbers. Fill every [bracket] with a figure you can back up in an interview, and delete any line you can't.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "Act as a hiring panel for the job below. Step 1: invent 100 different hiring managers and recruiters who could be screening for this role. Vary the company size, the industry and how busy they are. Give each one a name, what they care about most, and the one thing that makes them reject a CV in ten seconds. Step 2: each of them reads my CV for ten seconds, like a real first screen, and decides INTERVIEW or REJECT, in their own words. Step 3: show me the full table of all 100, then a summary: how many would interview me, the top 5 reasons I was rejected with counts, the 3 kinds of hiring manager most likely to interview me, and the exact lines on my CV that did the most damage. Step 4: rewrite those lines using only facts already on my CV. Where a number is missing, leave a [bracket] for me to fill in; never invent experience. Then run the same 100 people again on the new version and show me what changed. Be tough: real screens are harsher than AI ones. THE JOB ADVERT: [paste the advert] MY CV: [paste your CV]",
+  "followups": [
+    {
+      "label": "Fill the gaps honestly",
+      "prompt": "Ask me one question at a time to find a real number for each [bracket] in the rewrite. If I don't have an exact figure, help me give an honest range and word it so I can defend it in an interview.",
+      "note": "In our test the same CV went from 7 interviews to 31 with real numbers, and about 12 with weak ones."
+    },
+    {
+      "label": "Aim at who said yes",
+      "prompt": "Look at the kinds of hiring manager most likely to interview me. Tell me which companies and job titles I should apply to first, and what to search for to find them.",
+      "note": "Our sample CV did best with small software teams and keyword-driven recruiters."
+    },
+    {
+      "label": "Run it on a new job",
+      "prompt": "Here is a different job advert: [paste it]. Run the same 100 hiring managers on my new CV for this job and tell me what to change for it.",
+      "note": "A CV that passes for one job can fail for another. Re-run it for each one that matters."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Open Claude",
+      "detail": "claude.ai, or the Claude app."
+    },
+    {
+      "title": "Paste the prompt",
+      "detail": "Add the job advert and your CV where the brackets are."
+    },
+    {
+      "title": "Read why you were rejected",
+      "detail": "The top reasons and the lines that did the damage matter more than the number."
+    },
+    {
+      "title": "Fill in the rewrite",
+      "detail": "Replace every [bracket] with a real number. Delete lines you can't back up."
+    },
+    {
+      "title": "Run the 100 again",
+      "detail": "Paste your finished CV back in and ask Claude to run the same panel on it."
+    }
+  ],
+  "safety": [
+    "**These are not real hiring managers.** Claude makes them up and plays each one. Use it to find patterns, not to predict your odds.",
+    "**Never invent experience.** The prompt tells Claude to use only what is on your CV. Keep it that way: anything on a CV can be asked about in an interview.",
+    "**Take out personal details** you don't want to share, like your address or phone number, before you paste your CV in."
+  ],
+  "email": {
+    "tested": "We ran the prompt on a sample CV for a marketing manager job: 7 of 100 hiring managers would interview, and 31 after Claude's rewrite. The prompt and three follow-ups are on your guide page: plan.signalservice.ai/hired",
+    "safety": "The hiring managers are made up by Claude, so treat the result as a way to find weak lines, not as your real odds. Never add experience you don't have.",
+    "question": "what job are you going to test your CV for?"
+  },
+  "dm": {
+    "keyword": "HIRED",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the prompt you need. Claude runs your CV past 100 hiring managers and tells you exactly why you'd get rejected.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/hired?utm_source=instagram&utm_medium=autodm&utm_campaign=hired"
+  },
+  "hub": {
+    "date": "2026-11-17 12:00",
+    "title": "Test your CV on 100 fake hiring managers",
+    "line": "100 screeners, ten seconds each: who'd interview you, and why not.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/06a8653147e75bffd45b4e168d3db8d67454bcb0/reels/2026-11-17/hired-cover.jpg",
+    "tags": "cv resume job hunt interview hiring recruiter application career rejected"
+  }
+}
