@@ -1,5 +1,13 @@
 [
   {
+    "slug": "customers",
+    "date": "2026-11-18 21:30",
+    "title": "A Claude agent that finds you customers",
+    "line": "Finds businesses that need you, reads their sites, writes each one an email.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/4e553786c56770ad9805a22ec0492daa7511a610/reels/2026-11-18/customers-cover.jpg",
+    "tags": "customers clients leads sales cold email outreach lead generation small business freelancer agency sellbird harvey"
+  },
+  {
     "slug": "hired",
     "date": "2026-11-17 12:00",
     "title": "Test your CV on 100 fake hiring managers",
