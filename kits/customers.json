@@ -1,0 +1,107 @@
+{
+  "slug": "customers",
+  "keyword": "CUSTOMERS",
+  "name": "Customer finder guide",
+  "checked": "17 Nov 2026",
+  "description": "Sellbird, the free open-source Claude agent from the reel: it finds businesses that need what you sell, reads their websites, writes each one a short personal email and drafts your replies. Nothing sends until you approve it.",
+  "page": {
+    "title": "Let Claude find you customers",
+    "mark": "Customer finder",
+    "sub": "Sellbird is the free, open-source agent from the reel. It runs on your own Claude plan through Claude Code, finds businesses that fit, reads their websites and writes each one a short email. You approve every email first.",
+    "prompt_how": "Do steps 1 and 2 below first. Then open the sellbird folder in Claude Code and paste this, with your details in the square brackets.",
+    "prompt_note": "No website yet? Describe what you sell in two lines instead of the link.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran its free steps on Austin dentists",
+    "results": [
+      {
+        "name": "160 dentists found on OpenStreetMap, for $0",
+        "ok": true
+      },
+      {
+        "name": "57 of their websites read: 19 had a gap worth an email",
+        "ok": true
+      },
+      {
+        "name": "The full install, sending and replies",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We ran the two free steps Sellbird uses, the same way its code does them: one OpenStreetMap search for dentists within 25 km of downtown Austin (**160 found**, 74 with a website listed), then a read of each site's homepage, robots.txt and sitemap. **57 sites** answered. **19 real practices** had a gap a web designer could write about: 9 give Google no structured data, 7 have had no new page in six months or more, 6 block AI search. The sample email in the reel was written with Sellbird's own writing rules from one of those facts. **Not checked yet:** the full Sellbird install, sending and the reply handling.",
+    "tip": "**The tip:** keep approval mode on (it's the default) and read the first ten emails yourself before you ever switch on autopilot.",
+    "checklist_label": "step 3 · set it up"
+  },
+  "prompt": "Set up Sellbird for me. I sell [what you sell] to [your dream customer] in [your city or area]. My website is [your website]. Learn my product from my site, turn on only the free signals, and find my first businesses on OpenStreetMap. Don't send anything: put every email in the Outbox for me to approve.",
+  "followups": [
+    {
+      "label": "Pick the best target",
+      "prompt": "Look at the businesses you found and tell me which signal makes the best campaign for what I sell. Give me the group and say why.",
+      "note": "Sellbird calls a group like this a cohort."
+    },
+    {
+      "label": "Check the first emails",
+      "prompt": "Show me the first five drafts in the Outbox. For each one, tell me which fact from their website it uses, so I can check it's true before I approve it.",
+      "note": "Its site checks can miss things, so read every one."
+    },
+    {
+      "label": "Just the list",
+      "prompt": "Don't write or send any emails yet. Export the businesses you found to a spreadsheet with their name, website and the fact you found on their site, so I can contact them my own way.",
+      "note": "No mailbox needed for this. Good for a first look before you set up sending."
+    }
+  ],
+  "checklist_title": "Set it up in five steps",
+  "checklist": [
+    {
+      "title": "Have Claude Pro or Max",
+      "detail": "Sellbird thinks through Claude Code on your own plan, so there's no AI bill on top. Claude Code is the Code tab in the Claude desktop app, or the claude command in a terminal."
+    },
+    {
+      "title": "Get Sellbird",
+      "detail": "It's free and open source (formerly called Harvey): github.com/ethanplusai/sellbird. In a terminal, type git clone https://github.com/ethanplusai/sellbird.git then cd sellbird then claude."
+    },
+    {
+      "title": "Say: set up Sellbird for me",
+      "detail": "Claude Code follows the project's own setup guide. It installs what's missing (it needs Python 3.11 or newer), asks what it needs and learns your product from your website."
+    },
+    {
+      "title": "Add a mailbox to send from",
+      "detail": "Ideally a separate sending domain on Google Workspace (about $7 a month), warmed up for two weeks before any cold email. Only want the list? It can stop there and export it."
+    },
+    {
+      "title": "Approve every email",
+      "detail": "Everything waits in the Outbox until you approve it. Type sellbird dashboard to open the live dashboard."
+    }
+  ],
+  "safety": [
+    "**Cold email has rules.** Follow the law where your prospects are (UK PECR, US CAN-SPAM and others). Sellbird honours opt-outs straight away and can check each address before the first email.",
+    "**Read before you approve.** Its website checks can miss things, so check the fact each email uses.",
+    "**It uses your Claude plan.** Check Anthropic's current terms on automated use of your plan. Sellbird holds itself back to leave room for your own work.",
+    "**It runs on your own computer.** A hosted version is in early access at sellbird.ai."
+  ],
+  "email": {
+    "tested": "We ran its free steps on Austin dentists: 160 found on OpenStreetMap for $0, 57 websites read, 19 with a gap worth an email. The setup steps and the first prompt are on your guide page: plan.signalservice.ai/customers",
+    "safety": "Sellbird runs in Claude Code on a paid Claude plan (Pro or Max). The tool itself is free and open source, and nothing sends until you approve it.",
+    "question": "what do you sell, and who to?"
+  },
+  "dm": {
+    "keyword": "CUSTOMERS",
+    "replies": [
+      "Sent! Check your DMs for the guide.",
+      "Done, the guide is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free setup for the Claude agent that finds you customers. It finds businesses that need what you sell and writes each one a personal email.\nTap below 👇",
+    "button": "Get the guide",
+    "link": "https://plan.signalservice.ai/customers?utm_source=instagram&utm_medium=autodm&utm_campaign=customers"
+  },
+  "hub": {
+    "date": "2026-11-18 21:30",
+    "title": "A Claude agent that finds you customers",
+    "line": "Finds businesses that need you, reads their sites, writes each one an email.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/4e553786c56770ad9805a22ec0492daa7511a610/reels/2026-11-18/customers-cover.jpg",
+    "tags": "customers clients leads sales cold email outreach lead generation small business freelancer agency sellbird harvey"
+  }
+}
