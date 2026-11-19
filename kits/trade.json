@@ -1,0 +1,111 @@
+{
+  "slug": "trade",
+  "keyword": "TRADE",
+  "name": "Day trader skills guide",
+  "checked": "18 Nov 2026",
+  "description": "Day Trader Skill, the free set of 11 Claude skills from the reel: scan the market for setups, watch the news, plan your stop and target, track Congress's stock trades, and replay a trade 10,000 times before you risk a dollar. Paper trading by default.",
+  "page": {
+    "title": "Turn Claude into a trading desk",
+    "mark": "Day trader skills",
+    "sub": "Day Trader Skill is the free, open-source pack from the reel: 11 Claude skills that each do one job a trader would do, from scanning charts to replaying a trade 10,000 times. It uses free public data and paper money by default.",
+    "prompt_how": "Paste this into Claude (Claude Code works best, because the skills come with small Python tools).",
+    "prompt_note": "No Claude Code? You can paste a single skill's SKILL.md into a chat and it runs as a mode, without the tools.",
+    "tested_label": "what we checked",
+    "tested_title": "We checked it against its own repo",
+    "results": [
+      {
+        "name": "11 skills, 8,578 stars, MIT licence, free",
+        "ok": true
+      },
+      {
+        "name": "Free public data: no signup, no API key",
+        "ok": true
+      },
+      {
+        "name": "Paper trading by default, nothing trades without your yes",
+        "ok": true
+      },
+      {
+        "name": "Running it ourselves on a live market",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We read the repo on 18 Nov 2026: **11 skills**, **8,578 stars**, MIT licence, plain Python reading free public data (Yahoo Finance charts, Nasdaq's symbol lists, SEC filings and the House Clerk). The creator's own worked example is Tesla on Monday 19 October 2026: the **Time Machine** replayed the rest of the day **10,000 times** (target first 29.4%, stop first 25.5%, still open at the close 45.1%), and the same rule on 59 real days fired 33 times: 13 hit the target, 15 the stop. His verdict: **close to a coin flip**. **Not checked by us:** running it on a live market.",
+    "tip": "**The tip:** run the Time Machine on every setup before you even think about a trade, and stay on paper money until you've seen how often your setups really work.",
+    "checklist_label": "step 3 · set it up"
+  },
+  "prompt": "https://github.com/Jakeschincariol/day-trader-skill\n\ninstall skill",
+  "followups": [
+    {
+      "label": "Find today's setups",
+      "prompt": "Use the chart scanner to find today's opening-range breakouts across US stocks. Show me the five cleanest, with the range, the breakout price and why each one made the list.",
+      "note": "The scanner's universe is about 5,900 US stocks from Nasdaq Trader's lists."
+    },
+    {
+      "label": "Test before you trade",
+      "prompt": "Run the Time Machine on [ticker]'s setup: replay the rest of today 10,000 times and check every past day the same setup fired. Tell me the honest odds of hitting the target first, the stop first, or neither.",
+      "note": "On the creator's own Tesla example the answer was close to a coin flip. That's the point of checking."
+    },
+    {
+      "label": "Set your limits",
+      "prompt": "Keep me on paper trading. My budget is $[budget] and my max loss per trade is $[max loss]. Size every trade to that and block anything that breaks my rules before you show it to me.",
+      "note": "The budget and risk skills check every order and say PASS or BLOCK, with the reason."
+    }
+  ],
+  "checklist_title": "Set it up in five steps",
+  "checklist": [
+    {
+      "title": "Have Claude",
+      "detail": "Claude Code is best (the Code tab in the Claude desktop app, or the claude command in a terminal), because each skill comes with a small Python tool. It needs Python 3.8 or newer and nothing to pip install."
+    },
+    {
+      "title": "Paste the link, say install skill",
+      "detail": "Paste github.com/Jakeschincariol/day-trader-skill into Claude with the words install skill. In Claude Code you can also add it as a plugin."
+    },
+    {
+      "title": "Add your name for SEC data",
+      "detail": "The news and earnings tools read SEC filings, which ask you to identify yourself: add your name and email in trader/config.json."
+    },
+    {
+      "title": "Stay on paper money",
+      "detail": "Paper trading is the default. Orders only go to a broker if you connect one (Alpaca's paper account by default), and every order needs your yes."
+    },
+    {
+      "title": "Test, don't trust",
+      "detail": "Run the Time Machine before every setup and keep a note of how often your setups really work. Learn first, risk money later, if ever."
+    }
+  ],
+  "safety": [
+    "**This isn't financial advice.** Most people who day trade lose money. Use it to learn and test.",
+    "**Paper trading is the default.** Nothing places an order on its own, and every order needs your yes.",
+    "**Free data can be late or wrong.** Check prices with your broker before you act on anything.",
+    "**It runs on your own computer** with your own Claude plan. Read what each skill does before you connect a broker."
+  ],
+  "email": {
+    "tested": "We checked the repo on 18 Nov: 11 skills, 8,578 stars, MIT licence, free public data, paper trading by default. On the creator's own Tesla example the Time Machine came out close to a coin flip. The install and the first prompts are on your guide page: plan.signalservice.ai/trade",
+    "safety": "This isn't financial advice: most people who day trade lose money. It starts on paper money and nothing trades without your yes.",
+    "question": "which setup would you test first?"
+  },
+  "dm": {
+    "keyword": "TRADE",
+    "replies": [
+      "Sent! Check your DMs for the guide.",
+      "Done, the guide is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free setup for the Claude day trading desk: the one-line install, the Time Machine and the first three prompts.\nTap below 👇",
+    "button": "Get the guide",
+    "link": "https://plan.signalservice.ai/trade?utm_source=instagram&utm_medium=autodm&utm_campaign=trade"
+  },
+  "hub": {
+    "date": "2026-11-19 12:35",
+    "title": "Turn Claude into a trading desk",
+    "line": "11 free skills: scan, news, stop and target, and 10,000 replays before you risk $1.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/29d0785188da9760f405640f57f779a6b75d3b35/reels/2026-11-19/trade-cover.jpg",
+    "tags": "trading day trading stocks stock market tesla time machine paper trading congress trades investing"
+  }
+}
