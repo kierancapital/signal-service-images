@@ -1,5 +1,13 @@
 [
   {
+    "slug": "trade",
+    "date": "2026-11-19 12:35",
+    "title": "Turn Claude into a trading desk",
+    "line": "11 free skills: scan, news, stop and target, and 10,000 replays before you risk $1.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/29d0785188da9760f405640f57f779a6b75d3b35/reels/2026-11-19/trade-cover.jpg",
+    "tags": "trading day trading stocks stock market tesla time machine paper trading congress trades investing"
+  },
+  {
     "slug": "customers",
     "date": "2026-11-18 21:30",
     "title": "A Claude agent that finds you customers",
