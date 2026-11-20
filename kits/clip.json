@@ -11,10 +11,10 @@
     "prompt_how": "Paste this into Claude Code (the Code tab in the Claude desktop app, not the normal chat). It installs the skill, then asks for your video.",
     "prompt_note": "It looks long because the skill is inside it. Paste the whole thing once; after that you only say: clip this video.",
     "tested_label": "what we checked",
-    "tested_title": "We ran it on a 28-minute NASA talk",
+    "tested_title": "We ran it on a 25-minute IShowSpeed video",
     "results": [
       {
-        "name": "28 min 40 s in, 8 shorts out, in 6 min 25 s",
+        "name": "25 min 23 s in, 8 shorts out, in 5 min 28 s",
         "ok": true
       },
       {
@@ -34,7 +34,7 @@
       "Checked",
       "Not yet"
     ],
-    "tested_text": "We gave it NASA Science Live's **Black Hole 101** (28 minutes 40 seconds, public domain). Listening took **4 minutes**, Claude picked **8 moments** in under a minute, and cutting took **a minute and a half**: **8 shorts in 6 minutes 25 seconds** on a Mac mini. The best one opens with \"What would happen if I stumbled into a black hole?\" and ends on the word spaghettification. **Not checked by us:** pasting a link instead of a file, and Windows.",
+    "tested_text": "We gave it IShowSpeed's **Speed Goes Pro: Tom Brady** (25 minutes 23 seconds, from his own YouTube channel). Listening took **3 minutes 19 seconds**, Claude picked **8 moments** in under a minute, and cutting took **1 minute 44 seconds**: **8 shorts in 5 minutes 28 seconds** on a Mac mini. The best one is Speed's last try at the 40-yard dash, ending on his 4.49. We cut them as a test and did not post them. An earlier run on a 28-minute NASA talk took 6 minutes 25 seconds. **Not checked by us:** pasting a link instead of a file, and Windows.",
     "tip": "**The tip:** watch each short once before you post it, and ask for a re-cut when a clip starts a sentence too late: \"start clip 3 two seconds earlier\".",
     "checklist_label": "step 3 · set it up"
   },
@@ -86,7 +86,7 @@
     "**Clipping pay is small.** Creators who pay clippers pay about $1 per 1,000 views on average, so treat this as a skill, not a salary."
   ],
   "email": {
-    "tested": "We ran it on a 28-minute NASA talk: 8 captioned shorts in 6 minutes 25 seconds, and the video never left our computer. The prompt and the steps are on your guide page: plan.signalservice.ai/clip",
+    "tested": "We ran it on a 25-minute IShowSpeed video: 8 captioned shorts in 5 minutes 28 seconds, and the video never left our computer. The prompt and the steps are on your guide page: plan.signalservice.ai/clip",
     "safety": "Only clip videos you're allowed to use, and nothing is posted for you.",
     "question": "what's the first long video you'd clip?"
   },
