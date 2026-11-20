@@ -1,0 +1,104 @@
+{
+  "slug": "jarvis",
+  "keyword": "JARVIS",
+  "name": "OpenJarvis setup guide",
+  "checked": "19 Nov 2026",
+  "description": "OpenJarvis, the free open-source assistant from the reel: eight assistants that run on your own computer, including a morning digest that reads your day out loud from your email and calendar.",
+  "page": {
+    "title": "Set up your own Jarvis",
+    "mark": "OpenJarvis",
+    "sub": "OpenJarvis is the free, open-source assistant from the reel, built at Stanford. Eight assistants run on your own computer: research with sources, code, an all-day monitor, and a spoken morning digest from your email and calendar.",
+    "prompt_how": "Paste this into Claude Code (the Code tab in the Claude desktop app, not the normal chat).",
+    "prompt_note": "The install is one command and takes about three minutes on a good connection. Claude asks before it runs it.",
+    "tested_label": "what we checked",
+    "tested_title": "We checked it against its own page",
+    "results": [
+      {
+        "name": "17,277 stars, Apache 2.0 licence, free",
+        "ok": true
+      },
+      {
+        "name": "Built at Stanford, runs on your own computer",
+        "ok": true
+      },
+      {
+        "name": "Eight built-in assistants, one-command install",
+        "ok": true
+      },
+      {
+        "name": "Installing and running it ourselves",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We read the project's own page: **17,277 stars**, Apache 2.0 licence, built at Stanford's Hazy Research and Scaling Intelligence Lab. It ships **eight assistants**: the morning digest, deep research with citations, a monitor that runs all day, a code assistant and four more. The installer sets everything up with one command in **about three minutes**, and one sign-in connects Gmail, Calendar and Tasks for the digest. **Not checked by us:** installing and running it on our own computer.",
+    "tip": "**The tip:** start with the morning digest only. Connect your email and calendar, hear one briefing, then add the next assistant when you want it.",
+    "checklist_label": "step 3 · set it up"
+  },
+  "prompt": "https://github.com/open-jarvis/OpenJarvis\n\nInstall this for me, then set up the morning digest. Tell me each step before you run it.",
+  "followups": [
+    {
+      "label": "Hear your first briefing",
+      "prompt": "Connect my Gmail and Calendar, then generate and play my first morning digest.",
+      "note": "One sign-in covers Gmail, Calendar and Tasks. The digest is read out loud."
+    },
+    {
+      "label": "Research something",
+      "prompt": "Use the deep research assistant on this question and show me the sources: [your question]",
+      "note": "It searches the web and your own documents and cites what it used."
+    },
+    {
+      "label": "Watch something for me",
+      "prompt": "Set up the monitor to check [what you want watched] every hour and tell me when it changes.",
+      "note": "The monitor keeps running in the background with its own memory."
+    }
+  ],
+  "checklist_title": "Set it up in five steps",
+  "checklist": [
+    {
+      "title": "Open Claude Code",
+      "detail": "The Code tab in the Claude desktop app (or the claude command in a terminal), on a paid Claude plan. You can also install OpenJarvis without Claude: its page has a one-line installer for Mac, Windows and Linux."
+    },
+    {
+      "title": "Paste the link and the request",
+      "detail": "Claude reads the project's install steps and runs the one-command installer. It takes about three minutes on a good connection."
+    },
+    {
+      "title": "Give it about three minutes",
+      "detail": "It downloads and sets itself up on your own computer. Nothing is sent anywhere."
+    },
+    {
+      "title": "Connect email and calendar",
+      "detail": "One Google sign-in covers Gmail, Calendar and Tasks. This is what the morning digest reads."
+    },
+    {
+      "title": "Play your first digest",
+      "detail": "Ask for your first morning digest. After that it can run every morning on its own."
+    }
+  ],
+  "safety": [
+    "**It runs on your own computer.** That is the point of it, and it means it is only as fast as your machine. An older laptop will feel slow.",
+    "**You choose what it connects to.** Only connect the email and calendar you want it to read.",
+    "**It is a research project.** Expect rough edges and updates; check the project's page if something fails.",
+    "**We have not installed it ourselves yet.** Everything here is from the project's own page."
+  ],
+  "email": {
+    "tested": "We checked OpenJarvis against its own page: 17,277 stars, built at Stanford, eight assistants that run on your own computer, one-command install in about three minutes. The steps are on your guide page: plan.signalservice.ai/jarvis",
+    "safety": "It runs on your own computer, so it's only as fast as your laptop. We haven't installed it ourselves yet.",
+    "question": "which assistant would you switch on first?"
+  },
+  "dm": {
+    "keyword": "JARVIS",
+    "replies": [
+      "Sent! Check your DMs for the guide.",
+      "Done, the guide is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free setup for your own Jarvis: the link, the one request to paste, and how to hear your first morning briefing.\nTap below 👇",
+    "button": "Get the guide",
+    "link": "https://plan.signalservice.ai/jarvis?utm_source=instagram&utm_medium=autodm&utm_campaign=jarvis"
+  }
+}
