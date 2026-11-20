@@ -5,7 +5,7 @@
   "checked": "20 Nov 2026",
   "description": "The strict tutor prompt from the reel: Claude finds your level, builds a five-step plan, teaches one step at a time, tests you after each one, and won't let you move on until you pass.",
   "page": {
-    "title": "Make Claude teach you anything, and test you on it",
+    "title": "Study for any exam with Claude, and get tested on it",
     "mark": "The strict tutor",
     "sub": "One free prompt from the reel. Claude asks three questions to find your level, builds a five-step plan, teaches one step at a time, and tests you after each one. Get it wrong and it says \"not yet\", explains it a different way, and asks again.",
     "prompt_how": "Paste this into any Claude chat (the normal chat is fine, and so is the free plan). Change the three parts in square brackets first.",
