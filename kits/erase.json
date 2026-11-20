@@ -1,0 +1,110 @@
+{
+  "slug": "erase",
+  "keyword": "ERASE",
+  "name": "Erase prompt guide",
+  "checked": "20 Nov 2026",
+  "description": "The erase prompt from the reel: Claude finds where your details are listed, writes the removal request for each site using the privacy law where you live, and builds a tracker with the date each one has to reply by.",
+  "page": {
+    "title": "Get your details taken off the internet",
+    "mark": "The erase prompt",
+    "sub": "One free prompt from the reel. Claude looks for where your details are listed, writes the removal request for each site, and builds a tracker with the date each one has to reply by. You send the requests.",
+    "prompt_how": "Paste this into a Claude chat with web search turned on. Fill in your own name and where you live first.",
+    "prompt_note": "Use it on your own name only. It will never need your passwords, ID numbers or bank details.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it for Manchester, in the UK",
+    "results": [
+      {
+        "name": "It listed 10 sites, with where to remove yourself",
+        "ok": true
+      },
+      {
+        "name": "It wrote the requests, quoting the UK's right to erasure",
+        "ok": true
+      },
+      {
+        "name": "It built a tracker with a reply-by date (one month)",
+        "ok": true
+      },
+      {
+        "name": "It said plainly what can't be removed",
+        "ok": true
+      },
+      {
+        "name": "Searching for a real person's listings",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We ran it in a normal Claude chat for **Manchester, in the UK**, with **no real name**. It listed **10 sites**, wrote **two ready-to-send requests** (one quoting the UK's right to erasure, with the one-month deadline), built a **tracker** with the date each site has to reply by, and listed **six kinds of thing that can't be removed**. Its best tip came first: most UK people-search sites get their data from the open electoral register, and you can opt out of that for free. **Not run by us:** the search for a real person's listings. We don't put anyone's name into a search for a video.",
+    "tip": "**The tip:** send the requests from a spare email address, not your main one, and check the sites again every three months. Listings often come back.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "Act as my privacy assistant. I want my personal details taken off the internet. This is for me only: I will only give you my own name.\n\nMy name: [your full name]\nWhere I live: [city and country, or US state]\nOld usernames or emails I've used: [optional]\n\nDo this in order:\n1. Search the web for where my details are listed. Check three kinds of places: people-search sites, data brokers, and old accounts or profiles. Only list things you actually found, with the link. If you can't search the web, say so and go to step 2.\n2. Give me the 10 biggest people-search and data broker sites for where I live, each with its official opt-out or removal page.\n3. For every site in steps 1 and 2, write the removal request, ready to send. Use the privacy law for where I live if there is one (for example the right to erasure in the UK and EU, or California's privacy law), and say which law you used. If no law applies, use the site's own opt-out process.\n4. Build me a tracker: site, what it shows, how to remove it, date sent, and the date they must reply by.\n5. Tell me honestly what can't be removed (news stories, court records, things other people posted) and what to do instead.\nNever ask for my passwords, ID numbers or bank details. Start now.",
+  "followups": [
+    {
+      "label": "If a site ignores you",
+      "prompt": "It's been more than the reply-by date and [site] hasn't answered. Write my follow-up, then tell me who to complain to where I live and write that complaint too.",
+      "note": "In the UK that's the Information Commissioner's Office. Claude will name the right body for your country."
+    },
+    {
+      "label": "Old accounts",
+      "prompt": "Here are the old usernames and emails I've used: [list them]. For each service I might still have an account with, give me the account-deletion page and the steps, and write the request to send if there's no button.",
+      "note": "For the accounts you forgot you had."
+    },
+    {
+      "label": "Check again in three months",
+      "prompt": "Here is my tracker from last time: [paste it]. Tell me which sites to check again today and what to do if my details are back.",
+      "note": "Records often reappear, so save your tracker."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Fill in your own name and where you live",
+      "detail": "The country (or US state) matters: it decides which privacy law Claude quotes."
+    },
+    {
+      "title": "Paste it into Claude with web search on",
+      "detail": "It searches, lists what it found with links, then adds the biggest sites for where you live."
+    },
+    {
+      "title": "Send the requests yourself",
+      "detail": "Use each site's own opt-out form first, and paste the request into it. Claude can't send anything for you."
+    },
+    {
+      "title": "Fill in the tracker",
+      "detail": "Write down the date you sent each one. If the reply-by date passes, use the follow-up prompt below."
+    },
+    {
+      "title": "Check again in three months",
+      "detail": "Listings often come back. Run the prompt again and compare it with your tracker."
+    }
+  ],
+  "safety": [
+    "**Your own name only.** Don't use this to look anyone else up.",
+    "**You send the requests, not Claude.** It can't delete anything itself.",
+    "**Some things can't be removed:** news stories, court records, company filings, and things other people posted. The prompt tells you what to do instead.",
+    "**Don't send ID unless a site truly needs it,** and never give passwords or bank details to anyone.",
+    "**This isn't legal advice.** Privacy law is different in every country; where there is no law, sites usually still honour their own opt-out form.",
+    "**We have not run the search step on a real name.** Everything else here is from our own run."
+  ],
+  "email": {
+    "tested": "We ran the erase prompt for Manchester, in the UK, with no real name: it listed 10 sites, wrote the removal requests and built a tracker with the date each site has to reply by. The prompt is on your guide page: plan.signalservice.ai/erase",
+    "safety": "You send the requests, some things can't be removed, and it's for your own name only.",
+    "question": "have you ever searched your own name and been surprised?"
+  },
+  "dm": {
+    "keyword": "ERASE",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free erase prompt: Claude finds where your details are listed, writes each removal request and builds your tracker. For your own name only.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/erase?utm_source=instagram&utm_medium=autodm&utm_campaign=erase"
+  }
+}
