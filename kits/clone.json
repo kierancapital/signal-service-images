@@ -1,0 +1,105 @@
+{
+  "slug": "clone",
+  "keyword": "CLONE",
+  "name": "Replica Skill setup guide",
+  "checked": "20 Nov 2026",
+  "description": "Replica Skill, the eleven free Claude skills from the reel: they study an app you pay for, rebuild your own version screen by screen, test it, and fix what its users complain about.",
+  "page": {
+    "title": "Build your own version of an app you pay for",
+    "mark": "Replica Skill",
+    "sub": "Eleven free Claude skills from the reel. They study the app, rebuild your own version screen by screen, test it for bugs, and fix what its users complain about in real reviews.",
+    "prompt_how": "Paste this into Claude Code (or the Code tab in the Claude desktop app). It installs all eleven skills.",
+    "prompt_note": "No Claude Code? Scroll down for a plain prompt that builds a simple tool in any Claude chat.",
+    "tested_label": "what we checked",
+    "tested_title": "We checked it against its own page",
+    "results": [
+      {
+        "name": "10,000 stars, MIT licence, free",
+        "ok": true
+      },
+      {
+        "name": "Eleven skills, no sign-up, no API key",
+        "ok": true
+      },
+      {
+        "name": "It copies what an app does, never its name, logo or content",
+        "ok": true
+      },
+      {
+        "name": "Building a full app with it ourselves",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We read the project's own page: **10,000 stars**, MIT licence, **eleven skills**, no sign-up and no API key. It says plainly what to expect: it rebuilds **what an app does, never what it owns**, and **a booking tool takes weeks**, not minutes. The numbers in the reel (18 screens, a score of 86, 140 reviews) come from the project's own worked example. **Not checked by us:** building a full app with it.",
+    "tip": "**The tip:** run /replica-entrepreneur first, on its own. It reads the real reviews and tells you whether the app is worth rebuilding before you spend a weekend on it.",
+    "checklist_label": "step 3 · set it up"
+  },
+  "prompt": "https://github.com/Jakeschincariol/replica-skill\n\ninstall skill",
+  "followups": [
+    {
+      "label": "No Claude Code? Try this first",
+      "prompt": "I pay for [app name] but I only use it for three things: [thing 1], [thing 2], [thing 3]. Build me my own simple tool that does just those three things, as a single page I can use right here. Give it a new name and its own look. Don't copy the original's name, logo or wording.",
+      "note": "This is our own prompt. It works in any Claude chat and is best for small tools: trackers, calculators, planners, simple forms."
+    },
+    {
+      "label": "Study the app, then see what its users hate",
+      "prompt": "/replica-recon [the app's website]\n\nThen: /replica-entrepreneur",
+      "note": "The first maps the screens and features. The second reads real reviews and lists the top complaints, each with a link."
+    },
+    {
+      "label": "Build it, then score it",
+      "prompt": "/replica-build\n\nThen: /replica-diff",
+      "note": "Builds your version screen by screen, then scores it against the original and lists what's missing."
+    }
+  ],
+  "checklist_title": "Set it up in five steps",
+  "checklist": [
+    {
+      "title": "Have Claude Code",
+      "detail": "The claude command in a terminal (or the Code tab in the Claude desktop app), on a paid Claude plan. The tools also need Python 3.8 or newer."
+    },
+    {
+      "title": "Paste the link and say install skill",
+      "detail": "Paste the two lines above. Claude downloads the eleven skills."
+    },
+    {
+      "title": "Start small",
+      "detail": "Pick a simple app you really use, like a booking page or a tracker. The project's own page says a booking tool takes weeks; a spreadsheet engine is far bigger."
+    },
+    {
+      "title": "Run them in order",
+      "detail": "Recon, architect, design, build, backend, test, diff, entrepreneur, brand, launch, deploy. Each one reads what the last one wrote."
+    },
+    {
+      "title": "Rename it before anyone sees it",
+      "detail": "Run /replica-brand for a new name, colours and logo. Nothing of the original app should be left."
+    }
+  ],
+  "safety": [
+    "**It copies what an app does, never what it owns.** No code, logo, name, wording or content from the original. Give yours a new name before anyone else sees it.",
+    "**A real app takes weeks, not minutes.** Small tools are quick; anything with accounts and payments is a proper project.",
+    "**Only study what you're allowed to read:** public pages and your own account. Check the app's terms first.",
+    "**If you plan to sell it, check the trademark and talk to a lawyer.** This isn't legal advice.",
+    "**We have not built a full app with it ourselves yet.** Everything here is from the project's own page."
+  ],
+  "email": {
+    "tested": "We checked Replica Skill against its own page: 10,000 stars, eleven free Claude skills that study an app, rebuild your own version and fix what its users complain about. The steps are on your guide page: plan.signalservice.ai/clone",
+    "safety": "It copies what an app does, never its name, logo or content, and a real app takes weeks, not minutes.",
+    "question": "which app would you stop paying for first?"
+  },
+  "dm": {
+    "keyword": "CLONE",
+    "replies": [
+      "Sent! Check your DMs for the guide.",
+      "Done, the guide is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free setup for building your own version of an app you pay for: the two lines to paste, the skills to run first, and a prompt you can try with no install.\nTap below 👇",
+    "button": "Get the guide",
+    "link": "https://plan.signalservice.ai/clone?utm_source=instagram&utm_medium=autodm&utm_campaign=clone"
+  }
+}
