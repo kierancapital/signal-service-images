@@ -1,0 +1,108 @@
+{
+  "slug": "five",
+  "keyword": "FIVE",
+  "name": "Five tested prompts guide",
+  "checked": "20 Nov 2026",
+  "description": "The five Claude prompts and skills from the reel, each one run by us first: test a business idea, test your CV, price the stuff you don't use, a strict tutor, and a skill that watches YouTube for you.",
+  "page": {
+    "title": "Five Claude prompts we actually tested",
+    "mark": "All five, tested",
+    "sub": "Everyone posts Claude prompts. We ran these five ourselves before sharing them, and each link below opens its own free guide with the prompt, our result and the steps.",
+    "prompt_how": "Pick the one that fits what you need today. Each link opens its own guide with the full prompt to copy.",
+    "prompt_note": "Four are prompts for any Claude chat. The fifth is a free skill for Claude Code.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran all five ourselves",
+    "results": [
+      {
+        "name": "Business idea: 19 of 100 fake customers bought",
+        "ok": true
+      },
+      {
+        "name": "CV: 7 of 100 hiring managers said yes",
+        "ok": true
+      },
+      {
+        "name": "Old stuff: six things priced at $655",
+        "ok": true
+      },
+      {
+        "name": "Tutor: both wrong answers caught",
+        "ok": true
+      },
+      {
+        "name": "YouTube skill: an 18-minute video in 88 seconds",
+        "ok": true
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "Every number in the reel is from our own run. A **$39 snack box** tested on 100 fake customers: **19 bought**, 81 passed. A sample CV tested on 100 hiring managers: **7 said yes**. Photos of six things we don't use: priced at **$655**. A strict tutor: we gave it **two wrong answers on purpose** and it caught both. A skill that watches YouTube: an **18-minute video back in 88 seconds**. **These are our results. Yours will be different**, because your idea, CV and stuff are different.",
+    "tip": "**The tip:** start with the one that solves this week's problem. One prompt you actually use beats five you save.",
+    "checklist_label": "step 3 · use them"
+  },
+  "prompt": "1. Test your business idea on 100 fake customers\nplan.signalservice.ai/idea\n\n2. Test your CV on 100 hiring managers\nplan.signalservice.ai/hired\n\n3. Price the stuff you don't use\nplan.signalservice.ai/sell\n\n4. A tutor that won't let you move on\nplan.signalservice.ai/tutor\n\n5. Claude watches YouTube and keeps what it learned (a free skill)\nplan.signalservice.ai/watch",
+  "followups": [
+    {
+      "label": "Not sure which one to use",
+      "prompt": "Here's what I'm working on this week: [describe it in two lines]. I have five prompts: one tests a business idea on 100 fake customers, one tests a CV on 100 hiring managers, one prices things I want to sell from photos, one is a strict tutor for any topic, and one learns from a YouTube video. Which one helps me most this week, and what exactly should I give it?",
+      "note": "Paste this into Claude and it will point you at the right one."
+    },
+    {
+      "label": "Test any prompt before you trust it",
+      "prompt": "I found this prompt online: [paste it]. Before I rely on it, run it on a small example, tell me what it actually did, where it went wrong, and how you'd change the prompt to fix that.",
+      "note": "Almost nobody tests the prompts they share. This is how to test one in two minutes."
+    },
+    {
+      "label": "Make a prompt your own",
+      "prompt": "Here is a prompt I use: [paste it]. Rewrite it for my situation: [describe your job or business in two lines]. Keep the steps, change the examples, and tell me what you changed.",
+      "note": "A prompt written for someone else rarely fits first time."
+    }
+  ],
+  "checklist_title": "Use them in five steps",
+  "checklist": [
+    {
+      "title": "Pick one",
+      "detail": "Open the guide for the one that fits what you need today."
+    },
+    {
+      "title": "Copy the prompt",
+      "detail": "Each guide has a copy button and shows our own result so you know what to expect."
+    },
+    {
+      "title": "Paste it into Claude and add your details",
+      "detail": "Your idea, your CV, your photos, your topic. The square brackets show where they go."
+    },
+    {
+      "title": "For the YouTube one, use Claude Code",
+      "detail": "It is a skill, not a prompt, so it needs Claude Code (the Code tab in the Claude desktop app), on a paid Claude plan."
+    },
+    {
+      "title": "Run it on your own thing",
+      "detail": "Your idea, your CV, your stuff. Our numbers are ours; yours will be different."
+    }
+  ],
+  "safety": [
+    "**These are our results, yours will be different.**",
+    "**AI customers and AI hiring managers are kinder than real ones.** Treat the numbers as a first test, not a promise.",
+    "**The prices are estimates,** not offers. Check recent sold listings before you list anything.",
+    "**The tutor can still get things wrong.** Double-check anything that matters."
+  ],
+  "email": {
+    "tested": "We ran all five ourselves: 19 of 100 fake customers bought our idea, 7 of 100 hiring managers said yes to a CV, six old things were priced at $655, a tutor caught both our wrong answers, and a skill watched an 18-minute video in 88 seconds. All five are on your guide page: plan.signalservice.ai/five",
+    "safety": "These are our results. Yours will be different.",
+    "question": "which of the five are you trying first?"
+  },
+  "dm": {
+    "keyword": "FIVE",
+    "replies": [
+      "Sent! Check your DMs for all five.",
+      "Done, all five are in your DMs.",
+      "Just sent them over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere are all five Claude prompts we tested, each with its own free guide and the result we got.\nTap below 👇",
+    "button": "Get all five",
+    "link": "https://plan.signalservice.ai/five?utm_source=instagram&utm_medium=autodm&utm_campaign=five"
+  }
+}
