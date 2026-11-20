@@ -1,0 +1,104 @@
+{
+  "slug": "search",
+  "keyword": "SEARCH",
+  "name": "AI search setup guide",
+  "checked": "19 Nov 2026",
+  "description": "GEO, the free Claude skill from the reel: paste in your website and it checks how ChatGPT, Claude, Gemini and Google's AI see your business, gives you a 60-second snapshot, and writes the fixes.",
+  "page": {
+    "title": "Get your business into the AI answer",
+    "mark": "GEO skill",
+    "sub": "People now ask ChatGPT, not Google. GEO is the free Claude skill from the reel: it checks how AI sees your website, shows you what's missing, and writes the fixes for you.",
+    "prompt_how": "Run this one command in a terminal to install the skill. Then open Claude Code and type the command under it.",
+    "prompt_note": "No Claude Code? Scroll down for a plain prompt you can paste into any Claude chat for a quick first look.",
+    "tested_label": "what we checked",
+    "tested_title": "We checked it against its own page",
+    "results": [
+      {
+        "name": "11,773 stars, MIT licence, free",
+        "ok": true
+      },
+      {
+        "name": "13 specialist skills, a 60-second snapshot",
+        "ok": true
+      },
+      {
+        "name": "It writes the fixes (llms.txt, schema, a report)",
+        "ok": true
+      },
+      {
+        "name": "Running it on a real business website",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We read the project's own page: **11,773 stars**, MIT licence, **13 specialist skills**. The quick command gives a **60-second snapshot** of how AI sees your site; the full audit checks whether AI crawlers can read it, how quotable each page is, where your brand is mentioned, and the technical basics, then writes the fixes (an llms.txt file, schema, a client-ready report). **Not checked by us:** running it on a real business website.",
+    "tip": "**The tip:** before you install anything, ask ChatGPT and Claude the question your customers would ask (\"best [what you do] near [your town]\"). If you're not named, that's the gap this skill works on.",
+    "checklist_label": "step 3 · set it up"
+  },
+  "prompt": "curl -fsSL https://raw.githubusercontent.com/zubair-trabzada/geo-seo-claude/main/install.sh | bash\n\nThen, in Claude Code:\n/geo quick yourbusiness.com",
+  "followups": [
+    {
+      "label": "No Claude Code? Try this first",
+      "prompt": "Act as a customer. Ask yourself the five questions someone would ask an AI before hiring a [what you do] in [your town]. Answer each as you normally would, then tell me whether you named [your business name], who you named instead, and what on their websites made you pick them.",
+      "note": "This is our own prompt. It works in any Claude chat and shows the gap in a minute."
+    },
+    {
+      "label": "The full audit",
+      "prompt": "/geo audit yourbusiness.com",
+      "note": "The longer check with every specialist. It ends with a list of fixes, biggest first."
+    },
+    {
+      "label": "Write the fixes",
+      "prompt": "/geo llmstxt yourbusiness.com",
+      "note": "Writes the small file that tells AI what your site is about. Your web person can add it in minutes."
+    }
+  ],
+  "checklist_title": "Set it up in five steps",
+  "checklist": [
+    {
+      "title": "Have Claude Code",
+      "detail": "The claude command in a terminal (or the Code tab in the Claude desktop app), on a paid Claude plan. It also needs Python and Git."
+    },
+    {
+      "title": "Run the one command",
+      "detail": "It installs the skill into Claude Code in its own folder. Windows has its own command on the project's page."
+    },
+    {
+      "title": "Type /geo quick and your website",
+      "detail": "You get the 60-second snapshot: can AI read it, is it quotable, is your brand mentioned."
+    },
+    {
+      "title": "Fix the biggest gap first",
+      "detail": "Ask it to write the fixes, then send them to whoever runs your website."
+    },
+    {
+      "title": "Check again in a month",
+      "detail": "Run the quick check again and compare. Changes take weeks to show up in AI answers."
+    }
+  ],
+  "safety": [
+    "**No tool can promise you a ranking.** This shows what AI sees and what to fix; results take weeks and nobody can guarantee them.",
+    "**Only audit a website you own or work on.**",
+    "**Read the fixes before they go live.** Make sure every claim about your business is true.",
+    "**We have not run it on a real site ourselves yet.** Everything here is from the project's own page."
+  ],
+  "email": {
+    "tested": "We checked the GEO skill against its own page: 11,773 stars, 13 specialist skills, a 60-second snapshot of how AI sees your website, and it writes the fixes. The steps are on your guide page: plan.signalservice.ai/search",
+    "safety": "No tool can promise you a ranking, and we haven't run it on a real site ourselves yet.",
+    "question": "does ChatGPT name your business when you ask it?"
+  },
+  "dm": {
+    "keyword": "SEARCH",
+    "replies": [
+      "Sent! Check your DMs for the guide.",
+      "Done, the guide is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free setup for getting your business into the AI answer: the one command, the 60-second check, and a prompt you can try with no install.\nTap below 👇",
+    "button": "Get the guide",
+    "link": "https://plan.signalservice.ai/search?utm_source=instagram&utm_medium=autodm&utm_campaign=search"
+  }
+}
