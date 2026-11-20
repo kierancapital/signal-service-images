@@ -1,0 +1,104 @@
+{
+  "slug": "grow",
+  "keyword": "GROW",
+  "name": "Instagram skills setup guide",
+  "checked": "20 Nov 2026",
+  "description": "Instagram Agent Skill, the thirteen free Claude skills from the reel: they find what's working in your niche, write and score your reel hooks, score your profile out of 100, and plan your week. Claude writes, you post.",
+  "page": {
+    "title": "Let Claude run your Instagram",
+    "mark": "Instagram Agent Skill",
+    "sub": "Thirteen free Claude skills from the reel. They find what's working in your niche, write your reel and score the hook before you film, score your profile out of 100, and plan your week. Claude writes, you post.",
+    "prompt_how": "Paste this into Claude Code (or the Code tab in the Claude desktop app). It installs all thirteen skills and checks the first one works.",
+    "prompt_note": "No Claude Code? Scroll down for a plain prompt that works in any Claude chat.",
+    "tested_label": "what we checked",
+    "tested_title": "We checked it against its own page",
+    "results": [
+      {
+        "name": "Over 7,000 stars, MIT licence, free",
+        "ok": true
+      },
+      {
+        "name": "Thirteen skills, no sign-up, no API key",
+        "ok": true
+      },
+      {
+        "name": "Nothing is posted for you: it writes, you post",
+        "ok": true
+      },
+      {
+        "name": "Running it on a real account",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We read the project's own page: **over 7,000 stars**, MIT licence, **thirteen skills**, with no sign-up and no API key. It doesn't connect to your Instagram account: it writes the reel, the caption, the profile and the weekly plan, and **you post**. Its hook scorer and caption checker run on your own computer. **Not checked by us:** running it on a real account.",
+    "tip": "**The tip:** start with /ig-profile. It takes two minutes, and fixing your bio and name line helps every reel you post afterwards.",
+    "checklist_label": "step 3 · set it up"
+  },
+  "prompt": "https://github.com/Jakeschincariol/instagram-agent-skill\n\nInstall this skill, then confirm /ig-reel works.",
+  "followups": [
+    {
+      "label": "No Claude Code? Try this first",
+      "prompt": "Act as an Instagram strategist. My account is about [your topic] for [who it's for]. Here is my bio and name line: [paste them]. Score the profile out of 100 against what a stranger needs to see in three seconds (who it's for, what they get, why you, what to do next), tell me what lost points, and rewrite the bio and name line. Then give me three reel ideas for this week, each with the first line I'd say out loud.",
+      "note": "This is our own prompt. It works in any Claude chat, with nothing to install."
+    },
+    {
+      "label": "Score your profile, then see what's working",
+      "prompt": "/ig-profile\n\nThen: /ig-viral",
+      "note": "The first scores your profile out of 100 and rewrites what lost points. The second finds the reels beating their own account's average in your niche."
+    },
+    {
+      "label": "Write a reel, then plan the week",
+      "prompt": "/ig-reel [your idea in one line]\n\nThen: /ig-plan",
+      "note": "Three hooks from 26 formulas, scored, then the script. The plan covers what to post, when, and the ten accounts to talk to."
+    }
+  ],
+  "checklist_title": "Set it up in five steps",
+  "checklist": [
+    {
+      "title": "Have Claude Code",
+      "detail": "The claude command in a terminal (or the Code tab in the Claude desktop app), on a paid Claude plan. The scoring tools also need Python, which most Macs already have."
+    },
+    {
+      "title": "Paste the link and say install",
+      "detail": "Paste the two lines above. Claude downloads the skills and tells you when /ig-reel works."
+    },
+    {
+      "title": "Teach it your voice",
+      "detail": "Send Claude three of your own reels or captions and say \"write my voice.md from these\". Every skill reads that file, so the drafts sound like you."
+    },
+    {
+      "title": "Run /ig-profile, then /ig-plan",
+      "detail": "Fix the profile first, then get the week's plan. Film and post it yourself."
+    },
+    {
+      "title": "Film and post it yourself",
+      "detail": "Nothing is posted for you. Read every draft, change what doesn't sound like you, then post."
+    }
+  ],
+  "safety": [
+    "**No tool can promise you followers.** This gives you better ideas, hooks and a plan; you still have to film and post.",
+    "**It never posts for you.** It doesn't log in to Instagram or connect to your account.",
+    "**Read every draft before you post it.** Make sure it's true and sounds like you.",
+    "**We have not run it on a real account ourselves yet.** Everything here is from the project's own page."
+  ],
+  "email": {
+    "tested": "We checked Instagram Agent Skill against its own page: over 7,000 stars, thirteen free Claude skills, no sign-up and no API key. It writes, you post. The steps are on your guide page: plan.signalservice.ai/grow",
+    "safety": "No tool can promise you followers, and we haven't run it on a real account ourselves yet.",
+    "question": "what's the one thing you never know what to post about?"
+  },
+  "dm": {
+    "keyword": "GROW",
+    "replies": [
+      "Sent! Check your DMs for the guide.",
+      "Done, the guide is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free setup for the 13 Instagram skills: the two lines to paste, the four commands to start with, and a prompt you can try with no install.\nTap below 👇",
+    "button": "Get the guide",
+    "link": "https://plan.signalservice.ai/grow?utm_source=instagram&utm_medium=autodm&utm_campaign=grow"
+  }
+}
