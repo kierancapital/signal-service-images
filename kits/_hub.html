@@ -75,15 +75,21 @@ li a:hover,li a:focus-visible{background:var(--rowhover);outline:none}
 </div>
 <script>
 const KITS = /*KITS*/[];
+// 2026-11-20: a row whose date is still in the future stays hidden until that moment (UK time). So a guide can be published days ahead and joins the list by
+// itself at the minute its reel goes out; nothing has to run at that time. (Kieran: the bio link only gets a guide once its reel is up.)
+let UK_NOW;
+try { const P = Object.fromEntries(new Intl.DateTimeFormat("en-GB", {timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23"}).formatToParts(new Date()).map((p) => [p.type, p.value])); UK_NOW = `${P.year}-${P.month}-${P.day} ${P.hour}:${P.minute}`; }
+catch (e) { UK_NOW = new Date().toISOString().slice(0, 16).replace("T", " "); }
+const LIVE = KITS.filter((k) => !k.date || String(k.date).slice(0, 16) <= UK_NOW);
 const KIT_HOST = "https://plan.signalservice.ai/"; // absolute, so the list works on any address that serves it
 const list = document.getElementById("list"), q = document.getElementById("q"), empty = document.getElementById("empty");
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>';
 function draw(term){
   const words = term.toLowerCase().split(/\s+/).filter(Boolean);
-  const shown = KITS.filter((k) => words.every((w) => (k.title + " " + k.line + " " + (k.tags || "")).toLowerCase().includes(w)));
+  const shown = LIVE.filter((k) => words.every((w) => (k.title + " " + k.line + " " + (k.tags || "")).toLowerCase().includes(w)));
   list.innerHTML = shown.map((k) => `<li><a href="${KIT_HOST}${encodeURIComponent(k.slug)}?utm_source=prompts&utm_medium=bio">` +
-    `<img class="thumb" src="${esc(k.cover)}" alt="" loading="lazy"><span class="txt"><span class="title">${esc(k.title)}${k === KITS[0] ? '<span class="new">NEW</span>' : ""}</span>` +
+    `<img class="thumb" src="${esc(k.cover)}" alt="" loading="lazy"><span class="txt"><span class="title">${esc(k.title)}${k === LIVE[0] ? '<span class="new">NEW</span>' : ""}</span>` +
     `<span class="line">${esc(k.line)}</span></span><span class="go">${arrow}</span></a></li>`).join("");
   empty.hidden = shown.length > 0;
 }
