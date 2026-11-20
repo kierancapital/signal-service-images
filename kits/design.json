@@ -1,0 +1,104 @@
+{
+  "slug": "design",
+  "keyword": "DESIGN",
+  "name": "Impeccable setup guide",
+  "checked": "20 Nov 2026",
+  "description": "Impeccable, the free design skill from the reel: 24 commands that make Claude's websites bolder, fix the fonts and colour, review the page like a designer, and catch what makes a site look AI-made.",
+  "page": {
+    "title": "Make Claude design your website like a pro",
+    "mark": "Impeccable",
+    "sub": "The free design skill from the reel. It gives Claude 24 design commands and checks every page against 62 rules for what makes a site look AI-made, so yours doesn't.",
+    "prompt_how": "Run this one command in a terminal, inside your website's folder. Then reload Claude Code and type the command under it.",
+    "prompt_note": "No Claude Code? Scroll down for a plain prompt that works in any Claude chat.",
+    "tested_label": "what we checked",
+    "tested_title": "We checked it against its own page",
+    "results": [
+      {
+        "name": "Over 100,000 stars, Apache licence, free",
+        "ok": true
+      },
+      {
+        "name": "24 commands, 62 rules, no API key",
+        "ok": true
+      },
+      {
+        "name": "The before and after in the reel are the project's own",
+        "ok": true
+      },
+      {
+        "name": "Running it on a real website ourselves",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We read the project's own page: **over 100,000 stars**, Apache licence, **24 commands** and **62 rules** that flag the usual tells (the same font on everything, purple-to-blue gradients, cards inside cards). The two website pictures in the reel are the project's own: the same model and the same brief, without the skill and with it. It says itself that it is **strongest on a page that already exists**. **Not checked by us:** running it on a real website.",
+    "tip": "**The tip:** point it at one part of the page, not the whole site. \"/impeccable critique the pricing section\" gets a much better answer than \"fix my website\".",
+    "checklist_label": "step 3 · set it up"
+  },
+  "prompt": "npx impeccable install\n\nThen, in Claude Code:\n/impeccable init",
+  "followups": [
+    {
+      "label": "No Claude Code? Try this first",
+      "prompt": "Act as a senior web designer reviewing my page. Here it is: [paste a screenshot or the link]. Tell me the three things that make it look generic or AI-made (for example: the same font everywhere, a purple-to-blue gradient, cards inside cards, grey text on a coloured background), ranked by what to fix first. For each one, tell me exactly what to change, in plain words I can hand to whoever builds the site.",
+      "note": "This is our own prompt. It works in any Claude chat, with nothing to install."
+    },
+    {
+      "label": "Review it, then make it bolder",
+      "prompt": "/impeccable critique the homepage\n\nThen: /impeccable bolder the hero section",
+      "note": "The review ranks what to fix first. Bolder is for a page that looks safe and forgettable."
+    },
+    {
+      "label": "Fonts, colour, then the last pass",
+      "prompt": "/impeccable typeset the homepage\n/impeccable colorize the homepage\n/impeccable polish the homepage",
+      "note": "Run them one at a time and look at the page after each."
+    }
+  ],
+  "checklist_title": "Set it up in five steps",
+  "checklist": [
+    {
+      "title": "Have Claude Code and a website project",
+      "detail": "The claude command in a terminal (or the Code tab in the Claude desktop app), on a paid Claude plan, opened in the folder that holds your site. The install command needs Node, which is free."
+    },
+    {
+      "title": "Run the one command",
+      "detail": "It finds Claude Code and installs the skill. When it offers the design check (the \"hook\"), say yes: that is the part that catches problems before you see them."
+    },
+    {
+      "title": "Reload, then type /impeccable init",
+      "detail": "It reads your site and asks a few questions about who it's for. Every later command uses those answers."
+    },
+    {
+      "title": "Name a command and a target",
+      "detail": "For example: /impeccable critique the homepage. One section at a time works best."
+    },
+    {
+      "title": "Look before it goes live",
+      "detail": "Open the page on your phone and check every price, name and claim yourself."
+    }
+  ],
+  "safety": [
+    "**It works best on a page you already have.** Get a first version built, then polish it.",
+    "**It improves the look, not the facts.** Read every page before it goes live and check prices, names and claims.",
+    "**Only run it on a website you own or work on.**",
+    "**We have not run it on a real website ourselves yet.** Everything here is from the project's own page."
+  ],
+  "email": {
+    "tested": "We checked Impeccable against its own page: over 100,000 stars, 24 design commands and 62 rules that catch what makes a site look AI-made. The steps are on your guide page: plan.signalservice.ai/design",
+    "safety": "It works best on a page you already have, and we haven't run it on a real website ourselves yet.",
+    "question": "what's the one page on your site you'd fix first?"
+  },
+  "dm": {
+    "keyword": "DESIGN",
+    "replies": [
+      "Sent! Check your DMs for the guide.",
+      "Done, the guide is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free setup for making Claude design your website like a pro: the one command, the four to try first, and a prompt you can use with no install.\nTap below 👇",
+    "button": "Get the guide",
+    "link": "https://plan.signalservice.ai/design?utm_source=instagram&utm_medium=autodm&utm_campaign=design"
+  }
+}
