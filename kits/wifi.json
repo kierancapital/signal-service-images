@@ -1,0 +1,104 @@
+{
+  "slug": "wifi",
+  "keyword": "WIFI",
+  "name": "Slow Wi-Fi prompt guide",
+  "checked": "19 Nov 2026",
+  "description": "The free prompt from the reel: Claude runs a speed test, finds the apps eating your internet, checks whether your neighbours' Wi-Fi is crowding yours and lists every device on your network, then tells you what to change.",
+  "page": {
+    "title": "Find what's slowing your Wi-Fi",
+    "mark": "Slow Wi-Fi prompt",
+    "sub": "The one prompt from the reel. Claude runs four checks on your own computer, tells you in plain English what's slowing your internet down, and asks before it changes anything.",
+    "prompt_how": "Paste this into Claude Code (the Code tab in the Claude desktop app, not the normal chat).",
+    "prompt_note": "Claude asks permission before each check it runs. Say yes to the checks; nothing is changed until you say so.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it on our own Wi-Fi",
+    "results": [
+      {
+        "name": "Speed test: 526 Mbps down, 102 up",
+        "ok": true
+      },
+      {
+        "name": "9 networks nearby, 1 on our channel",
+        "ok": true
+      },
+      {
+        "name": "12 devices found, 10 with no name",
+        "ok": true
+      },
+      {
+        "name": "Changing router settings",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "On our Mac it measured **526 Mbps down and 102 up**, found **9 networks nearby** (only one sharing our channel), listed **12 devices** on the network (**10 with no name**, which is the list to go through) and flagged a **weak signal** where the computer sits. The fixes it pointed to: move closer or add a second access point, stay on the clear channel, close apps that sync in the background. **Not checked by us:** letting Claude change the router's settings, which needs your router's admin password.",
+    "tip": "**The tip:** run it once where your Wi-Fi feels slow and once next to the router. If the speed is fine by the router, the fix is where the router sits, not your internet plan.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "Find everything that's slowing my Wi-Fi down. Don't change anything yet.\n\nRun these four checks on this computer and tell me what you find in plain English:\n1. A speed test (download, upload and how steady the connection is).\n2. The apps using the most internet right now, biggest first.\n3. My Wi-Fi itself: signal strength, the channel I'm on, and how many nearby networks are on the same channel.\n4. Every device on my network. Flag any that have no name or that you can't identify.\n\nThen give me a short list of fixes, biggest win first, and say which ones need my router's settings. Ask me before you change anything.",
+  "followups": [
+    {
+      "label": "Name the unknown devices",
+      "prompt": "For each device with no name, tell me what it most likely is (maker and type) and how I can check.",
+      "note": "Most unnamed devices turn out to be yours: TVs, plugs, speakers. The list tells you which to look at."
+    },
+    {
+      "label": "Pick a clearer channel",
+      "prompt": "Which Wi-Fi channel near me is the least crowded, and how do I switch my router to it? Give me the steps for my router model.",
+      "note": "You change the channel in your router's own settings page."
+    },
+    {
+      "label": "Check again",
+      "prompt": "Run the speed test again and compare it with the first one.",
+      "note": "Do this after every change, so you know what actually helped."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Open Claude Code",
+      "detail": "The Code tab in the Claude desktop app (or the claude command in a terminal). It needs a paid Claude plan. The normal chat can't run the checks."
+    },
+    {
+      "title": "Paste the prompt",
+      "detail": "Claude asks before each check. They only read information from your own computer and network."
+    },
+    {
+      "title": "Say yes to each check",
+      "detail": "Claude asks before it runs each of the four checks. Say yes; nothing on your Wi-Fi is changed."
+    },
+    {
+      "title": "Read the list of fixes",
+      "detail": "Biggest win first. Most are things you do yourself: move the router, change the channel, close an app."
+    },
+    {
+      "title": "Test again",
+      "detail": "Ask it to run the speed test again after each change."
+    }
+  ],
+  "safety": [
+    "**Only run it on your own Wi-Fi.** Don't scan a network that isn't yours.",
+    "**It asks before it changes anything.** Read what it wants to change, and say no if you're not sure.",
+    "**Never paste your router's password into a chat you share.** If a fix needs the router's settings, you can make the change yourself from its steps.",
+    "**A slow connection can also be your provider.** If the speed is low even next to the router, call them with the numbers from the speed test."
+  ],
+  "email": {
+    "tested": "We ran it on our own Wi-Fi: 526 Mbps down, 9 networks nearby, 12 devices (10 with no name) and a weak signal where the computer sits. The prompt is on your guide page: plan.signalservice.ai/wifi",
+    "safety": "Only run it on your own Wi-Fi. It asks before it changes anything.",
+    "question": "what did it find on yours?"
+  },
+  "dm": {
+    "keyword": "WIFI",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free prompt that finds what's slowing your Wi-Fi: four checks, then exactly what to change.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/wifi?utm_source=instagram&utm_medium=autodm&utm_campaign=wifi"
+  }
+}
