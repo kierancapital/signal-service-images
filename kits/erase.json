@@ -106,5 +106,12 @@
     "text": "Hey! Thanks for commenting 🙌\nHere's the free erase prompt: Claude finds where your details are listed, writes each removal request and builds your tracker. For your own name only.\nTap below 👇",
     "button": "Get the prompt",
     "link": "https://plan.signalservice.ai/erase?utm_source=instagram&utm_medium=autodm&utm_campaign=erase"
+  },
+  "hub": {
+    "date": "2026-11-29 14:30",
+    "title": "Get your details taken off the internet",
+    "line": "One free prompt finds where you're listed, writes each removal request and tracks the replies.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/95e1b71c4e7377865189beb39d6c47cde1e97e8f/reels/2026-11-29/erase-cover.jpg",
+    "tags": "privacy data brokers people search remove delete personal data address phone gdpr footprint online safety"
   }
 }
