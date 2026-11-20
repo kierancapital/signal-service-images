@@ -100,5 +100,12 @@
     "text": "Hey! Thanks for commenting 🙌\nHere's the free Clip skill: one prompt to install it, then drop in a long video and get your shorts back.\nTap below 👇",
     "button": "Get the skill",
     "link": "https://plan.signalservice.ai/clip?utm_source=instagram&utm_medium=autodm&utm_campaign=clip"
+  },
+  "hub": {
+    "date": "2026-11-20 14:30",
+    "title": "Turn one long video into ready-to-post shorts",
+    "line": "One free skill: Claude picks the moments and cuts captioned shorts on your own computer.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/80aa9264fff5a4520f31788ed88b212bbb01f394/reels/2026-11-20/clip-cover.jpg",
+    "tags": "clipping clips shorts reels tiktok video editing podcast stream webinar captions content creator repurpose"
   }
 }
