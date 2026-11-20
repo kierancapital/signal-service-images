@@ -100,5 +100,12 @@
     "text": "Hey! Thanks for commenting 🙌\nHere's the free setup for your own Jarvis: the link, the one request to paste, and how to hear your first morning briefing.\nTap below 👇",
     "button": "Get the guide",
     "link": "https://plan.signalservice.ai/jarvis?utm_source=instagram&utm_medium=autodm&utm_campaign=jarvis"
+  },
+  "hub": {
+    "date": "2026-11-22 14:30",
+    "title": "Set up your own Jarvis",
+    "line": "OpenJarvis: eight free assistants on your own computer, with a morning briefing read out loud.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/f11f241153f0b2af53b301cb9f30aebea2f2ce37/reels/2026-11-22/jarvis-cover.jpg",
+    "tags": "jarvis assistant openjarvis stanford email calendar morning briefing productivity open source local ai"
   }
 }
