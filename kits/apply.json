@@ -100,5 +100,12 @@
     "text": "Hey! Thanks for commenting 🙌\nHere's the free setup for Career Ops: the one command, what to tell it about yourself, and how to score your first job.\nTap below 👇",
     "button": "Get the guide",
     "link": "https://plan.signalservice.ai/apply?utm_source=instagram&utm_medium=autodm&utm_campaign=apply"
+  },
+  "hub": {
+    "date": "2026-11-23 14:30",
+    "title": "Run your whole job hunt with Claude",
+    "line": "Career Ops: scans 180 companies, scores every job out of 5 against your CV, drafts the rest. You press submit.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/95363e239740ca093b14513aa9c9def992c2d1e0/reels/2026-11-23/apply-cover.jpg",
+    "tags": "jobs job search job hunt cv resume applications interview career hiring recruiter apply"
   }
 }
