@@ -1,0 +1,104 @@
+{
+  "slug": "clip",
+  "keyword": "CLIP",
+  "name": "Clip skill guide",
+  "checked": "19 Nov 2026",
+  "description": "The free Clip skill from the reel: give Claude one long video and it picks the moments worth posting and cuts each one into a vertical short with captions, a title and the post written for you. It runs on your own computer.",
+  "page": {
+    "title": "Turn one long video into ready-to-post shorts",
+    "mark": "Clip skill",
+    "sub": "The free skill from the reel. Claude listens to your whole video, picks the moments worth posting and cuts each one into a vertical short with captions, a title and the post written for you.",
+    "prompt_how": "Paste this into Claude Code (the Code tab in the Claude desktop app, not the normal chat). It installs the skill, then asks for your video.",
+    "prompt_note": "It looks long because the skill is inside it. Paste the whole thing once; after that you only say: clip this video.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it on a 28-minute NASA talk",
+    "results": [
+      {
+        "name": "28 min 40 s in, 8 shorts out, in 6 min 25 s",
+        "ok": true
+      },
+      {
+        "name": "Every short has captions, a title and a post",
+        "ok": true
+      },
+      {
+        "name": "The video never left our computer",
+        "ok": true
+      },
+      {
+        "name": "A link instead of a file, and Windows",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We gave it NASA Science Live's **Black Hole 101** (28 minutes 40 seconds, public domain). Listening took **4 minutes**, Claude picked **8 moments** in under a minute, and cutting took **a minute and a half**: **8 shorts in 6 minutes 25 seconds** on a Mac mini. The best one opens with \"What would happen if I stumbled into a black hole?\" and ends on the word spaghettification. **Not checked by us:** pasting a link instead of a file, and Windows.",
+    "tip": "**The tip:** watch each short once before you post it, and ask for a re-cut when a clip starts a sentence too late: \"start clip 3 two seconds earlier\".",
+    "checklist_label": "step 3 · set it up"
+  },
+  "prompt": "Install this skill for me, then confirm it works.\n\n1. Make the folder ~/.claude/skills/clip\n2. Save the first block below there as SKILL.md and the second as clip.py, exactly as written.\n3. Check that ffmpeg and faster-whisper are installed. If either is missing, tell me what you will install and wait for my yes.\n4. Then say: \"Clip is ready. Give me a long video you are allowed to clip.\"\n\n----- SKILL.md -----\n---\nname: clip\ndescription: Turn one long video (podcast, stream, webinar, interview) into ready-to-post vertical shorts with captions and titles. Use when the user says \"clip this\", \"/clip\", or gives a long video and wants shorts, Reels or TikToks.\n---\n\n# Clip: one long video in, ready-to-post shorts out\n\nYou pick the moments. `clip.py` (next to this file) does the two machine jobs on the user's own computer: it listens to the video, and it cuts the shorts. Nothing is uploaded and nothing is posted.\n\n## Before you start\n1. **Permission.** Only clip a video the user owns or is allowed to clip (their own content, a creator's clipping programme, public-domain footage). If that is not clear, ask once.\n2. **Tools.** Check `ffmpeg -version` and `python3 -c \"import faster_whisper\"`. If one is missing, tell the user what you will install, wait for a yes, then install it:\n   - ffmpeg: `brew install ffmpeg` (Mac), `winget install ffmpeg` (Windows), `sudo apt install ffmpeg` (Linux)\n   - `python3 -m pip install faster-whisper` (and `yt-dlp` only if they gave a link)\n\n## The steps\n1. **Listen.** `python3 clip.py listen \"<video file or link>\"`. It prints the folder it made. Read the whole `transcript.txt` there. Every line starts with its start and end time in seconds, like `[754.2-761.8]`.\n2. **Pick the moments** (8 unless the user asks for another number). A moment is worth posting when:\n   - its first sentence makes sense to a stranger and makes them want the next one (a question, a surprising claim, a number, a story starting);\n   - it holds one idea and reaches a payoff (the answer, the punchline, the lesson);\n   - it runs 20 to 60 seconds, and starts and ends on a full sentence. Use the line times; never cut mid-sentence;\n   - it does not need anything said earlier to be understood.\n   Skip intros, housekeeping, sponsor reads and \"thanks for watching\". Do not pick two moments that make the same point.\n3. **Write `picks.json`** in that folder: a list, best first, each with `start`, `end` (seconds), `title` (up to 8 words, plain, what the viewer gets; shown at the top of the short) and `caption` (one or two sentences to post with it, no hashtags unless asked).\n4. **Cut.** `python3 clip.py cut \"<video file>\" \"<folder>/picks.json\"`. Add `--layout crop` when one person stays in the middle of the frame; the default keeps the whole picture over a blurred background.\n5. **Report** in a short table: file, title, where it starts in the original, length, and one line on why it should hold. Say where the files and `posts.txt` are. Offer to re-cut any clip (earlier, later, shorter, new title).\n\n## Rules\n- Never post, upload or schedule anything. You make files; the user posts.\n- If the transcript is in another language, write titles and captions in that language.\n- If a step fails, show the error in one line and fix it; do not start over.\n\n----- clip.py -----\n#!/usr/bin/env python3\n\"\"\"clip.py: the two machine steps of the Clip skill (Signal Service, free to use and change).\n\n  python3 clip.py listen <video file or link> [--model small]\n      Writes clip_work/<name>/transcript.txt (every line with its start and end second) and words.json.\n  python3 clip.py cut <video file> <picks.json> [--layout blur|crop]\n      Writes clip_work/<name>/shorts/01-<title>.mp4 ... (1080x1920, captions burned in) and posts.txt.\n\nNeeds: Python 3.9+, ffmpeg, and `pip install faster-whisper` (plus `pip install yt-dlp` if you pass a link).\nEverything runs on your own computer. Only use videos you own or have permission to clip.\n\"\"\"\nimport json, os, re, subprocess, sys, time\n\nFF = os.environ.get(\"FFMPEG\", \"ffmpeg\")\n\n\ndef run(cmd, **kw):\n    return subprocess.run(cmd, check=True, **kw)\n\n\ndef workdir(video):\n    name = re.sub(r\"[^A-Za-z0-9_-]+\", \"-\", os.path.splitext(os.path.basename(video))[0]).strip(\"-\")[:60] or \"video\"\n    d = os.path.join(\"clip_work\", name)\n    os.makedirs(d, exist_ok=True)\n    return d\n\n\ndef listen(src, model=\"small\"):\n    t0 = time.time()\n    if src.startswith(\"http\"):\n        os.makedirs(\"clip_work\", exist_ok=True)\n        out = os.path.join(\"clip_work\", \"source.mp4\")\n        run([sys.executable, \"-m\", \"yt_dlp\", \"-q\", \"-f\", \"bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b\",\n             \"--merge-output-format\", \"mp4\", \"-o\", out, src])\n        src = out\n    d = workdir(src)\n    wav = os.path.join(d, \"audio.wav\")\n    run([FF, \"-nostdin\", \"-loglevel\", \"error\", \"-y\", \"-i\", src, \"-vn\", \"-ac\", \"1\", \"-ar\", \"16000\", wav])\n    from faster_whisper import WhisperModel\n    segs, info = WhisperModel(model, compute_type=\"int8\").transcribe(wav, word_timestamps=True, vad_filter=True)\n    words, lines = [], []\n    for s in segs:\n        lines.append(f\"[{s.start:.1f}-{s.end:.1f}] {s.text.strip()}\")\n        for w in s.words or []:\n            words.append([w.word.strip(), round(w.start, 2), round(w.end, 2)])\n    json.dump(words, open(os.path.join(d, \"words.json\"), \"w\"))\n    open(os.path.join(d, \"transcript.txt\"), \"w\").write(\"\\n\".join(lines) + \"\\n\")\n    os.remove(wav)\n    print(json.dumps({\"video\": src, \"folder\": d, \"minutes\": round(info.duration / 60, 1), \"lines\": len(lines),\n                      \"words\": len(words), \"seconds_taken\": round(time.time() - t0)}))\n\n\ndef ass_time(t):\n    t = max(0, t)\n    return f\"{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}\"\n\n\ndef wrap(text, width):\n    out, line = [], \"\"\n    for w in text.split():\n        if line and len(line) + 1 + len(w) > width:\n            out.append(line); line = w\n        else:\n            line = (line + \" \" + w).strip()\n    return out + [line] if line else out\n\n\ndef make_ass(words, a, b, title, path):\n    \"\"\"Captions in chunks of up to three words (max 18 letters), and the title in a box at the top.\"\"\"\n    head = \"\"\"[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\nWrapStyle: 2\n\n[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\nStyle: Cap,Arial,92,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,7,2,2,60,60,470,1\nStyle: Title,Arial,62,&H00000000,&H00000000,&H00FFFFFF,&H00FFFFFF,-1,0,0,0,100,100,0,0,3,18,0,8,70,70,230,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n\"\"\"\n    ev = []\n    if title:\n        ev.append(f\"Dialogue: 1,{ass_time(0)},{ass_time(b - a)},Title,,0,0,0,,{(chr(92) + 'N').join(wrap(title, 26))}\")\n    ws = [w for w in words if w[1] >= a - 0.05 and w[2] <= b + 0.3]\n    chunk = []\n    chunks = []\n    for w in ws:\n        txt = \" \".join(x[0] for x in chunk + [w])\n        gap = chunk and w[1] - chunk[-1][2] > 0.6\n        if chunk and (len(chunk) >= 3 or len(txt) > 18 or gap or re.search(r\"[.!?,]$\", chunk[-1][0])):\n            chunks.append(chunk); chunk = []\n        chunk.append(w)\n    if chunk:\n        chunks.append(chunk)\n    for i, c in enumerate(chunks):\n        st = c[0][1] - a\n        en = (chunks[i + 1][0][1] - a) if i + 1 < len(chunks) else min(c[-1][2] - a + 0.4, b - a)\n        en = min(en, c[-1][2] - a + 1.2)\n        text = \" \".join(x[0] for x in c).upper().replace(\"{\", \"(\").replace(\"}\", \")\")\n        ev.append(f\"Dialogue: 0,{ass_time(st)},{ass_time(en)},Cap,,0,0,0,,{text}\")\n    open(path, \"w\", encoding=\"utf-8\").write(head + \"\\n\".join(ev) + \"\\n\")\n\n\ndef cut(video, picks_path, layout=\"blur\"):\n    t0 = time.time()\n    d = workdir(video)\n    words = json.load(open(os.path.join(d, \"words.json\")))\n    picks = json.load(open(picks_path))\n    out_dir = os.path.join(d, \"shorts\")\n    os.makedirs(out_dir, exist_ok=True)\n    video = os.path.abspath(video)\n    posts, made = [], []\n    for i, p in enumerate(picks, 1):\n        a, b = float(p[\"start\"]), float(p[\"end\"])\n        slug = re.sub(r\"[^a-z0-9]+\", \"-\", p.get(\"title\", \"clip\").lower()).strip(\"-\")[:40]\n        name = f\"{i:02d}-{slug}.mp4\"\n        make_ass(words, a, b, p.get(\"title\", \"\"), os.path.join(out_dir, f\"caps_{i:02d}.ass\"))\n        if layout == \"crop\":\n            vf = f\"scale=-2:1920,crop=1080:1920,ass=caps_{i:02d}.ass\"\n            fc = [\"-vf\", vf]\n        else:\n            fc = [\"-filter_complex\",\n                  \"[0:v]split[x][y];[x]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=24:4,eq=brightness=-0.08[bg];\"\n                  f\"[y]scale=1080:-2[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,ass=caps_{i:02d}.ass[v]\", \"-map\", \"[v]\", \"-map\", \"0:a?\"]\n        run([FF, \"-nostdin\", \"-loglevel\", \"error\", \"-y\", \"-ss\", f\"{a:.2f}\", \"-t\", f\"{b - a:.2f}\", \"-i\", video, *fc,\n             \"-r\", \"30\", \"-c:v\", \"libx264\", \"-preset\", \"veryfast\", \"-crf\", \"20\", \"-pix_fmt\", \"yuv420p\",\n             \"-c:a\", \"aac\", \"-b:a\", \"160k\", \"-movflags\", \"+faststart\", name], cwd=out_dir)\n        os.remove(os.path.join(out_dir, f\"caps_{i:02d}.ass\"))\n        made.append({\"file\": os.path.join(out_dir, name), \"seconds\": round(b - a, 1), \"title\": p.get(\"title\", \"\")})\n        posts.append(f\"{name}\\nTitle: {p.get('title', '')}\\nCaption: {p.get('caption', '')}\\nFrom {int(a // 60)}:{int(a % 60):02d} to {int(b // 60)}:{int(b % 60):02d} of the original\\n\")\n    open(os.path.join(out_dir, \"posts.txt\"), \"w\", encoding=\"utf-8\").write(\"\\n\".join(posts))\n    print(json.dumps({\"shorts\": made, \"folder\": out_dir, \"seconds_taken\": round(time.time() - t0)}, indent=1))\n\n\nif __name__ == \"__main__\":\n    a = sys.argv[1:]\n    opt = lambda k, dflt: a[a.index(k) + 1] if k in a else dflt\n    if len(a) >= 2 and a[0] == \"listen\":\n        listen(a[1], opt(\"--model\", \"small\"))\n    elif len(a) >= 3 and a[0] == \"cut\":\n        cut(a[1], a[2], opt(\"--layout\", \"blur\"))\n    else:\n        sys.exit(__doc__)\n",
+  "followups": [
+    {
+      "label": "Clip your video",
+      "prompt": "Clip this video into 8 shorts: [drag your video file here]",
+      "note": "Use a file on your computer. Podcasts, streams, webinars and interviews work best."
+    },
+    {
+      "label": "Fix one clip",
+      "prompt": "Re-cut clip 3: start two seconds earlier and give it a shorter title.",
+      "note": "You can ask for a different start, end, title or post for any clip."
+    },
+    {
+      "label": "One person on screen",
+      "prompt": "Cut them again with --layout crop.",
+      "note": "Crop fills the whole screen when one person stays in the middle. The default keeps the full picture over a blurred background."
+    }
+  ],
+  "checklist_title": "Set it up in five steps",
+  "checklist": [
+    {
+      "title": "Open Claude Code",
+      "detail": "It is the Code tab in the Claude desktop app (or the claude command in a terminal). It needs a paid Claude plan. The normal chat cannot run the tools."
+    },
+    {
+      "title": "Paste the prompt",
+      "detail": "Paste the whole prompt above. Claude saves the skill as two small files and checks for two free tools, ffmpeg and Whisper. If one is missing it asks before installing it."
+    },
+    {
+      "title": "Drop in a long video",
+      "detail": "Drag a video file into Claude and say clip this. It listens first (about a minute for every seven minutes of video on our Mac), then shows you the moments it picked."
+    },
+    {
+      "title": "Pick the clips you want",
+      "detail": "It lists every clip with its start, its end and why it chose it. Tell it which ones to keep before it cuts."
+    },
+    {
+      "title": "Check, then post",
+      "detail": "Your shorts and a posts.txt with every title and post are in the clip_work folder. Nothing is posted for you."
+    }
+  ],
+  "safety": [
+    "**Only clip videos you are allowed to use:** your own, a creator's clipping programme, or public-domain footage.",
+    "**Nothing is posted for you.** The skill makes files; you decide what goes out.",
+    "**Your video stays on your computer.** Only the words (the transcript) go to Claude so it can pick the moments.",
+    "**Clipping pay is small.** Creators who pay clippers pay about $1 per 1,000 views on average, so treat this as a skill, not a salary."
+  ],
+  "email": {
+    "tested": "We ran it on a 28-minute NASA talk: 8 captioned shorts in 6 minutes 25 seconds, and the video never left our computer. The prompt and the steps are on your guide page: plan.signalservice.ai/clip",
+    "safety": "Only clip videos you're allowed to use, and nothing is posted for you.",
+    "question": "what's the first long video you'd clip?"
+  },
+  "dm": {
+    "keyword": "CLIP",
+    "replies": [
+      "Sent! Check your DMs for the skill.",
+      "Done, the skill is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free Clip skill: one prompt to install it, then drop in a long video and get your shorts back.\nTap below 👇",
+    "button": "Get the skill",
+    "link": "https://plan.signalservice.ai/clip?utm_source=instagram&utm_medium=autodm&utm_campaign=clip"
+  }
+}
