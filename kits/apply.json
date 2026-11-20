@@ -1,0 +1,104 @@
+{
+  "slug": "apply",
+  "keyword": "APPLY",
+  "name": "Career Ops setup guide",
+  "checked": "19 Nov 2026",
+  "description": "Career Ops, the free open-source job search agent from the reel: it scans 180 companies, scores every job out of 5 against your CV, tells you which to skip, and drafts your CV, answers and messages for the good ones. You always press submit.",
+  "page": {
+    "title": "Run your whole job hunt with Claude",
+    "mark": "Career Ops",
+    "sub": "Career Ops is the free, open-source job search agent from the reel. It scans companies for you, scores every job out of 5 against your real CV, and drafts everything for the ones worth your evening. It never applies for you.",
+    "prompt_how": "Run this one command in a terminal, then open Claude Code in the new career-ops folder.",
+    "prompt_note": "On first launch it asks about your CV, what you want and what you refuse, just by chatting. Nothing to edit by hand.",
+    "tested_label": "what we checked",
+    "tested_title": "We checked it against its own page",
+    "results": [
+      {
+        "name": "83,779 stars, MIT licence, free",
+        "ok": true
+      },
+      {
+        "name": "180+ companies ready to scan, scores out of 5",
+        "ok": true
+      },
+      {
+        "name": "It never submits: you press submit",
+        "ok": true
+      },
+      {
+        "name": "Running a job search with it ourselves",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We read the project's own page: **83,779 stars**, MIT licence, built by one job seeker with 800+ contributors since. The scanner ships with **180+ companies** and scores each job **out of 5** against your CV; under **4.0** it tells you not to apply (you can overrule it). For the good ones it drafts the CV, the cover letter, the answers and the note to the right person. Its maker's own search: **740 jobs checked, 68 applications, 12 interviews, 1 offer.** **Not checked by us:** running a real search with it.",
+    "tip": "**The tip:** paste one job you were about to apply to tonight. If it says skip, you got your evening back. If it says go, you have the CV and the answers ready.",
+    "checklist_label": "step 3 · set it up"
+  },
+  "prompt": "npx @santifer/career-ops init",
+  "followups": [
+    {
+      "label": "Teach it who you are",
+      "prompt": "Here is my CV. Ask me what I want, what I refuse, and anything else you need to score jobs for me properly.",
+      "note": "The first runs are rough until it knows you. Its own page calls this 'a recruiter's first week'."
+    },
+    {
+      "label": "Score one job",
+      "prompt": "[paste a job link or the job description]",
+      "note": "It checks the posting is still open, scores it out of 5 against your CV, and tells you whether to skip it."
+    },
+    {
+      "label": "Scan for new jobs",
+      "prompt": "Scan the companies on my list for new roles that fit me, and show me only the ones scoring 4 or more.",
+      "note": "It comes with 180+ companies; add your own to the list any time."
+    }
+  ],
+  "checklist_title": "Set it up in five steps",
+  "checklist": [
+    {
+      "title": "Have Claude Code",
+      "detail": "The claude command in a terminal (or the Code tab in the Claude desktop app), on a paid Claude plan. You also need Node.js, which the command uses."
+    },
+    {
+      "title": "Run the one command",
+      "detail": "It downloads Career Ops into a career-ops folder. Then open Claude Code inside that folder."
+    },
+    {
+      "title": "Paste your CV",
+      "detail": "It asks about you in the chat. Be honest about what you want and what you won't do."
+    },
+    {
+      "title": "Tell it what you want",
+      "detail": "The roles, the pay and the places. It scores every job against this."
+    },
+    {
+      "title": "Paste a job, read, then send",
+      "detail": "It drafts the CV and the answers. Read every one before you send it: it must never invent anything, and you are the check."
+    }
+  ],
+  "safety": [
+    "**It never applies for you.** It drafts; you read and press submit.",
+    "**Read every CV it writes.** It rewrites your experience; it must never make any up. Take out anything that isn't true.",
+    "**Your CV goes to the AI you use** (Claude) and nowhere else. The project has no server of its own.",
+    "**We have not run a search with it ourselves yet.** The numbers here are from the project's own page."
+  ],
+  "email": {
+    "tested": "We checked Career Ops against its own page: 83,779 stars, 180+ companies ready to scan, every job scored out of 5 against your CV, and it never submits for you. Its maker checked 740 jobs, applied to 68 and got 12 interviews and the offer. The steps are on your guide page: plan.signalservice.ai/apply",
+    "safety": "It never applies for you, and you should read every CV it writes before you send it.",
+    "question": "what's the first job you'd paste in?"
+  },
+  "dm": {
+    "keyword": "APPLY",
+    "replies": [
+      "Sent! Check your DMs for the guide.",
+      "Done, the guide is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free setup for Career Ops: the one command, what to tell it about yourself, and how to score your first job.\nTap below 👇",
+    "button": "Get the guide",
+    "link": "https://plan.signalservice.ai/apply?utm_source=instagram&utm_medium=autodm&utm_campaign=apply"
+  }
+}
