@@ -1,0 +1,107 @@
+{
+  "slug": "tutor",
+  "keyword": "TUTOR",
+  "name": "Strict tutor prompt guide",
+  "checked": "20 Nov 2026",
+  "description": "The strict tutor prompt from the reel: Claude finds your level, builds a five-step plan, teaches one step at a time, tests you after each one, and won't let you move on until you pass.",
+  "page": {
+    "title": "Make Claude teach you anything, and test you on it",
+    "mark": "The strict tutor",
+    "sub": "One free prompt from the reel. Claude asks three questions to find your level, builds a five-step plan, teaches one step at a time, and tests you after each one. Get it wrong and it says \"not yet\", explains it a different way, and asks again.",
+    "prompt_how": "Paste this into any Claude chat (the normal chat is fine, and so is the free plan). Change the three parts in square brackets first.",
+    "prompt_note": "Answer in your own words and don't look things up: it can only test what you really know.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it ourselves, on Excel formulas",
+    "results": [
+      {
+        "name": "It asked 3 questions, then built a 5-step plan",
+        "ok": true
+      },
+      {
+        "name": "2 wrong answers given on purpose: both caught",
+        "ok": true
+      },
+      {
+        "name": "One was off by a single character (> instead of >=)",
+        "ok": true
+      },
+      {
+        "name": "Final test: 5 out of 5, then what to learn next",
+        "ok": true
+      },
+      {
+        "name": "How long a real beginner takes",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We ran it in a normal Claude chat, as a beginner starting an office job on Monday. It asked **3 questions**, wrote a **5-step plan** (formulas, SUM, AVERAGE, IF, copying formulas) and tested us after every step. We gave it **two wrong answers on purpose**. It marked both **\"NOT YET\"**, said exactly what was wrong, explained it a different way and asked a new question. One answer was off by **a single character** (> where the rule needed >=) and it still wouldn't let us pass. We then passed its final test, **5 out of 5**, and it told us what to learn next. **Not measured:** how long a real beginner takes.",
+    "tip": "**The tip:** tell it why you're learning (\"I start a new job on Monday\", \"my exam is in two weeks\"). It picks examples to match, which makes them stick.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "You are my strict but kind tutor. I want to learn: [what you want to learn, and why]. My level: [beginner / I know a bit / rusty]. I have [20] minutes.\n\nFollow these rules exactly:\n1. First ask me 3 quick questions to find out what I already know. One at a time, and wait for each answer.\n2. Then build a learning path of 5 short steps, from where I am to the goal. Show it as a numbered checklist.\n3. Teach one step at a time, in under 120 words, with one everyday example.\n4. After each step, test me with one question that makes me USE the idea, not repeat it. Don't give the answer.\n5. Mark my answer honestly: PASS or NOT YET. If it's NOT YET, tell me exactly what I got wrong, explain it a different way, and ask a new question. I can't move on until I pass.\n6. After every answer, show a scoreboard: steps passed out of 5, and tries used.\n7. When I've passed all 5 steps, give me a final test of 5 questions, one at a time, in mixed order. I need 4 out of 5 to pass. Then tell me what to learn next.\nNever tell me I'm right just to be nice. Start now with your first question.",
+  "followups": [
+    {
+      "label": "Study from your own notes",
+      "prompt": "Use only these notes as the source. Teach and test me on them the same way, and tell me if a question goes beyond them: [paste your notes]",
+      "note": "Best for an exam: it tests you on what your course actually covers."
+    },
+    {
+      "label": "Come back tomorrow",
+      "prompt": "Give me a summary of what I passed and what I got wrong today, written so I can paste it into a new chat tomorrow and carry on from where I stopped.",
+      "note": "A new chat doesn't remember the last one, so save this summary."
+    },
+    {
+      "label": "The day before",
+      "prompt": "My exam is tomorrow. Give me a 15-question mixed test on everything we covered, one question at a time, and mark me honestly at the end with the three things to revise tonight.",
+      "note": "A last check on the whole topic."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Fill in the three blanks",
+      "detail": "What you want to learn and why, your level, and how many minutes you have."
+    },
+    {
+      "title": "Paste it into Claude",
+      "detail": "Any Claude chat works, on the free plan too. It starts with three quick questions."
+    },
+    {
+      "title": "Answer honestly",
+      "detail": "If you don't know, say so. A wrong answer is how it finds what to teach you again."
+    },
+    {
+      "title": "Finish the final test",
+      "detail": "Five questions, and you need four to pass. Then it tells you what to learn next."
+    },
+    {
+      "title": "Save your summary",
+      "detail": "Ask for a summary of what you passed and what you missed, so you can carry on in a new chat tomorrow."
+    }
+  ],
+  "safety": [
+    "**It can still get things wrong.** Double-check anything that matters, and for an exam, check against your own notes or textbook.",
+    "**It only knows what you tell it.** If you look the answers up, it can't see what you still need to learn.",
+    "**Don't paste anything private** (medical, legal or company documents) unless you're allowed to share them."
+  ],
+  "email": {
+    "tested": "We ran the strict tutor prompt on Excel formulas and gave it two wrong answers on purpose. It caught both, one off by a single character. The prompt is on your guide page: plan.signalservice.ai/tutor",
+    "safety": "It can still get things wrong, so double-check anything that matters.",
+    "question": "what's the one thing you'd like it to teach you first?"
+  },
+  "dm": {
+    "keyword": "TUTOR",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free strict tutor prompt: paste it into Claude, tell it what you want to learn, and it tests you until you really know it.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/tutor?utm_source=instagram&utm_medium=autodm&utm_campaign=tutor"
+  }
+}
