@@ -1,0 +1,104 @@
+{
+  "slug": "course",
+  "keyword": "COURSE",
+  "name": "Free AI courses guide",
+  "checked": "20 Nov 2026",
+  "description": "Claude Academy, Anthropic's free AI courses from the reel: the five to take first, in order, with how long each takes and how to put the badge on your CV.",
+  "page": {
+    "title": "Learn AI for free, from the people who make Claude",
+    "mark": "Claude Academy",
+    "sub": "Anthropic, the company behind Claude, has 29 free courses. Here are the five to take first, in order, how long each one takes, and how to put the completion badge on your CV.",
+    "prompt_how": "Nothing to install. Open the first course and press Start course. This is the order we'd take them in:",
+    "prompt_note": "You can start without an account. Sign in when you want your progress saved.",
+    "tested_label": "what we checked",
+    "tested_title": "We checked every course on its own page",
+    "results": [
+      {
+        "name": "29 courses, free, from Anthropic",
+        "ok": true
+      },
+      {
+        "name": "The lessons, hours and badge for each of the five",
+        "ok": true
+      },
+      {
+        "name": "You can press Start course without an account",
+        "ok": true
+      },
+      {
+        "name": "Finishing a full course and getting the badge",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We read Claude Academy's own pages: **\"Free courses on Claude and AI, from Anthropic\"**, **29 courses**, and most are marked with a **completion badge**. The site says badge, not certificate, so that is the word we use. Each course page has two buttons: **Start course** and **Sign in to save progress**. **Not checked by us:** we haven't finished a whole course, so we can't show you what the badge looks like.",
+    "tip": "**The tip:** do Claude 101 first even if you already use Claude. It is short, and the later courses lean on it.",
+    "checklist_label": "step 3 · take them in this order"
+  },
+  "prompt": "1. Claude 101 (13 lessons, about 2.5 hours)\nacademy.claude.com/courses/claude-101\n\n2. AI Fluency: Framework and foundations (14 lessons, about 4 hours)\nacademy.claude.com/courses/ai-fluency-framework-foundations\n\n3. AI capabilities and limitations (13 lessons, about 3.5 hours)\nacademy.claude.com/courses/ai-capabilities-and-limitations\n\n4. AI Fluency for small businesses (8 lessons, about 3.5 hours)\nacademy.claude.com/courses/ai-fluency-for-small-businesses\n\n5. Claude Code 101 (12 lessons, about 1.5 hours)\nacademy.claude.com/courses/claude-code-101",
+  "followups": [
+    {
+      "label": "Put it on your CV and LinkedIn",
+      "prompt": "I've just completed [course name] on Claude Academy, Anthropic's free course site. Write one line for the Training or Courses section of my CV, and one bullet for my current job that shows how I've used what I learned. My job: [your job]. What I used it for: [one real example]. Then write a short LinkedIn post (under 90 words, no hashtags, no emojis) about the one thing I'll do differently at work because of it.",
+      "note": "A badge on its own says little. One real example of what you did with it says a lot more."
+    },
+    {
+      "label": "Make it stick",
+      "prompt": "I've just finished the lesson on [topic] in [course name]. Ask me five questions, one at a time, that make me use what it taught, and tell me honestly which ones I got wrong.",
+      "note": "Paste this into Claude after each lesson. It's the strict tutor idea from our other reel."
+    },
+    {
+      "label": "Not sure which course fits",
+      "prompt": "Here is what I do at work: [your job, in two lines]. Claude Academy has courses on Claude 101, AI Fluency, AI capabilities and limitations, AI Fluency for small businesses, students, educators and nonprofits, Claude Code, and building with the Claude API. Which three should I take, in what order, and why?",
+      "note": "There are 29 courses. This picks three for the job you actually do."
+    }
+  ],
+  "checklist_title": "Take them in five steps",
+  "checklist": [
+    {
+      "title": "Open Claude 101",
+      "detail": "About 2.5 hours, 13 lessons. Press Start course. You don't need an account to begin."
+    },
+    {
+      "title": "Sign in when you want it saved",
+      "detail": "The second button on every course is Sign in to save progress. Do that before you close the tab if you plan to come back."
+    },
+    {
+      "title": "Then AI Fluency, then capabilities and limitations",
+      "detail": "About 4 hours and 3.5 hours. Together they teach you how to work with AI and when not to trust it."
+    },
+    {
+      "title": "Pick your lane",
+      "detail": "Run a business: AI Fluency for small businesses (about 3.5 hours). Want to build: Claude Code 101 (about 90 minutes)."
+    },
+    {
+      "title": "Add it to your CV",
+      "detail": "One line under Training, and one real example of how you used what you learned. The prompt above writes both."
+    }
+  ],
+  "safety": [
+    "**It's a completion badge, not a degree or a certification.** Say \"completed\" on your CV, not \"certified\".",
+    "**What counts is what you can do with it.** Add one real example of how you used it at work.",
+    "**The courses and their lengths can change.** These were the figures on the site when we looked.",
+    "**We haven't finished a full course ourselves yet,** so we can't show what the badge looks like."
+  ],
+  "email": {
+    "tested": "We checked Claude Academy's own pages: 29 free courses from Anthropic, most with a completion badge, and you can start without an account. The five to take first are on your guide page: plan.signalservice.ai/course",
+    "safety": "It's a completion badge, not a degree. What counts is what you can do with it.",
+    "question": "which one are you starting with?"
+  },
+  "dm": {
+    "keyword": "COURSE",
+    "replies": [
+      "Sent! Check your DMs for the guide.",
+      "Done, the guide is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free guide to Anthropic's AI courses: the five to take first, how long each takes, and how to put the badge on your CV.\nTap below 👇",
+    "button": "Get the guide",
+    "link": "https://plan.signalservice.ai/course?utm_source=instagram&utm_medium=autodm&utm_campaign=course"
+  }
+}
