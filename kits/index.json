@@ -1,5 +1,101 @@
 [
   {
+    "slug": "five",
+    "date": "2026-12-01 14:30",
+    "title": "Five Claude prompts we actually tested",
+    "line": "A business idea, a CV, your old stuff, a strict tutor and YouTube: five we ran ourselves.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/a147b35d0cf11f9be882d9055bc18e85ea284c88/reels/2026-12-01/five-cover.jpg",
+    "tags": "prompts best prompts tested five list beginner start here business idea cv sell tutor youtube skills"
+  },
+  {
+    "slug": "course",
+    "date": "2026-11-30 14:30",
+    "title": "Learn AI for free, from the people who make Claude",
+    "line": "Anthropic's 29 free courses: the five to take first, and how to put the badge on your CV.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/330450e0caf72cbe920d33ca8bfacf06ff3282b7/reels/2026-11-30/course-cover.jpg",
+    "tags": "free courses ai course learn anthropic claude academy badge certificate cv career skills training beginner"
+  },
+  {
+    "slug": "erase",
+    "date": "2026-11-29 14:30",
+    "title": "Get your details taken off the internet",
+    "line": "One free prompt finds where you're listed, writes each removal request and tracks the replies.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/95e1b71c4e7377865189beb39d6c47cde1e97e8f/reels/2026-11-29/erase-cover.jpg",
+    "tags": "privacy data brokers people search remove delete personal data address phone gdpr footprint online safety"
+  },
+  {
+    "slug": "tutor",
+    "date": "2026-11-28 14:30",
+    "title": "Study for any exam with Claude, and get tested on it",
+    "line": "One free prompt turns Claude into a strict tutor that won't let you move on until you pass.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/cd134125f56d037353e7a97635c7de7a0bcd4191/reels/2026-11-28/tutor-cover.jpg",
+    "tags": "study learn tutor exam revision school university course excel skills teach test quiz"
+  },
+  {
+    "slug": "design",
+    "date": "2026-11-27 14:30",
+    "title": "Make Claude design your website like a pro",
+    "line": "A free skill gives Claude 24 design commands and catches what makes a site look AI-made.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/27a88e89b8d31c623232fef39fa4b62baca90c4b/reels/2026-11-27/design-cover.jpg",
+    "tags": "website web design designer small business landing page fonts colour layout ui ux"
+  },
+  {
+    "slug": "clone",
+    "date": "2026-11-26 14:30",
+    "title": "Build your own version of an app you pay for",
+    "line": "Eleven free Claude skills study an app, rebuild it screen by screen and fix what its users hate.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/a880659270ae23a63f1a9da53d6a97fc2b5ab912/reels/2026-11-26/clone-cover.jpg",
+    "tags": "apps subscriptions clone rebuild save money no code build app black friday software tools"
+  },
+  {
+    "slug": "grow",
+    "date": "2026-11-25 14:30",
+    "title": "Let Claude run your Instagram",
+    "line": "Thirteen free Claude skills find what's working in your niche, score your hooks and plan your week.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/d4d747b333814c828473af3e6cf985e8be483fd3/reels/2026-11-25/grow-cover.jpg",
+    "tags": "instagram reels growth followers content creator social media hooks profile bio plan marketing"
+  },
+  {
+    "slug": "search",
+    "date": "2026-11-24 14:30",
+    "title": "Get your business into the AI answer",
+    "line": "A free Claude skill checks how ChatGPT and Google's AI see your website, then writes the fixes.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/19268809b00dd8918cd458d467042003be2c38d8/reels/2026-11-24/search-cover.jpg",
+    "tags": "seo ai search google chatgpt geo business website visibility marketing local business ranking"
+  },
+  {
+    "slug": "apply",
+    "date": "2026-11-23 14:30",
+    "title": "Run your whole job hunt with Claude",
+    "line": "Career Ops: scans 180 companies, scores every job out of 5 against your CV, drafts the rest. You press submit.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/95363e239740ca093b14513aa9c9def992c2d1e0/reels/2026-11-23/apply-cover.jpg",
+    "tags": "jobs job search job hunt cv resume applications interview career hiring recruiter apply"
+  },
+  {
+    "slug": "jarvis",
+    "date": "2026-11-22 14:30",
+    "title": "Set up your own Jarvis",
+    "line": "OpenJarvis: eight free assistants on your own computer, with a morning briefing read out loud.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/f11f241153f0b2af53b301cb9f30aebea2f2ce37/reels/2026-11-22/jarvis-cover.jpg",
+    "tags": "jarvis assistant openjarvis stanford email calendar morning briefing productivity open source local ai"
+  },
+  {
+    "slug": "wifi",
+    "date": "2026-11-21 14:30",
+    "title": "Find what's slowing your Wi-Fi",
+    "line": "One free prompt: speed test, the apps eating your internet, crowded channels and every device on your network.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/a2802f3547c9c0d0b81413c0c308f84c87c70e30/reels/2026-11-21/wifi-cover.jpg",
+    "tags": "wifi wi-fi internet slow speed router network devices home office tech tips"
+  },
+  {
+    "slug": "clip",
+    "date": "2026-11-20 14:30",
+    "title": "Turn one long video into ready-to-post shorts",
+    "line": "One free skill: Claude picks the moments and cuts captioned shorts on your own computer.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/80aa9264fff5a4520f31788ed88b212bbb01f394/reels/2026-11-20/clip-cover.jpg",
+    "tags": "clipping clips shorts reels tiktok video editing podcast stream webinar captions content creator repurpose"
+  },
+  {
     "slug": "trade",
     "date": "2026-11-19 12:35",
     "title": "Turn Claude into a trading desk",
