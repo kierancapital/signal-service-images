@@ -103,5 +103,12 @@
     "text": "Hey! Thanks for commenting 🙌\nHere's the free strict tutor prompt: paste it into Claude, tell it what you want to learn, and it tests you until you really know it.\nTap below 👇",
     "button": "Get the prompt",
     "link": "https://plan.signalservice.ai/tutor?utm_source=instagram&utm_medium=autodm&utm_campaign=tutor"
+  },
+  "hub": {
+    "date": "2026-11-28 14:30",
+    "title": "Study for any exam with Claude, and get tested on it",
+    "line": "One free prompt turns Claude into a strict tutor that won't let you move on until you pass.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/cd134125f56d037353e7a97635c7de7a0bcd4191/reels/2026-11-28/tutor-cover.jpg",
+    "tags": "study learn tutor exam revision school university course excel skills teach test quiz"
   }
 }
