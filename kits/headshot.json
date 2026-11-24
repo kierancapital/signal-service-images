@@ -1,0 +1,107 @@
+{
+  "slug": "headshot",
+  "keyword": "HEADSHOT",
+  "name": "Headshot prompt guide",
+  "checked": "22 Nov 2026",
+  "description": "The headshot prompt from the reel: upload a selfie to ChatGPT with one prompt and get a professional headshot that keeps your real face and changes only your clothes, the background and the light.",
+  "page": {
+    "title": "Turn a selfie into a professional headshot",
+    "mark": "The headshot prompt",
+    "sub": "One free prompt for ChatGPT from the reel. A studio headshot can cost hundreds. This keeps your real face (the same features, hair and expression) and changes only three things: your clothes, the background and the light. Change one line and you get a different outfit or backdrop.",
+    "prompt_how": "Upload a clear selfie to a normal ChatGPT chat (not a temporary chat: those can't make images) and paste this under it. The two parts in square brackets are the outfit and the background: change them if you like.",
+    "prompt_note": "Use a selfie with your whole face in good light, looking at the camera.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it ourselves",
+    "results": [
+      {
+        "name": "A headshot in about a minute, from one selfie",
+        "ok": true
+      },
+      {
+        "name": "The same face, hair and beard as the selfie",
+        "ok": true
+      },
+      {
+        "name": "Only the clothes, the background and the light changed",
+        "ok": true
+      },
+      {
+        "name": "One line changed: a new outfit and backdrop, about a minute",
+        "ok": true
+      },
+      {
+        "name": "How close it stays on every face: we tested one",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We uploaded one selfie with the prompt and got a headshot in **about a minute**: a navy jacket, an open collar and a grey studio backdrop, with **the same face, hair and beard**. Then we changed one line (\"a black crew-neck jumper… and a warm beige studio backdrop\") and got a second one, also in about a minute. **To be clear:** the selfie we tested on was made with AI, so no real person is in the reel. **Not checked:** how well it keeps other faces. We tested one, so look hard at yours before you use it.",
+    "tip": "**The tip:** if it has changed your face, say so: \"same again, but my nose and jaw exactly as in the selfie\". It usually fixes it in one try.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "Turn this selfie into a professional headshot I could use on LinkedIn. Keep my real face exactly as it is: the same features, the same skin, the same hair and beard, the same expression. Do not beautify me and do not change my age.\n\nChange only these things: [a well-fitted navy suit jacket over a white shirt with an open collar], [a soft light-grey studio backdrop], soft flattering studio light from the front left, the camera at eye level, head and shoulders framing with both shoulders square to the camera and my arms down. Sharp eyes, natural skin texture.\n\nIt must look like a real photographer's portrait, not an AI picture. Vertical 4:5.",
+  "followups": [
+    {
+      "label": "A different outfit",
+      "prompt": "Same headshot of me again, same face, but change one line: [a black crew-neck jumper] instead of the jacket and shirt, and [a warm beige studio backdrop].",
+      "note": "This is the exact line we tested."
+    },
+    {
+      "label": "For your industry",
+      "prompt": "Same face. Dress me the way someone senior in [your industry] would dress for a company website photo, and pick a background to match.",
+      "note": "A lawyer and a designer need different photos."
+    },
+    {
+      "label": "Closer to me",
+      "prompt": "Compare this with my selfie and list anything about my face that changed. Then make it again with those things exactly as in the selfie.",
+      "note": "Use this if it looks a bit too polished."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Take a clear selfie",
+      "detail": "Face the light, look at the camera, whole face in the frame."
+    },
+    {
+      "title": "Upload it to ChatGPT",
+      "detail": "A normal chat, then paste the prompt under the photo."
+    },
+    {
+      "title": "Check your face",
+      "detail": "Put it next to the selfie. If anything about you changed, ask for it again."
+    },
+    {
+      "title": "Change one line",
+      "detail": "Swap the outfit or the background in the square brackets."
+    },
+    {
+      "title": "Save the best one",
+      "detail": "Keep the selfie too, in case you need to say it was edited."
+    }
+  ],
+  "safety": [
+    "**Your own face only.** Never make a headshot of someone else without their permission.",
+    "**It is an edited photo.** Some employers, sites and official forms need an unedited picture. Don't use it for ID.",
+    "**Check it still looks like you.** If you would look different in the room, make it again."
+  ],
+  "email": {
+    "tested": "We turned one selfie into a headshot with this prompt in about a minute, then changed one line for a new outfit. The prompt is on your guide page: plan.signalservice.ai/headshot",
+    "safety": "It is an edited photo, so do not use it for ID.",
+    "question": "where will you use yours?"
+  },
+  "dm": {
+    "keyword": "HEADSHOT",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free headshot prompt: upload a selfie to ChatGPT, paste it, and it keeps your real face.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/headshot?utm_source=instagram&utm_medium=autodm&utm_campaign=headshot"
+  }
+}
