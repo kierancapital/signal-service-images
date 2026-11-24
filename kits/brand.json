@@ -1,0 +1,107 @@
+{
+  "slug": "brand",
+  "keyword": "BRAND",
+  "name": "Brand kit prompt guide",
+  "checked": "22 Nov 2026",
+  "description": "The brand kit prompt from the reel: upload one photo of your product to ChatGPT and get a brand board with a name, a logo, five colours, two fonts, your product with the new label, packaging and a lifestyle photo. One follow-up makes your listing photos.",
+  "page": {
+    "title": "One photo of your product, a whole brand",
+    "mark": "The brand kit prompt",
+    "sub": "One free prompt for ChatGPT from the reel. Photograph what you sell, upload it, and get a brand board: a name and a logo, five colours with their codes, two fonts, your own product with the new label on it, a packaging mock-up and a photo for social media. Ask once more and it makes the photos you need to sell it online.",
+    "prompt_how": "Upload one clear photo of your product to a normal ChatGPT chat (not a temporary chat: those can't make images) and paste this under it. Change the parts in square brackets first.",
+    "prompt_note": "A plain photo is fine. Ours was a candle on a kitchen table.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it ourselves, on a plain candle",
+    "results": [
+      {
+        "name": "A name and a logo, on one board",
+        "ok": true
+      },
+      {
+        "name": "Five colours with their hex codes, and two fonts",
+        "ok": true
+      },
+      {
+        "name": "Our own jar with the new label, and a gift box",
+        "ok": true
+      },
+      {
+        "name": "Four listing photos from one follow-up",
+        "ok": true
+      },
+      {
+        "name": "Whether the name is free to use: we did not check",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We uploaded a photo of a plain candle with a blank label and pasted the prompt. One image came back with all six parts: a name and logo (it invented \"Emberwood Candle Co.\"), **five colours with hex codes**, **two fonts** (Playfair Display and Inter), **our own jar with the new label**, a kraft gift box and a lifestyle shot. One follow-up (\"Now make the photos I need to sell it online…\") returned **four listing photos**: white background, bedside table, in a hand, a close-up. **To be clear:** the candle photo was made with AI, so no real brand is in the reel. **Not checked:** whether anyone already trades under the name it invented. It also wrote \"sandalwood & cedar\" on the label, which was its guess.",
+    "tip": "**The tip:** tell it the true details (the scent, the weight, the material) in the first bracket, or it will make them up for the label.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "This is a photo of my product, [what it is]. Build a complete brand around it and show it as ONE brand board image on an off-white background, laid out as a clean grid with a small label on each part:\n1) a brand name you invent and a simple logo,\n2) a palette of five colours with their hex codes,\n3) the two fonts to use,\n4) my product re-shot as a professional pack shot with the new label and logo on it,\n5) a packaging mock-up,\n6) one lifestyle photo for social media.\n\nKeep my real product: the same [jar / bottle / item], the same shape and size. The feel: [three words, for example premium, minimal, warm]. Vertical 3:4.",
+  "followups": [
+    {
+      "label": "The listing photos",
+      "prompt": "Now make the photos I need to sell it online, as ONE image split into four equal squares with a thin white gap: 1) the product on a pure white background, straight on, 2) in use at home in warm light, 3) held in one hand to show its size, 4) a close-up of the label. Same product, label and logo as the brand board. Square 1:1.",
+      "note": "This is the follow-up we tested."
+    },
+    {
+      "label": "Three names to choose from",
+      "prompt": "Give me three different brand names and logos for the same product, side by side on one board, each with one line on who it is for.",
+      "note": "Then check the one you like is free to use."
+    },
+    {
+      "label": "The words too",
+      "prompt": "Write the product title, five bullet points and a 60-word description for a listing, using only these true facts: [your facts]. No claims I have not given you.",
+      "note": "For Etsy, Amazon or your own shop."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Photograph your product",
+      "detail": "One clear photo. The background doesn't matter."
+    },
+    {
+      "title": "Upload it to ChatGPT",
+      "detail": "A normal chat, then paste the prompt under the photo."
+    },
+    {
+      "title": "Fill in the true details",
+      "detail": "What it is, what it is made of, and three words for the feel."
+    },
+    {
+      "title": "Ask for the listing photos",
+      "detail": "Use the first follow-up. It keeps the same label and logo."
+    },
+    {
+      "title": "Check the name",
+      "detail": "Search the name it invented before you print anything."
+    }
+  ],
+  "safety": [
+    "**Check the name and logo are free to use.** It invents them, and someone may already trade under that name. Search it, and check trade marks where you sell.",
+    "**The pictures must match what you ship.** Marketplaces expect listing photos to show the real item. Use these as designs to produce, or re-shoot the real product once it has the new label.",
+    "**Only true claims.** It will write things on a label (a scent, \"natural\", a weight) that it made up. Replace them with your own."
+  ],
+  "email": {
+    "tested": "We uploaded one photo of a plain candle. ChatGPT returned a brand board (a name, a logo, five colours, two fonts, a labelled jar, a gift box) and four listing photos from one follow-up. The prompt is on your guide page: plan.signalservice.ai/brand",
+    "safety": "Check the name it invents is free to use before you print anything.",
+    "question": "what product are you building a brand for?"
+  },
+  "dm": {
+    "keyword": "BRAND",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free brand kit prompt: upload one photo of your product to ChatGPT, paste it, and you get the name, logo, colours and packaging.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/brand?utm_source=instagram&utm_medium=autodm&utm_campaign=brand"
+  }
+}
