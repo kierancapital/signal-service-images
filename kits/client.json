@@ -1,0 +1,107 @@
+{
+  "slug": "client",
+  "keyword": "CLIENT",
+  "name": "First client prompt guide",
+  "checked": "22 Nov 2026",
+  "description": "The first client prompt from the reel: pick a trade and a city, and Claude reads local businesses' real websites, scores which need a new one, builds a one-page preview for the worst, and writes your first message.",
+  "page": {
+    "title": "Build a business a new website before you even say hello",
+    "mark": "The first client prompt",
+    "sub": "One free prompt from the reel, for anyone who builds websites. Claude reads the real websites of local businesses, scores each one out of ten, lists exactly what is wrong, then builds the one that needs it most a new homepage using only the facts on its own site. Your first message isn't a pitch. It is a finished preview.",
+    "prompt_how": "Paste this into a normal Claude chat with web search switched on (the free plan has it). Change the trade and the city in the square brackets.",
+    "prompt_note": "In a normal chat the preview opens as a page beside the conversation, and you can publish it as a link.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it ourselves, on plumbers in Austin",
+    "results": [
+      {
+        "name": "It read 14 pages and scored 5 real businesses out of 10",
+        "ok": true
+      },
+      {
+        "name": "Real problems: reviews that stop in 2015, an Hours page with no hours",
+        "ok": true
+      },
+      {
+        "name": "A one-page preview built only from the business's own facts",
+        "ok": true
+      },
+      {
+        "name": "A 75-word first message that opens with what it noticed",
+        "ok": true
+      },
+      {
+        "name": "Whether an owner replies: we contacted nobody",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We ran it in a Claude chat on plumbers in Austin. It read **14 pages**, skipped the sites that were already good, and scored five independents **9, 8, 7, 6 and 3 out of 10**. The problems were specific: one site's reviews were **all dated October 2015**, one had an **\"Hours\" heading with no hours under it**, one had a Facebook link that went to the wrong page. It built the worst one a one-page preview (marked \"Preview concept, not the live site\") using only facts from that business's own site, and wrote a **75-word** first message that opened with the 2015 reviews. **Not checked:** we contacted nobody, so we can't tell you how owners respond. The reel shows no business's name.",
+    "tip": "**The tip:** send the message first and the preview second. \"Want me to send it over?\" gets a reply; an unexpected link gets ignored.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "You are my client finder. I build websites for small local businesses.\n\nStep 1: search the web for real, independent [trade, for example plumbers] in [city] that have their own website, and open their sites. Find 5 whose website looks outdated or weak. For each one give me: the business name, the link, and the three most obvious problems a customer would notice, using only what you can actually read on their page (for example an old copyright year, no prices, no online booking, no reviews shown, very little text, broken or missing pages). Give each a 'needs a new site' score from 1 to 10. Skip big chains and franchises.\n\nStep 2: take the one with the highest score and build a one-page redesign preview for it as a single HTML page I can open: a modern, clean, mobile-first homepage using only true facts from their current site (their name, services, service area, phone number if shown). Mark it clearly at the top as 'Preview concept, not the live site'.\n\nStep 3: write a short, friendly first message to the owner (under 90 words) that names one specific thing I noticed on their site and offers the preview.\n\nRules: only real businesses you actually found, each with its link. Never invent a fact about them. I will send the message myself; do not contact anyone.",
+  "followups": [
+    {
+      "label": "The next one",
+      "prompt": "Now build the preview and the message for number 2 on the list, the same way.",
+      "note": "One at a time: a preview made for them beats ten generic ones."
+    },
+    {
+      "label": "Your price",
+      "prompt": "Write a simple one-page offer I can send if they say yes: what I will build, what I need from them, the price [your price] and the timeline. Plain English, no jargon.",
+      "note": "Have it ready before they reply."
+    },
+    {
+      "label": "A different trade",
+      "prompt": "Run the whole thing again for [another trade] in [city].",
+      "note": "Trades with old sites and steady work are the best place to start."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Pick a trade and a city",
+      "detail": "Somewhere you could actually meet or call the owner."
+    },
+    {
+      "title": "Paste it into Claude",
+      "detail": "With web search on. It reads their real websites."
+    },
+    {
+      "title": "Check every problem",
+      "detail": "Open the business's site and see it yourself before you mention it."
+    },
+    {
+      "title": "Look at the preview",
+      "detail": "Make sure everything on it is true of that business. Keep the \"Preview concept\" banner."
+    },
+    {
+      "title": "Send it yourself",
+      "detail": "One short message, from you. If they say no, leave it there."
+    }
+  ],
+  "safety": [
+    "**The preview is a concept, not their site.** Keep the banner, never publish it as if it were theirs, and don't use their logo or photos without asking.",
+    "**Check before you criticise.** Claude reads the page's text, not the picture. Look at the site yourself first.",
+    "**One message, then stop.** Follow the rules for contacting businesses where you live, and take no for an answer."
+  ],
+  "email": {
+    "tested": "We ran the first client prompt on plumbers in Austin. It scored five real sites, built a preview for the worst one and wrote the first message. We contacted nobody. The prompt is on your guide page: plan.signalservice.ai/client",
+    "safety": "The preview is a concept: keep the banner and never publish it as theirs.",
+    "question": "which trade and city are you starting with?"
+  },
+  "dm": {
+    "keyword": "CLIENT",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free first client prompt: paste it into Claude, pick a trade and a city, and it builds a business a new homepage before you say hello.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/client?utm_source=instagram&utm_medium=autodm&utm_campaign=client"
+  }
+}
