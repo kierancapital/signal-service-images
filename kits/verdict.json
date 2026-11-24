@@ -1,0 +1,107 @@
+{
+  "slug": "verdict",
+  "keyword": "VERDICT",
+  "name": "Idea on trial prompt guide",
+  "checked": "22 Nov 2026",
+  "description": "The idea on trial prompt from the reel: a prosecutor argues why your business idea will fail, a defence lawyer argues why it will work, twelve customers vote, and a judge gives the verdict and the three things to fix first.",
+  "page": {
+    "title": "Put your business idea on trial before you build it",
+    "mark": "The idea on trial",
+    "sub": "One free prompt from the reel. Don't ask Claude if your idea is good: it will be polite. Make it argue both sides. A prosecutor gives the three strongest reasons it fails, a defence lawyer fights back, twelve customers vote buy or pass, and the judge gives a verdict and the three things to fix first.",
+    "prompt_how": "Paste this into any Claude chat (the free plan is fine). Change the part in square brackets first.",
+    "prompt_note": "The more detail you give (price, who it is for, where), the sharper the trial.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it ourselves, on a mobile car wash",
+    "results": [
+      {
+        "name": "Three charges, three answers, in under a minute",
+        "ok": true
+      },
+      {
+        "name": "12 customers voted: 4 buy, 8 pass",
+        "ok": true
+      },
+      {
+        "name": "A clear verdict: GUILTY, do not build it yet",
+        "ok": true
+      },
+      {
+        "name": "Three things to fix first, in order",
+        "ok": true
+      },
+      {
+        "name": "Whether real customers would vote the same way",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We ran it in a normal Claude chat on a sample idea: a mobile car wash that comes to your office car park, **$35 a wash**. The prosecution's first charge was that $35 leaves a margin of a few dollars. Twelve customers voted: **4 buy, 8 pass** (\"$35 for a wash is silly. The automatic one is $10.\"). The verdict was **GUILTY: do not build it yet**, and the first fix was to get written permission from three office buildings before writing any code. **Not checked:** these are made-up customers, so treat the vote as a stress test, not as market research.",
+    "tip": "**The tip:** answer the judge's last question and run the trial again. The verdict changes when your answer does.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "Put my business idea on trial. The idea: [your idea: what it is, who it is for, the price, where you would start].\n\nRun it as a courtroom, in this order, with a clear heading for each part.\n1) THE PROSECUTION: the three strongest reasons this idea will fail, each in two sentences, as specific as you can.\n2) THE DEFENCE: answer each charge in one sentence, then give the three strongest reasons it will work.\n3) THE JURY: 12 different customers this idea is aimed at. For each one: first name, age, job, their vote (BUY or PASS) and one line in their own words on why. Make them realistic, not kind.\n4) THE VERDICT from the judge: the vote count, then either NOT GUILTY (build it) or GUILTY (do not build it yet), the price the jury would actually pay, and the three things to fix first, in order.\n\nRules: be harsh and honest, do not flatter me, and do not soften the verdict. Keep the whole thing under 500 words. End by asking me one question that would change the verdict.",
+  "followups": [
+    {
+      "label": "Appeal the verdict",
+      "prompt": "Here is my answer to your question: [your answer]. Run the trial again with the same jury and tell me whose vote changed and why.",
+      "note": "A good answer should move at least one juror."
+    },
+    {
+      "label": "A tougher jury",
+      "prompt": "Replace the jury with 12 people who already pay for the closest alternative. Run the vote again.",
+      "note": "People who already pay a competitor are the hardest to win."
+    },
+    {
+      "label": "The cheapest test",
+      "prompt": "Give me the cheapest way to test the first fix this week, without building anything. One page, step by step.",
+      "note": "Test before you build."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Describe the idea",
+      "detail": "One or two sentences: what it is, who it is for, the price and where you would start."
+    },
+    {
+      "title": "Paste it into Claude",
+      "detail": "Any Claude chat, free plan included. It takes under a minute."
+    },
+    {
+      "title": "Read the charges first",
+      "detail": "If a charge is true and you can't answer it, that is the thing to fix."
+    },
+    {
+      "title": "Answer the judge",
+      "detail": "It ends with one question that would change the verdict. Answer it honestly."
+    },
+    {
+      "title": "Run it again",
+      "detail": "Change the price or the customer and put it back on trial."
+    }
+  ],
+  "safety": [
+    "**The jury is made up.** It is a way to find weak points fast, not proof of what real people will pay.",
+    "**It can be wrong about your market.** Check any fact it states (prices, rules, competitors) before you rely on it.",
+    "**Talk to real customers next.** A verdict is a reason to go and ask people, not a reason to skip it."
+  ],
+  "email": {
+    "tested": "We put a sample idea on trial (a $35 office car wash). 4 of 12 customers said buy and the verdict was GUILTY, with three things to fix first. The prompt is on your guide page: plan.signalservice.ai/verdict",
+    "safety": "The jury is made up, so treat the vote as a stress test.",
+    "question": "what idea are you putting on trial?"
+  },
+  "dm": {
+    "keyword": "VERDICT",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free idea on trial prompt: paste it into Claude, type in your idea, and you get both sides, a jury vote and a verdict.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/verdict?utm_source=instagram&utm_medium=autodm&utm_campaign=verdict"
+  }
+}
