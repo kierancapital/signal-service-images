@@ -1,0 +1,107 @@
+{
+  "slug": "codes",
+  "keyword": "CODES",
+  "name": "Five photo codes guide",
+  "checked": "22 Nov 2026",
+  "description": "The five photo codes from the reel: paste them into ChatGPT once, upload a photo, and type /studio, /sharp, /clean, /product or /remove.",
+  "page": {
+    "title": "Five codes that make your phone photos look professional",
+    "mark": "The 5 photo codes",
+    "sub": "Five short codes for ChatGPT from the reel. Paste them in once, then upload any photo and type one word: /studio for studio lighting, /sharp for a dark or blurry photo, /clean to tidy the background, /product for a shop photo, /remove to take people or things out.",
+    "prompt_how": "Paste this into a normal ChatGPT chat (not a temporary chat: those can't make images). Then upload a photo and type a code.",
+    "prompt_note": "ChatGPT makes images on the free plan too, with a daily limit.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran all five ourselves",
+    "results": [
+      {
+        "name": "/studio: plain backdrop and soft light, the same face",
+        "ok": true
+      },
+      {
+        "name": "/sharp: a dark, blurry dinner photo came back sharp",
+        "ok": true
+      },
+      {
+        "name": "/clean: the same room, with the clutter gone",
+        "ok": true
+      },
+      {
+        "name": "/product: a candle on a kitchen table became a shop photo",
+        "ok": true
+      },
+      {
+        "name": "/remove: six tourists and a bin, gone",
+        "ok": true
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We pasted the codes into ChatGPT once, then uploaded a photo and typed one code each time. All five worked first time, in **about a minute each**. **/sharp** turned a dark orange blur of pasta into a clean, sharp plate. **/remove the tourists behind her and the bin** took six people out of a holiday photo. **/product** put a candle from a cluttered kitchen table onto a clean surface with a soft shadow. **To be clear:** the photos we tested on were made with AI, so that no real person or brand is in the reel. **And one honest limit:** ChatGPT redraws the whole picture, so small details can shift (a garnish, the exact shape of a fountain). Compare before you post.",
+    "tip": "**The tip:** after a code, add a few words. \"/studio, warm light\" or \"/remove the car on the left\" works.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "From now on, when I upload a photo and type one of these codes, edit MY photo. Keep the same person, the same face, the same pose and the same objects. Never change who is in it and never add things I did not ask for.\n\n/studio = relight it like a professional studio portrait: soft key light, gentle shadows, natural skin, a clean neutral backdrop.\n/sharp = rescue a dark, blurry or noisy photo: fix the exposure and the colours, sharpen the detail, remove the noise, keep it natural.\n/clean = remove the clutter and distractions behind the subject and tidy the background, keeping the same room.\n/product = turn it into a professional product photo: the same product on a clean surface, soft studio lighting, a soft shadow, ready for a shop listing.\n/remove = remove the people or objects I name after the code and fill in the background naturally.\n\nReply with the edited image only.",
+  "followups": [
+    {
+      "label": "Make your own code",
+      "prompt": "Add a sixth code to the list: /[name] = [what it should do to my photo]. Then confirm the six codes.",
+      "note": "For the edit you do every week."
+    },
+    {
+      "label": "A set that matches",
+      "prompt": "Edit these four photos the same way so they look like one set: same light, same colours, same crop. [upload the photos] /studio",
+      "note": "For a shop, a menu or a profile."
+    },
+    {
+      "label": "Undo one thing",
+      "prompt": "Same edit again, but keep [the thing that changed] exactly as it was in my photo.",
+      "note": "When a detail shifted."
+    }
+  ],
+  "checklist_title": "Use them in five steps",
+  "checklist": [
+    {
+      "title": "Open ChatGPT",
+      "detail": "A normal chat. Temporary chats can't make images."
+    },
+    {
+      "title": "Paste the codes once",
+      "detail": "They stay for the rest of that chat."
+    },
+    {
+      "title": "Upload a photo",
+      "detail": "One at a time works best."
+    },
+    {
+      "title": "Type a code",
+      "detail": "One word. Add a few words after it if you want something specific."
+    },
+    {
+      "title": "Compare with the original",
+      "detail": "Look closely before you post or print it."
+    }
+  ],
+  "safety": [
+    "**It redraws the photo.** Faces and small details can shift a little. Compare with your original, most of all for photos of people.",
+    "**Your own photos only.** Don't edit photos of other people without asking them, and don't use an edited photo where a true one is needed (ID, insurance, listings that must show the real item).",
+    "**Say when it matters.** If a platform or a buyer asks whether a photo was edited with AI, say yes."
+  ],
+  "email": {
+    "tested": "We ran all five codes in ChatGPT. Each worked first time, in about a minute. The codes are on your guide page: plan.signalservice.ai/codes",
+    "safety": "It redraws the photo, so compare with your original before you post.",
+    "question": "which photo are you fixing first?"
+  },
+  "dm": {
+    "keyword": "CODES",
+    "replies": [
+      "Sent! Check your DMs for the codes.",
+      "Done, the codes are in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere are the 5 free photo codes: paste them into ChatGPT once, upload a photo and type one word.\nTap below 👇",
+    "button": "Get the codes",
+    "link": "https://plan.signalservice.ai/codes?utm_source=instagram&utm_medium=autodm&utm_campaign=codes"
+  }
+}
