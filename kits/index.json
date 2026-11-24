@@ -1,11 +1,27 @@
 [
   {
+    "slug": "client",
+    "date": "2026-12-01 19:30",
+    "title": "Build a business a new website before you even say hello",
+    "line": "One free prompt: Claude finds local businesses with outdated websites and builds the worst one a preview.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/a3e8b8f72b1aa15d2023e55f5688ff1e6a7606f8/reels/2026-12-01/client-cover.jpg",
+    "tags": "clients freelance web design website agency side hustle first client outreach local business leads"
+  },
+  {
     "slug": "five",
     "date": "2026-12-01 14:30",
     "title": "Five Claude prompts we actually tested",
     "line": "A business idea, a CV, your old stuff, a strict tutor and YouTube: five we ran ourselves.",
     "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/a147b35d0cf11f9be882d9055bc18e85ea284c88/reels/2026-12-01/five-cover.jpg",
     "tags": "prompts best prompts tested five list beginner start here business idea cv sell tutor youtube skills"
+  },
+  {
+    "slug": "funded",
+    "date": "2026-11-30 19:30",
+    "title": "Find a PhD or master's that pays you",
+    "line": "One free prompt: Claude finds PhD and master's programmes that pay your fees and a stipend, from official pages.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/73334c3a17a2fa4d5f6f7010ae9378aabcc8eb42/reels/2026-11-30/funded-cover.jpg",
+    "tags": "phd masters degree funded scholarship stipend study abroad university graduate student research"
   },
   {
     "slug": "course",
@@ -32,12 +48,28 @@
     "tags": "study learn tutor exam revision school university course excel skills teach test quiz"
   },
   {
+    "slug": "tv",
+    "date": "2026-11-27 19:30",
+    "title": "Make your slow TV fast again, with the exact settings for your model",
+    "line": "One free prompt: Claude reads the official help pages for your TV and gives you the exact menus to open.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/d10da320ffa2510e52f98d9390e2f95de2567c11/reels/2026-11-27/tv-cover.jpg",
+    "tags": "tv television slow smart tv google tv fire tv roku samsung lg settings home fix speed"
+  },
+  {
     "slug": "design",
     "date": "2026-11-27 14:30",
     "title": "Make Claude design your website like a pro",
     "line": "A free skill gives Claude 24 design commands and catches what makes a site look AI-made.",
     "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/27a88e89b8d31c623232fef39fa4b62baca90c4b/reels/2026-11-27/design-cover.jpg",
     "tags": "website web design designer small business landing page fonts colour layout ui ux"
+  },
+  {
+    "slug": "ads",
+    "date": "2026-11-26 19:30",
+    "title": "See every ad your competitors are running, and which ones are winning",
+    "line": "Meta shows every ad a company runs. One free prompt tells you which ones have run longest, and writes yours.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/38bdbc505c585a960fc4c6bcb6d3bda06009c771/reels/2026-11-26/ads-cover.jpg",
+    "tags": "ads advertising competitors meta facebook instagram ad library marketing business paid ads copy"
   },
   {
     "slug": "clone",
@@ -48,12 +80,28 @@
     "tags": "apps subscriptions clone rebuild save money no code build app black friday software tools"
   },
   {
+    "slug": "verdict",
+    "date": "2026-11-25 19:30",
+    "title": "Put your business idea on trial before you build it",
+    "line": "One free prompt: a prosecutor, a defence lawyer, twelve customers and a judge decide if your idea is worth building.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/02d0670549c9055ef94edf4bba75a90a5411e944/reels/2026-11-25/verdict-cover.jpg",
+    "tags": "business idea startup validate test side hustle founder trial verdict customers product"
+  },
+  {
     "slug": "grow",
     "date": "2026-11-25 14:30",
     "title": "Let Claude run your Instagram",
     "line": "Thirteen free Claude skills find what's working in your niche, score your hooks and plan your week.",
     "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/d4d747b333814c828473af3e6cf985e8be483fd3/reels/2026-11-25/grow-cover.jpg",
     "tags": "instagram reels growth followers content creator social media hooks profile bio plan marketing"
+  },
+  {
+    "slug": "leads",
+    "date": "2026-11-24 19:30",
+    "title": "Find businesses that already want to pay for what you sell",
+    "line": "One free prompt: Claude goes through job ads and finds small businesses already trying to pay for what you do.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/64a310c0ea900009f3d86bd2a6468220f6fc18b5/reels/2026-11-24/leads-cover.jpg",
+    "tags": "customers leads clients sales business freelance job ads hiring find customers outreach small business"
   },
   {
     "slug": "search",
