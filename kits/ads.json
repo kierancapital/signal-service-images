@@ -103,5 +103,12 @@
     "text": "Hey! Thanks for commenting 🙌\nHere's the free competitor ads prompt: copy their page from Meta's Ad Library, paste it into Claude, and it shows which ads are winning.\nTap below 👇",
     "button": "Get the prompt",
     "link": "https://plan.signalservice.ai/ads?utm_source=instagram&utm_medium=autodm&utm_campaign=ads"
+  },
+  "hub": {
+    "date": "2026-11-26 19:30",
+    "title": "See every ad your competitors are running, and which ones are winning",
+    "line": "Meta shows every ad a company runs. One free prompt tells you which ones have run longest, and writes yours.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/38bdbc505c585a960fc4c6bcb6d3bda06009c771/reels/2026-11-26/ads-cover.jpg",
+    "tags": "ads advertising competitors meta facebook instagram ad library marketing business paid ads copy"
   }
 }
