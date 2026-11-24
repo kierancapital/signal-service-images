@@ -1,5 +1,13 @@
 [
   {
+    "slug": "brand",
+    "date": "2026-12-02 19:30",
+    "title": "One photo of your product, a whole brand",
+    "line": "One free prompt for ChatGPT: a name, a logo, colours, packaging and listing photos from one product photo.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/b0d6ed556d9650474c96bdf0ff292293969e5d53/reels/2026-12-02/brand-cover.jpg",
+    "tags": "brand branding logo product small business etsy amazon packaging design chatgpt shop seller"
+  },
+  {
     "slug": "client",
     "date": "2026-12-01 19:30",
     "title": "Build a business a new website before you even say hello",
@@ -32,12 +40,28 @@
     "tags": "free courses ai course learn anthropic claude academy badge certificate cv career skills training beginner"
   },
   {
+    "slug": "headshot",
+    "date": "2026-11-29 19:30",
+    "title": "Turn a selfie into a professional headshot",
+    "line": "One free prompt for ChatGPT: a professional headshot from a selfie that keeps your real face.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/c3fbc5f0cfc0256df9d888fb08ff1ef1837d640b/reels/2026-11-29/headshot-cover.jpg",
+    "tags": "headshot linkedin selfie photo chatgpt profile picture job cv career professional portrait"
+  },
+  {
     "slug": "erase",
     "date": "2026-11-29 14:30",
     "title": "Get your details taken off the internet",
     "line": "One free prompt finds where you're listed, writes each removal request and tracks the replies.",
     "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/95e1b71c4e7377865189beb39d6c47cde1e97e8f/reels/2026-11-29/erase-cover.jpg",
     "tags": "privacy data brokers people search remove delete personal data address phone gdpr footprint online safety"
+  },
+  {
+    "slug": "codes",
+    "date": "2026-11-28 19:30",
+    "title": "Five codes that make your phone photos look professional",
+    "line": "Paste five codes into ChatGPT once, then fix any photo with one word.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/c526759e9eeef7a4cb847dc174932c15fffd8cf3/reels/2026-11-28/codes-cover.jpg",
+    "tags": "photo photos chatgpt edit codes selfie product photo remove background lighting phone camera"
   },
   {
     "slug": "tutor",
