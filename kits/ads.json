@@ -1,0 +1,107 @@
+{
+  "slug": "ads",
+  "keyword": "ADS",
+  "name": "Competitor ads prompt guide",
+  "checked": "22 Nov 2026",
+  "description": "The competitor ads prompt from the reel: copy a competitor's page from Meta's free Ad Library, paste it into Claude, and it lists every ad, how long each has run, the patterns the longest-running ads share, and three ads for your own business.",
+  "page": {
+    "title": "See every ad your competitors are running, and which ones are winning",
+    "mark": "The competitor ads prompt",
+    "sub": "Meta shows every ad a company is running on Facebook and Instagram, to anyone, for free. This prompt turns that page into answers: which ads have run the longest (nobody keeps paying for an ad that isn't working), what they have in common, and three ads for your business that use the same pattern without copying a word.",
+    "prompt_how": "Open Meta's Ad Library (facebook.com/ads/library), search your competitor and pick them from the list. Scroll to the bottom so every ad loads, select the whole page (Ctrl+A or Cmd+A), copy it, and paste it into a Claude chat after this prompt. Change the parts in square brackets first.",
+    "prompt_note": "You don't need a Facebook account to open the Ad Library.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it ourselves, on Duolingo's ads",
+    "results": [
+      {
+        "name": "Claude read all 32 ads from one paste",
+        "ok": true
+      },
+      {
+        "name": "It ranked them by days running: the oldest, 39 days",
+        "ok": true
+      },
+      {
+        "name": "It found the pattern: 9 of the oldest say the same thing",
+        "ok": true
+      },
+      {
+        "name": "It wrote 3 ads for a sample Spanish tutor",
+        "ok": true
+      },
+      {
+        "name": "Whether the longest-running ads really make the most money",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We copied Duolingo's page from the Ad Library (**32 active ads** in the US on 22 Nov) and pasted it into a normal Claude chat. It grouped them and worked out how long each had been running. The oldest had run **39 days**, and **nine of those** said the same thing: \"Learn a language for free with fun lessons…\". It named three patterns (a plain benefit as the hook, a free and low-effort offer, short video in many versions) and wrote **three ads** for a sample Spanish tutor. **Not checked:** the Ad Library shows no spending or sales, so \"longest running\" is a strong hint, not proof. **One thing that did NOT work:** asking Claude to open the Ad Library itself. Meta blocks it, so you copy and paste.",
+    "tip": "**The tip:** pick a competitor about your size. A huge brand in a sale week resets all its ads (we tried Gymshark first: 830 ads, all a week old).",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "You are my ad researcher. Below is everything I copied from Meta's free Ad Library for my competitor, [competitor's name] (active ads, [country]). I sell: [what you sell and who it is for]. Today is [today's date].\n\nStep 1: list every different ad you can see in the paste: its first line, the format if shown, the date it started and how many days it has been running. Group ads that share the same text and say how many there are. Rank them by days running, longest first, in a table.\nStep 2: the ads that have run longest are usually the ones that are working. Tell me the three patterns the longest-running ads share (the hook, the offer, the format), with the evidence from the paste.\nStep 3: write me three ads for my business that use those patterns without copying their words: a hook line, a body under 40 words, and the button text.\n\nRules: only use what is in the paste. Never invent an ad, a date or a number. If something is not shown, write 'not shown'. Here is the paste:\n[paste the page here]",
+  "followups": [
+    {
+      "label": "Three competitors at once",
+      "prompt": "Here are two more competitors, pasted the same way. Which patterns do all three share, and which does only one use? [paste]",
+      "note": "A pattern all three keep paying for is the safest to borrow."
+    },
+    {
+      "label": "Make it a video",
+      "prompt": "Turn ad number [1] into a 20-second video script: what is on screen, what is said, shot by shot.",
+      "note": "The longest runners we saw were short videos."
+    },
+    {
+      "label": "What they are NOT saying",
+      "prompt": "From the same paste, what does this competitor never mention that my customers care about? Give me three angles they have left open.",
+      "note": "The gap is often a better ad than the copy."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Open the Ad Library",
+      "detail": "facebook.com/ads/library. Choose the country, choose All ads, and search your competitor."
+    },
+    {
+      "title": "Load every ad",
+      "detail": "Scroll to the bottom of the page until nothing new appears."
+    },
+    {
+      "title": "Copy the whole page",
+      "detail": "Select all (Ctrl+A or Cmd+A), then copy."
+    },
+    {
+      "title": "Paste it after the prompt",
+      "detail": "In any Claude chat. Fill in the square brackets first."
+    },
+    {
+      "title": "Check the dates",
+      "detail": "Open the two or three longest-running ads in the library and look at them yourself."
+    }
+  ],
+  "safety": [
+    "**Longest running is a hint, not proof.** The library shows no spending and no sales.",
+    "**Use the pattern, not the words.** Don't copy a competitor's text, pictures or name.",
+    "**Check anything you publish.** Claude wrote the ads without knowing your prices or offers, so put the real ones in."
+  ],
+  "email": {
+    "tested": "We pasted Duolingo's 32 ads into Claude. The oldest had run 39 days, and nine of them said the same thing. The prompt is on your guide page: plan.signalservice.ai/ads",
+    "safety": "Longest running is a hint that an ad works, not proof.",
+    "question": "whose ads are you going to look at first?"
+  },
+  "dm": {
+    "keyword": "ADS",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free competitor ads prompt: copy their page from Meta's Ad Library, paste it into Claude, and it shows which ads are winning.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/ads?utm_source=instagram&utm_medium=autodm&utm_campaign=ads"
+  }
+}
