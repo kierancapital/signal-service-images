@@ -1,0 +1,107 @@
+{
+  "slug": "tv",
+  "keyword": "TV",
+  "name": "Slow TV prompt guide",
+  "checked": "22 Nov 2026",
+  "description": "The slow TV prompt from the reel: tell Claude which TV you have and it reads the official help pages for that model, then gives you a checklist with the exact menu to open for every step.",
+  "page": {
+    "title": "Make your slow TV fast again, with the exact settings for your model",
+    "mark": "The slow TV prompt",
+    "sub": "One free prompt from the reel. Smart TVs slow down as the storage fills up and the home screen fills with recommendations. Claude looks up the official help pages for your exact model and gives you a checklist: what each step does, the exact menu to open, and how to undo it. Settings only. Nothing to install, no computer.",
+    "prompt_how": "Paste this into a Claude chat with web search switched on (the free plan has it). Put your own TV in the square brackets: the brand, the size or series, the system (Google TV, Fire TV, Roku, Tizen, webOS) and the year.",
+    "prompt_note": "If you don't know the model, it is on a sticker on the back, or under Settings, then About.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran the prompt for a TCL Google TV",
+    "results": [
+      {
+        "name": "It came back with 11 steps, in order",
+        "ok": true
+      },
+      {
+        "name": "Each step had the menu path and how to undo it",
+        "ok": true
+      },
+      {
+        "name": "Each step linked to an official TCL or Google help page",
+        "ok": true
+      },
+      {
+        "name": "It said plainly what will NOT fix a slow TV",
+        "ok": true
+      },
+      {
+        "name": "Whether it made a real TV faster: we do not have this TV",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We ran it in a normal Claude chat for a **TCL 55-inch 4-Series with Google TV (2022)**. It came back with **11 steps**, each with the menu path, how to undo it and a link to an **official TCL or Google help page**. The first three were restart properly, clear cached data for all apps at once (Settings, System, Storage, Free Up Storage, Cached data) and uninstall the apps you never use. Step five was **Apps Only mode**, which swaps the home screen for a plain grid of your apps. Where it could not confirm a menu on an official page, it wrote \"check on your TV\". **Not checked:** we do not own this TV, so we have NOT tried the steps on a real one. We checked what the prompt returns, not how much faster a TV gets.",
+    "tip": "**The tip:** do the first three steps, restart, and see. Claude told us the privacy settings \"protect privacy more than they speed anything up\".",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "You are my TV technician. My TV: [brand, size or series, the system it runs, the year you bought it]. It has got slow: [what is slow: the home screen, opening apps, the remote]. I want it fast again using only the TV's own settings menus. No extra apps, no computer, no cables, nothing that voids a warranty, and everything must be reversible.\n\nSearch the web for the official help pages for this TV (the maker's and the system's) and give me a numbered checklist in the order I should do it. For each step: what it does in one plain sentence, the exact menu path on my TV, how to undo it, and the link to the official page you took it from.\n\nCover at least: restarting properly, clearing storage and cache, removing or disabling apps I do not use, turning off the ads and recommendations on the home screen, turning off the tracking of what I watch and ad personalisation, turning off features that run in the background, and updating the software. Put the three steps that make the biggest difference first.\n\nRules: never invent a menu name. If you cannot confirm a path on an official page, say 'check on your TV' and tell me what to look for. End by telling me what will NOT fix it and when it is the hardware.",
+  "followups": [
+    {
+      "label": "A menu is missing",
+      "prompt": "I can't find this on my TV: [the step]. Here is what my menu shows instead: [what you see]. Where is it on my version?",
+      "note": "Menus change between software versions."
+    },
+    {
+      "label": "One slow app",
+      "prompt": "Only [app] is slow. Give me the steps for that app alone, without touching my other apps or logins.",
+      "note": "Clearing one app's cache keeps you signed in."
+    },
+    {
+      "label": "Is it worth keeping?",
+      "prompt": "I did all of that and it is still slow. Tell me honestly whether a streaming stick would be faster than this TV, and what to look for.",
+      "note": "Sometimes the cheap fix is a new stick, not a new TV."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Find your model",
+      "detail": "On the back of the TV, or under Settings, then About."
+    },
+    {
+      "title": "Paste the prompt",
+      "detail": "Into a Claude chat with web search on. Fill in the brackets with your TV."
+    },
+    {
+      "title": "Do the first three steps",
+      "detail": "They make the biggest difference. Restart the TV afterwards."
+    },
+    {
+      "title": "Skip what you do not understand",
+      "detail": "Every step is optional, and each one says how to undo it."
+    },
+    {
+      "title": "Leave the factory reset alone",
+      "detail": "It erases everything, so it is the last resort."
+    }
+  ],
+  "safety": [
+    "**We have not tried this on a real TV.** We checked that the prompt returns real menu paths with official links. Follow the official page if the two differ.",
+    "**Use the settings only.** Nothing here needs developer mode, a computer or an extra app. If a guide elsewhere asks for those, that is a different and riskier job.",
+    "**Do not factory reset as a first step.** It signs you out of everything."
+  ],
+  "email": {
+    "tested": "We ran the slow TV prompt for a TCL Google TV. It returned 11 steps, each with the menu path and an official help link. We have not tried them on a real TV. The prompt is on your guide page: plan.signalservice.ai/tv",
+    "safety": "Follow the official help page if it differs from the checklist.",
+    "question": "which TV do you have?"
+  },
+  "dm": {
+    "keyword": "TV",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free slow TV prompt: paste it into Claude, type in your TV, and you get the exact settings to change for your model.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/tv?utm_source=instagram&utm_medium=autodm&utm_campaign=tv"
+  }
+}
