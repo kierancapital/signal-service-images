@@ -103,5 +103,12 @@
     "text": "Hey! Thanks for commenting 🙌\nHere's the free idea on trial prompt: paste it into Claude, type in your idea, and you get both sides, a jury vote and a verdict.\nTap below 👇",
     "button": "Get the prompt",
     "link": "https://plan.signalservice.ai/verdict?utm_source=instagram&utm_medium=autodm&utm_campaign=verdict"
+  },
+  "hub": {
+    "date": "2026-11-25 19:30",
+    "title": "Put your business idea on trial before you build it",
+    "line": "One free prompt: a prosecutor, a defence lawyer, twelve customers and a judge decide if your idea is worth building.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/02d0670549c9055ef94edf4bba75a90a5411e944/reels/2026-11-25/verdict-cover.jpg",
+    "tags": "business idea startup validate test side hustle founder trial verdict customers product"
   }
 }
