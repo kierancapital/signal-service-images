@@ -1,0 +1,107 @@
+{
+  "slug": "leads",
+  "keyword": "LEADS",
+  "name": "Customer finder prompt guide",
+  "checked": "22 Nov 2026",
+  "description": "The customer finder prompt from the reel: Claude searches job ads for small businesses that are advertising for what you sell, scores each one, and drafts a first message from their own ad.",
+  "page": {
+    "title": "Find businesses that already want to pay for what you sell",
+    "mark": "The customer finder",
+    "sub": "One free prompt from the reel. A business that is advertising a job for what you do already wants to pay for it. Claude finds those ads, scores each business out of ten, skips the recruiters, and writes a short first message using a real detail from the ad.",
+    "prompt_how": "Paste this into a Claude chat with web search switched on (the free plan has it). Change the part in square brackets first.",
+    "prompt_note": "Open every ad before you write to anyone: job boards show cached pages, so an ad can be old or already filled.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it ourselves, for a bookkeeper",
+    "results": [
+      {
+        "name": "It found 6 real small businesses advertising for a bookkeeper",
+        "ok": true
+      },
+      {
+        "name": "It skipped 5 staffing agencies and said so",
+        "ok": true
+      },
+      {
+        "name": "One ad named its own budget: $600 a month",
+        "ok": true
+      },
+      {
+        "name": "A first message for each, from a detail in the ad",
+        "ok": true
+      },
+      {
+        "name": "Whether each ad is still open (it could not confirm the dates)",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We ran it in a normal Claude chat for a sample online bookkeeping service (from $300 a month). It came back with **6 small businesses** that were advertising for a part-time or contract bookkeeper, including a tree service paying **$30 an hour** and one that had named a budget of **$600 a month**. It skipped **5 staffing agencies** and told us it could not confirm how old each ad was. It wrote a first message for each one from a real detail in the ad. **Not checked:** whether the ads were still open, and nothing was sent to anyone. **One thing that did NOT work:** we first asked it to find people asking for a bookkeeper on Reddit. Claude can't read Reddit at all, so this guide doesn't promise that.",
+    "tip": "**The tip:** say your price in the brackets. When an ad names a budget, Claude compares the two and tells you who to contact first.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "You are my customer finder. I sell: [what you sell, who it is for, your price, your country or city]. A business that is advertising a job for the thing I sell is a business that already wants to pay for it. Search the web right now for small businesses that are advertising for a part-time, freelance or contract [job title that matches what you sell] in the last 30 days. Use real job listings only (company career pages, Indeed, LinkedIn Jobs, Craigslist, local job boards, anything you can actually open).\n\nFor each one give me: the business name, what it does and where, the job title, the pay or hours if the ad says, the date posted if shown, the link, a fit score from 1 to 10 with a one-line reason (small company and part-time hours score highest, big companies and full-time roles score lowest), and a short friendly opening message I could send the owner that offers my service as a cheaper, faster alternative to hiring, using one real detail from their ad.\n\nRules: only listings you actually found, each with its link. Never invent a business, a number or a date. If a detail is not in the ad, write 'not stated'. Skip recruiters, staffing agencies and big companies. Give me the 10 best in a table ranked by score, then tell me which three to contact first and why. If you find fewer than 10 real ones, give me fewer.",
+  "followups": [
+    {
+      "label": "Find the owner",
+      "prompt": "For the top three, find the owner's or manager's name and a public contact route from the business's own website. Give me the link for each. If you can't find one, say so.",
+      "note": "Only from their own site. Never guess an email address."
+    },
+    {
+      "label": "A second message",
+      "prompt": "Write a short, polite follow-up for each of the three, to send a week later if I hear nothing. Under 60 words, no pressure.",
+      "note": "One follow-up is enough."
+    },
+    {
+      "label": "Run it every week",
+      "prompt": "Run the same search again and show me only ads you did not list last time: [paste last week's table]",
+      "note": "New ads appear every week."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Fill in the brackets",
+      "detail": "What you sell, who it is for, your price and where you work. Then the job title a business would hire for instead of buying from you."
+    },
+    {
+      "title": "Paste it into Claude",
+      "detail": "A normal Claude chat with web search on. It takes about a minute."
+    },
+    {
+      "title": "Open every ad",
+      "detail": "Check that it is real, recent and still open before you do anything else."
+    },
+    {
+      "title": "Send it yourself",
+      "detail": "Use the message as a start and rewrite it in your own voice. Claude sends nothing."
+    },
+    {
+      "title": "Keep the table",
+      "detail": "Save it, so next week you can ask for new ads only."
+    }
+  ],
+  "safety": [
+    "**Check every ad yourself.** Claude told us it could not confirm posting dates. An ad can be months old.",
+    "**One message, then stop.** Write to a business once, perhaps follow up once, and take no for an answer. Follow the rules of the site you contact them through.",
+    "**It can get details wrong.** Compare the message with the ad before you send it."
+  ],
+  "email": {
+    "tested": "We ran the customer finder prompt for a sample bookkeeper. It found 6 small businesses advertising that job, one with a $600 a month budget. The prompt is on your guide page: plan.signalservice.ai/leads",
+    "safety": "Open every ad before you write to anyone, because an ad can be old.",
+    "question": "what do you sell?"
+  },
+  "dm": {
+    "keyword": "LEADS",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free customer finder prompt: paste it into Claude, tell it what you sell, and it finds businesses already advertising to pay for it.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/leads?utm_source=instagram&utm_medium=autodm&utm_campaign=leads"
+  }
+}
