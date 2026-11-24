@@ -103,5 +103,12 @@
     "text": "Hey! Thanks for commenting 🙌\nHere's the free headshot prompt: upload a selfie to ChatGPT, paste it, and it keeps your real face.\nTap below 👇",
     "button": "Get the prompt",
     "link": "https://plan.signalservice.ai/headshot?utm_source=instagram&utm_medium=autodm&utm_campaign=headshot"
+  },
+  "hub": {
+    "date": "2026-11-29 19:30",
+    "title": "Turn a selfie into a professional headshot",
+    "line": "One free prompt for ChatGPT: a professional headshot from a selfie that keeps your real face.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/c3fbc5f0cfc0256df9d888fb08ff1ef1837d640b/reels/2026-11-29/headshot-cover.jpg",
+    "tags": "headshot linkedin selfie photo chatgpt profile picture job cv career professional portrait"
   }
 }
