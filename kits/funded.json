@@ -1,0 +1,107 @@
+{
+  "slug": "funded",
+  "keyword": "FUNDED",
+  "name": "Funded degree prompt guide",
+  "checked": "22 Nov 2026",
+  "description": "The funded degree prompt from the reel: tell Claude what you studied and it searches official university pages for PhD and master's programmes that pay your fees and a living stipend, then matches a professor and drafts your first email.",
+  "page": {
+    "title": "Find a PhD or master's that pays you",
+    "mark": "The funded degree finder",
+    "sub": "One free prompt from the reel. Some universities cover your fees and pay you to live while you study. Claude searches the official pages, lists what each programme pays, who can apply and the deadline, then picks a professor whose work matches yours and drafts a first email about one of their real papers.",
+    "prompt_how": "Paste this into a Claude chat with web search switched on (the free plan has it). Change the parts in square brackets first.",
+    "prompt_note": "Deadlines for most programmes fall between November and January.",
+    "tested_label": "what we checked",
+    "tested_title": "We ran it ourselves, for a PhD in AI",
+    "results": [
+      {
+        "name": "It read 20 official pages and listed 8 funded programmes",
+        "ok": true
+      },
+      {
+        "name": "What each pays, who can apply, and the deadline",
+        "ok": true
+      },
+      {
+        "name": "Toronto's $41,122 (CAD) for international students: on the university's own page",
+        "ok": true
+      },
+      {
+        "name": "A professor match and a first email for the best three",
+        "ok": true
+      },
+      {
+        "name": "Whether those professors are taking students this year",
+        "ok": false
+      }
+    ],
+    "result_labels": [
+      "Checked",
+      "Not yet"
+    ],
+    "tested_text": "We ran it in a normal Claude chat as someone with a bachelor's in computer science who wants a PhD in AI. It read **20 official pages** and listed **8 funded programmes**, with what each one states it pays, whether international students can get it, and the deadline. **Two deadlines were 8 days away.** We then checked two figures ourselves on the universities' own pages: the University of Toronto's package for international PhD students admitted in 2026-27 is **$41,122 (Canadian dollars)** with funding guaranteed for 60 months for direct entry, and UBC's is **$46,236**. For the best three it named a professor, one real recent paper and a first email under 120 words. **Not checked:** whether those professors are taking students. Claude said so itself. Nothing here promises a place: Toronto says only 5 to 10% of applicants get an offer.",
+    "tip": "**The tip:** fill in the bracket in the email with one true sentence about your own project. A professor can tell a template from a real note.",
+    "checklist_label": "step 3 · use it"
+  },
+  "prompt": "You are my funded-degree finder. About me: I have [your degree and subject], I want [a PhD / a master's] in [your field], I can study in [countries], and I cannot pay tuition fees.\n\nSearch the web right now for programmes that are fully funded: tuition paid AND a living stipend or salary. Use official university and funder pages only. For each one give me: the university and programme, the country, what the funding covers and the yearly stipend or salary as the page states it, whether international students can get it, the next application deadline, and the link to the official page.\n\nThen pick the three that fit me best and for each one name one real professor or lab there whose recent work matches my interest, with the link to their page, and write a short first email to that professor (under 120 words) that mentions one specific paper or project of theirs.\n\nRules: only programmes and people you actually found, each with its link. Never invent a stipend, a deadline or a name. If a page does not state something, write 'not stated'. Give me the 8 best in a table, ordered by deadline. Finish with the three things that most often get an application rejected.",
+  "followups": [
+    {
+      "label": "Am I eligible?",
+      "prompt": "For the three best, list every entry requirement on the official page (degree, grades, English test, references) and tell me which ones I meet, given this: [your grades, tests and experience].",
+      "note": "Check before you spend a week on an application."
+    },
+    {
+      "label": "A statement of purpose",
+      "prompt": "Using the programme page for [programme], give me an outline for my statement of purpose: what each paragraph must show, and the three mistakes to avoid. Don't write it for me.",
+      "note": "It has to be yours, or it reads like everyone else's."
+    },
+    {
+      "label": "Scholarships as well",
+      "prompt": "Now search for scholarships I could add on top, for [my nationality] students in [field], with the amount, the deadline and the official link.",
+      "note": "Some stack with a funded place."
+    }
+  ],
+  "checklist_title": "Use it in five steps",
+  "checklist": [
+    {
+      "title": "Fill in the brackets",
+      "detail": "Your degree, the field you want, where you can study."
+    },
+    {
+      "title": "Paste it into Claude",
+      "detail": "With web search on. Ours took about two and a half minutes."
+    },
+    {
+      "title": "Open every official page",
+      "detail": "Check the amount and the deadline yourself before you rely on them."
+    },
+    {
+      "title": "Read the paper first",
+      "detail": "Before you email a professor, read the paper Claude names. Then add one true line about your own work."
+    },
+    {
+      "title": "Send it yourself",
+      "detail": "One professor at a time, from your own email."
+    }
+  ],
+  "safety": [
+    "**Nothing here promises a place.** These programmes are competitive: one of the pages we read says 5 to 10% of applicants get an offer.",
+    "**Check every figure on the official page.** Stipends, rules and deadlines change each year, and some apply only to home or only to international students.",
+    "**Write to professors as yourself.** Read their paper first. Don't send the same email to twenty people."
+  ],
+  "email": {
+    "tested": "We ran the funded degree prompt for a PhD in AI. It listed 8 funded programmes from official pages; Toronto's pays international students $41,122 CAD a year. The prompt is on your guide page: plan.signalservice.ai/funded",
+    "safety": "Check every figure and deadline on the official page.",
+    "question": "what do you want to study?"
+  },
+  "dm": {
+    "keyword": "FUNDED",
+    "replies": [
+      "Sent! Check your DMs for the prompt.",
+      "Done, the prompt is in your DMs.",
+      "Just sent it over. Check your DMs."
+    ],
+    "text": "Hey! Thanks for commenting 🙌\nHere's the free funded degree prompt: paste it into Claude, type in what you studied, and it finds programmes that pay your fees and a stipend.\nTap below 👇",
+    "button": "Get the prompt",
+    "link": "https://plan.signalservice.ai/funded?utm_source=instagram&utm_medium=autodm&utm_campaign=funded"
+  }
+}
