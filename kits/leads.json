@@ -103,5 +103,12 @@
     "text": "Hey! Thanks for commenting 🙌\nHere's the free customer finder prompt: paste it into Claude, tell it what you sell, and it finds businesses already advertising to pay for it.\nTap below 👇",
     "button": "Get the prompt",
     "link": "https://plan.signalservice.ai/leads?utm_source=instagram&utm_medium=autodm&utm_campaign=leads"
+  },
+  "hub": {
+    "date": "2026-11-24 19:30",
+    "title": "Find businesses that already want to pay for what you sell",
+    "line": "One free prompt: Claude goes through job ads and finds small businesses already trying to pay for what you do.",
+    "cover": "https://raw.githubusercontent.com/kierancapital/signal-service-images/64a310c0ea900009f3d86bd2a6468220f6fc18b5/reels/2026-11-24/leads-cover.jpg",
+    "tags": "customers leads clients sales business freelance job ads hiring find customers outreach small business"
   }
 }
